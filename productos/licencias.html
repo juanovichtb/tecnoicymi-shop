@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licencias de Software | Tecnoicymi</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+
+<body>
+    <div class="blob"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <header class="section-header">
+            <a href="index.html" class="btn-back-nav">Volver a Departamentos</a>
+            <h1>Licencias Originales</h1>
+            <p>Activación garantizada, soporte técnico y entrega digital inmediata.</p>
+        </header>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <input type="text" id="productSearch" placeholder="Escribe para buscar... (ej: Claro, Windows, SSD)"
+                    onkeyup="filterProducts()">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="products-grid">
+
+            <div class="product-card software-card">
+                <div class="operator-badge">Más Popular</div>
+                <div class="logo-container">
+                    <img src="/assets/img/windows11-logo.svg" alt="windows11" class="op-img">
+                </div>
+                <h3>Windows 11 Pro</h3>
+                <ul class="price-list">
+                    <li><span>Tipo:</span> OEM / Retail</li>
+                    <li><span>Duración:</span> Permanente</li>
+                    <li><span>Dispositivos:</span> 1 PC</li>
+                    <li><span>Arquitectura:</span> 64 Bits</li>
+                </ul>
+                <div class="price-tag">$15.00 - Oferta Tech</div>
+                <a href="https://wa.me/593982541923?text=Hola, solicito licencia de Windows 11 Pro" class="btn-download"
+                    target="_blank">Comprar Ahora</a>
+            </div>
+
+            <div class="product-card software-card">
+                <div class="logo-container">
+                    <img src="/assets/img/mcafee-logo.png" alt="Mcafee" class="op-img">
+                </div>
+                <h3>Mcafee Antivirus</h3>
+                <ul class="price-list">
+                    <li><span>Protección:</span> 3 Años</li>
+                    <li><span>Dispositivo:</span> 1 PC</li>
+                    <li><span>Soporte:</span> Oficial MCAFEE</li>
+                </ul>
+                <div class="price-tag">$25.00 - Seguridad Total</div>
+                <a href="https://wa.me/593982541923?text=Hola, solicito licencia de Mcafee 2 años 1 pc"
+                    class="btn-download" target="_blank">Comprar Ahora</a>
+            </div>
+
+            <div class="product-card software-card">
+                <div class="logo-container">
+                    <img src="/assets/img/office365-logo.png" alt="office365" class="op-img">
+                </div>
+                <h3>Microsoft 365</h3>
+                <ul class="price-list">
+                    <li><span>Duración:</span> Permanente</li>
+                    <li><span>Almacenamiento:</span> 1TB OneDrive</li>
+                    <li><span>Dispositivos:</span> 5 a la vez</li>
+                    <li><span>Apps:</span> Siempre actualizadas</li>
+                </ul>
+                <div class="price-tag">$15.00 - Ofecta Tech</div>
+                <a href="https://wa.me/593982541923?text=Hola, solicito cuenta de Microsoft 365" class="btn-download"
+                    target="_blank">Comprar Ahora</a>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        function filterProducts() {
+            let input = document.getElementById('productSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('product-card');
+            let grid = document.querySelector('.products-grid');
+            let visibleCount = 0;
+
+            // Eliminar mensaje de "no resultados" previo si existe
+            let noResultsMsg = document.getElementById('no-results');
+            if (noResultsMsg) noResultsMsg.remove();
+
+            for (let i = 0; i < cards.length; i++) {
+                // innerText captura el h3 y los li de la lista de precios
+                let content = cards[i].innerText.toLowerCase();
+
+                if (content.includes(input)) {
+                    cards[i].style.display = "flex";
+                    visibleCount++;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            // Si no hay coincidencias, mostrar mensaje elegante
+            if (visibleCount === 0) {
+                let msg = document.createElement('div');
+                msg.id = 'no-results';
+                msg.innerHTML = `
+            <div style="text-align:center; padding: 40px; color: rgba(255,255,255,0.5);">
+                <p style="font-size: 2rem;">🔍</p>
+                <p>No encontramos licencias que coincidan con "${input}"</p>
+                <p style="font-size: 0.8rem;">Prueba con Windows, Office o Mcafee</p>
+            </div>
+        `;
+                grid.appendChild(msg);
+            }
+        }
+    </script>
+    <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
+        <span class="float-text">¿Necesitas ayuda?</span>
+    </a>
+</body>
+
+</html>

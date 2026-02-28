@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Software | Tecnoicymi</title>
+
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+
+<body>
+    <div class="blob"></div>
+
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <header class="section-header">
+            <a href="../index.html" class="btn-back-nav">Volver a Recursos</a>
+
+            <h1>Biblioteca de Software</h1>
+            <p>Selecciona una categoría para explorar herramientas específicas y sus guías educativas.</p>
+
+            <div class="search-box">
+                <input type="text" id="softwareSearch" placeholder="🔍 Buscar programas o sistemas...">
+            </div>
+        </header>
+
+        <section class="software-grid-catalog" id="catalogGrid">
+
+            <div class="category-block">
+                <h2>🪟 Sistemas Operativos</h2>
+                <div class="mini-card-container">
+                    <a href="sistemas-operativos/windows-pro.html" class="mini-card software-item">
+                        <strong>Windows 11 Pro</strong>
+                        <span style="font-size: 0.8rem; color: var(--text-gray);">Optimizado / 64-bit</span>
+                    </a>
+                    <a href="sistemas-operativos/windows-10.html" class="mini-card software-item">
+                        <strong>Windows 10 Ligero</strong>
+                        <span style="font-size: 0.8rem; color: var(--text-gray);">Ideal PCs antiguas</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-block">
+                <h2>📊 Ofimática</h2>
+                <div class="mini-card-container">
+                    <a href="ofimatica/office-2024.html" class="mini-card software-item">
+                        <strong>Office Suite 2024</strong>
+                        <span style="font-size: 0.8rem; color: var(--text-gray);">Word, Excel, PPT</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="category-block">
+                <h2>🎬 Multimedia</h2>
+                <div class="mini-card-container">
+                    <a href="multimedia/editor-video.html" class="mini-card software-item">
+                        <strong>Editor Pro Video</strong>
+                        <span style="font-size: 0.8rem; color: var(--text-gray);">Render Acelerado</span>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="load-more-area">
+            <button id="loadMoreBtn" class="btn-load-more">Ver más software</button>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

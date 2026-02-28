@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias Tech | Tecnoicymi</title>
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+</head>
+
+<body class="blog-layout">
+    <div class="blob"></div>
+
+    <div id="header-placeholder"></div>
+
+    <main class="blog-container">
+
+        <aside class="blog-sidebar">
+            <div class="sidebar-box">
+                <h3>Buscar</h3>
+                <div class="search-mini">
+                    <input type="text" id="sideSearch" placeholder="Ej: Windows..." onkeyup="filterSidebar()">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <h3>Capítulos</h3>
+                <ul id="storyList">
+                    <li><a href="efecto2038.html" class="active">⏰ El Efecto 2038</a></li>
+                    <li><a href="facebookInicio.html">💻 Facebook</a></li>
+                    <li><a href="captainCrunch.html">🤖 Captian Crunch</a></li>
+                    <li><a href="coreWar.html">🤖 Gusano Core War </a></li>
+                </ul>
+
+                <h3>Categorías</h3>
+                <div class="filter-tags">
+                    <span class="tag" onclick="filterByTag('aplicaciones')">Aplicaciones</span>
+                    <span class="tag" onclick="filterByTag('curiosidades')">Curiosidades</span>
+                    <span class="tag" onclick="filterByTag('hacker')">Hacker</span>
+                    <span class="tag" onclick="filterByTag('hardware')">Hardware</span>
+                    <span class="tag" onclick="filterByTag('software')">Software</span>
+                    <span class="tag" onclick="filterByTag('virus')">Virus</span>
+                    <span class="tag" onclick="filterByTag('all')">Todos</span>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="blog-content">
+            <header class="section-header">
+                <a href="../index.html" class="btn-back-nav">Volver a Recursos</a>
+                <h1>Historias Tech</h1>
+                <p>Inspirado en los hitos de "Un Día Más". Explora los momentos que definieron nuestra era.</p>
+            </header>
+
+            <div class="stories-grid" id="storiesGrid">
+
+                <article class="story-card" data-category="curiosidades">
+                    <div class="card-tag">Curiosidades</div>
+                    <div class="card-info">
+                        <span class="card-date">19 Enero</span>
+                        <h3>El Efecto 2038</h3>
+                        <p>El fin de los sistemas de 32 bits se acerca. ¿Estamos preparados para el próximo gran bug
+                            temporal?</p>
+                        <a href="efecto2038.html" class="btn-read">Leer Historia →</a>
+                    </div>
+                </article>
+
+                <article class="story-card" data-category="aplicaciones">
+                    <div class="card-tag">Aplicaciones</div>
+                    <div class="card-info">
+                        <span class="card-date">4 Febrero</span>
+                        <h3>El Nacimiento de Facebook</h3>
+                        <p>El 4 de febrero de 2004, un proyecto universitario nacido en un dormitorio de Harvard comenzó...
+                        </p>
+                        <a href="facebookInicio.html" class="btn-read">Leer Historia →</a>
+                    </div>
+                </article>
+
+                <article class="story-card" data-category="hacker">
+                    <div class="card-tag">Hacker</div>
+                    <div class="card-info">
+                        <span class="card-date">años 70</span>
+                        <h3>El nacimiento de la cultura hacker</h3>
+                        <p>Mucho antes de que existiera el hacking moderno como lo conocemos, un ingeniero curioso descubrió...
+                        </p>
+                        <a href="captainCrunch.html" class="btn-read">Leer Historia →</a>
+                    </div>
+                </article>
+
+                <article class="story-card" data-category="virus">
+                    <div class="card-tag">Virus</div>
+                    <div class="card-info">
+                        <span class="card-date">1994</span>
+                        <h3>Core War y el nacimiento de la guerra digital</h3>
+                        <p>En los albores de la programación competitiva, surgió un experimento que parecía un juego, pero que marcaría un hito en la historia de la informática...
+                        </p>
+                        <a href="coreWar.html" class="btn-read">Leer Historia →</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+    <script>
+        // 1. Filtrar por CATEGORÍA
+        function filterByTag(category) {
+            console.log("Filtrando por:", category); // Para que veas en consola que funciona
+            const cards = document.querySelectorAll('.story-card');
+            const filterTags = document.querySelectorAll('.filter-tags .tag');
+
+            // Actualizar estilo visual de los botones de filtro
+            filterTags.forEach(t => {
+                if (t.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && t.innerText.toLowerCase() === 'todos')) {
+                    t.style.background = 'var(--accent)';
+                    t.style.color = '#000';
+                } else {
+                    t.style.background = 'rgba(255, 255, 255, 0.05)';
+                    t.style.color = '#fff';
+                }
+            });
+
+            // Mostrar u ocultar tarjetas del grid
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. Filtrar Títulos en la BARRA LATERAL
+        function filterSidebar() {
+            let input = document.getElementById('sideSearch').value.toLowerCase();
+            let links = document.querySelectorAll('#storyList li');
+
+            links.forEach(li => {
+                let text = li.innerText.toLowerCase();
+                li.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

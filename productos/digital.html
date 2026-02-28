@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido Digital | Tecnoicymi</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body>
+    <div class="blob"></div>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <header class="section-header">
+            <a href="index.html" class="btn-back-nav">Volver a Departamentos</a>
+            <h1>Contenido Digital</h1>
+            <p>Explora nuestros recursos exclusivos organizados por categorías.</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="productSearch" placeholder="¿Qué estás buscando? (ej: perros, office, ssd...)" onkeyup="filterProducts()">
+            <i class="search-icon">🔍</i>
+        </div>
+    
+        <h2 class="category-title">🐾 Bienestar Animal</h2>
+        <div class="products-grid">
+            <div class="product-card digital-card">
+                <div class="logo-container">🐶</div>
+                <h3>100 Recetas Perritos</h3>
+                <p>Comida casera y saludable para tu mejor amigo.</p>
+                <a href="https://go.hotmart.com/P103899922M" target="_blank" class="btn-download" target="_blank">Ver Detalles</a>
+            </div>
+            <div class="product-card digital-card">
+                <div class="logo-container">🐱</div>
+                <h3>100 Recetas Gatos</h3>
+                <p>Nutrición felina deliciosa y balanceada.</p>
+                <a href="https://go.hotmart.com/Y103900226S" target="_blank" class="btn-download" target="_blank">Ver Detalles</a>
+            </div>
+        </div>
+    
+        <h2 class="category-title">🎨 Mundo Kids</h2>
+        <div class="products-grid">
+            <div class="product-card digital-card">
+                <div class="logo-container">🖍️</div>
+                <h3>Libros para Colorear</h3>
+                <p>Packs descargables para estimular la creatividad.</p>
+                <a href="https://wa.me/593982541923?text=Hola, busco libros para colorear" class="btn-download" target="_blank">Consultar</a>
+            </div>
+            <div class="product-card digital-card">
+                <div class="logo-container">🧩</div>
+                <h3>Juegos Educativos</h3>
+                <p>Recursos didácticos en formato PDF para imprimir.</p>
+                <a href="https://wa.me/593982541923?text=Hola, busco recursos educativos kids" class="btn-download" target="_blank">Consultar</a>
+            </div>
+        </div>
+    
+        <h2 class="category-title">📚 Biblioteca PDF</h2>
+        <div class="products-grid">
+            <div class="product-card digital-card">
+                <div class="logo-container">📑</div>
+                <h3>Guías Tecnológicas</h3>
+                <p>Tutoriales paso a paso sobre software y equipos.</p>
+                <a href="https://wa.me/593982541923?text=Hola, quiero ver las guías PDF" class="btn-download" target="_blank">Ver Catálogo</a>
+            </div>
+            <div class="product-card digital-card">
+                <div class="logo-container">🛡️</div>
+                <h3>Ciberseguridad Personal</h3>
+                <p>Guía práctica para proteger tus cuentas y datos.</p>
+                <a href="https://wa.me/593982541923?text=Hola, me interesa la guía de ciberseguridad" class="btn-download" target="_blank">Ver Catálogo</a>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/main.js"></script>
+    <script>
+function filterProducts() {
+    let input = document.getElementById('productSearch').value.toLowerCase();
+    let grids = document.getElementsByClassName('products-grid');
+    let titles = document.getElementsByClassName('category-title');
+
+    for (let i = 0; i < grids.length; i++) {
+        let cards = grids[i].getElementsByClassName('product-card');
+        let hasVisibleCards = false;
+
+        for (let j = 0; j < cards.length; j++) {
+            let productName = cards[j].getElementsByTagName('h3')[0].innerText.toLowerCase();
+            let productDesc = cards[j].getElementsByTagName('p')[0].innerText.toLowerCase();
+
+            if (productName.includes(input) || productDesc.includes(input)) {
+                cards[j].style.display = "";
+                hasVisibleCards = true;
+            } else {
+                cards[j].style.display = "none";
+            }
+        }
+
+        // Si la categoría no tiene productos visibles, esconde el título y el grid
+        if (hasVisibleCards) {
+            titles[i].style.display = "";
+            grids[i].style.display = "grid"; // O "" según tu CSS
+        } else {
+            titles[i].style.display = "none";
+            grids[i].style.display = "none";
+        }
+    }
+}
+        </script>
+        <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
+            <span class="float-text">¿Necesitas ayuda?</span>
+        </a>
+</body>
+</html>

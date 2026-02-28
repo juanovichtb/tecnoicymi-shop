@@ -1,0 +1,111 @@
+/* base.css - VERSIÓN CORREGIDA FORZADA */
+
+:root {
+    --accent: #00f2ff;
+    --bg-dark: #020408;
+}
+
+/* CONFIGURACIÓN GENERAL (Afecta a todas las páginas) */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark) !important;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden; 
+    overflow-y: auto; /* POR DEFECTO TODAS TIENEN SCROLL */
+}
+
+/* CONFIGURACIÓN SOLO PARA EL HOME */
+body.home-page {
+    height: auto; /* Permite que el cuerpo crezca según el contenido */
+    overflow-y: auto; /* Devuelve el scroll vertical */
+    overflow-x: hidden; /* Mantiene bloqueado el horizontal */
+}
+
+body.home-page .main-footer {
+    margin-top: 0;
+}
+
+body.home-page .hero {
+    height: 100vh !important; /* El Hero sigue siendo una pantalla completa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 80px; 
+}
+
+/* OPCIONAL: Un scrollbar más fino y elegante para que no se vea "tosco" */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+body::-webkit-scrollbar-thumb {
+    background: rgba(0, 242, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* LA MALLA Y EL BLOB (Se mantienen igual) */
+body::before {
+    content: "" !important;
+    position: fixed !important;
+    /* ... resto de tu código de malla ... */
+    z-index: -10;
+}
+
+/* EL RESPLANDOR CENTRAL (EL BLOB) */
+.blob {
+    position: fixed !important;
+    width: 800px !important;
+    height: 800px !important;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.2) 30%, transparent 70%) !important;
+    filter: blur(80px) !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: -5 !important; /* ENTRE LA MALLA Y EL TEXTO */
+    pointer-events: none !important;
+}
+
+/* EL CONTENEDOR HERO: Forzado al frente */
+
+.hero-content {
+    position: relative !important;
+    z-index: 101 !important;
+}
+
+.hero {
+    height: 100vh !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px 0 20px; /* 80px arriba para compensar el header */
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+    box-sizing: border-box; /* CLAVE: El padding se cuenta DENTRO de los 100vh */
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem) !important; /* Reducimos un poco el máximo */
+    margin-bottom: 15px !important; /* Menos espacio entre título y párrafo */
+    /* ... resto de tu código de gradiente ... */
+}
+
+.hero p {
+    font-size: 1.1rem; /* Un poco más grande para legibilidad */
+    color: rgba(255, 255, 255, 0.75) !important; /* Blanco suave, no gris oscuro */
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 110; /* Por encima de todo para que no se vea opaco */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar sobre el fondo */
+}
+
+/*PARA LAS HISTORIAS TECH*/

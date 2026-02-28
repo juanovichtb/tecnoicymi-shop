@@ -1,0 +1,205 @@
+
+/*ESTILOS HEADER*/
+/* Asegura que el Header se vea profesional ahora que el archivo carga bien */
+.main-header {
+    height: 80px; 
+    position: fixed; /* O absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    margin: 0;
+    background: rgba(18, 20, 26, 0.85) !important; 
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-container {
+    /* ... tus estilos ... */
+    pointer-events: auto; /* Esto permite que el logo y el menú sigan funcionando */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* ESTO DEVUELVE EL CLIC AL MENÚ */
+    pointer-events: auto; 
+}
+
+/* Contenedor del logo y texto */
+.logo-wrapper {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen con el texto */
+    gap: 12px;           /* Espacio entre el logo y la palabra */
+    text-decoration: none;
+}
+
+/* layout.css */
+
+.logo-img {
+    height: 35px;
+    width: auto;
+    border-radius: 50%;
+    
+    /* EL TRUCO: Un borde blanco sutil */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.logo-wrapper:hover .logo-img {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Estilo del texto al lado del logo */
+.logo-text {
+    font-weight: 800;
+    color: var(--text-white); /* O usa #ffffff si no tienes la variable */
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Opcional: Que el logo también cambie a cian solo cuando pasas el mouse */
+.logo-wrapper:hover .logo-text {
+    color: var(--accent);
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent); /* El cian neón que tanto nos gusta */
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar a los bloques principales */
+.category-block, .product-layout, .section-header {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Delay para efecto cascada en el catálogo */
+.category-block:nth-child(1) { animation-delay: 0.1s; }
+.category-block:nth-child(2) { animation-delay: 0.3s; }
+.category-block:nth-child(3) { animation-delay: 0.5s; }
+
+/*ESTILOS FOOTER*/
+.main-footer {
+    background: #12141a !important; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 0; /* Muy poco relleno arriba y abajo */
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; /* Todo en una línea: Izquierda, Centro, Derecha */
+    align-items: center;
+}
+
+/* El logo y slogan ahora en una sola línea pequeña */
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 0.9rem; /* Más pequeño */
+    margin: 0;
+}
+
+.footer-info p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0;
+}
+
+/* Los links en horizontal y sin título */
+.footer-links h4 {
+    display: none; /* Quitamos el título "Explora" que ocupa espacio */
+}
+
+.footer-links ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links a {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5); /* Un brillo sutil al pasar el mouse */
+    transition: all 0.3s ease;
+}
+/* El copyright integrado a la derecha */
+.footer-copy {
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de entrada para el Hero */
+.hero-content {
+    position: relative;
+    z-index: 5;
+    pointer-events: auto; /* <--- Esto es vital */
+}
+
+@keyframes fadeInReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

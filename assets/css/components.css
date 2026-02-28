@@ -1,0 +1,1486 @@
+/*
+INDEX PRINCIPLA HOME*/
+
+/* --- BOTONES HERO PREMIUM --- */
+
+.cta-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-neon {
+    position: relative;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 50; /* Super alto para ganar cualquier conflicto */
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+/* Estilo Primario (Cian Neón) */
+.btn-neon.primary {
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+/* Estilo Secundario (Cristal Blanco) */
+/* components.css */
+
+/* components.css */
+
+.btn-neon.secondary {
+    background: rgba(255, 255, 255, 0.03); /* Fondo casi invisible */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* ESTO DA EL EFECTO DE VIDRIO */
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+}
+/* El efecto de brillo que recorre el botón */
+.glow-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+/* --- INTERACCIÓN (HOVER) --- */
+
+.btn-neon:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.btn-neon.primary:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+}
+
+.btn-neon.secondary:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.btn-neon:hover .glow-effect {
+    left: 100%;
+}
+
+/* Animación de pulso para atraer la atención al botón principal */
+@keyframes pulse-border {
+    0% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(0, 242, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 242, 255, 0); }
+}
+
+.btn-neon.primary {
+    animation: pulse-border 2s infinite;
+}
+
+
+/* Espaciado del contenedor principal */
+/*RECURSOS*/
+.container {
+    padding: 120px 5% 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.badge {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El Grid que organiza las tarjetas */
+.grid-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* La Tarjeta (Glassmorphism) */
+.card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 24px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 30px rgba(0, 242, 255, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+.card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.card-action {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-action {
+    opacity: 1;
+}
+/*multimedia plantilla general.html*/
+/* Layout del detalle de software */
+.software-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--glass);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+}
+
+.software-info h2 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 25px;
+}
+
+.edu-block {
+    margin-bottom: 30px;
+}
+
+.edu-block h3 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent);
+    padding-left: 15px;
+}
+
+.edu-block p, .edu-block li {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.edu-block ul {
+    padding-left: 20px;
+}
+
+/* Placeholder para la imagen */
+.img-placeholder {
+    width: 100%;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed var(--glass-border);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-gray);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .software-detail {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+}
+/*index.HTML de software*/
+/* Contenedor del Catálogo */
+/* Esto le dará el color negro y el estilo de botones a los links */
+.software-grid-catalog {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.category-block h2 {
+    color: var(--accent); /* El cian neón */
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+/* Busca tu .mini-card y reemplázala/actualízala con esto */
+.mini-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 18px;
+    border-radius: 12px;
+    color: var(--text-white);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto elástico */
+    position: relative;
+    overflow: hidden;
+}
+
+/* El efecto de brillo (Glare) */
+.mini-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
+    transition: 0.6s;
+    transform: rotate(45deg);
+}
+
+.mini-card:hover {
+    border-color: var(--accent);
+    background: rgba(0, 242, 255, 0.05);
+    transform: translateY(-8px) scale(1.02); /* Sube y se agranda un poco */
+    box-shadow: 0 15px 35px rgba(0, 242, 255, 0.15);
+}
+
+.mini-card:hover::after {
+    left: 100%; /* El brillo cruza la tarjeta al pasar el mouse */
+}
+
+
+/* Buscador */
+.search-box {
+    margin: 25px auto 0 auto;
+    max-width: 450px;
+    position: relative;
+    z-index: 10; /* Para que no se tape con el fondo */
+}
+
+#softwareSearch {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+#softwareSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+/* Botón Cargar Más */
+.load-more-area {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-load-more {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 12px 35px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-load-more:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+/* Clase de utilidad para ocultar */
+.hidden {
+    display: none !important;
+}
+
+
+
+/**windows-pro/
+/* Layout de dos columnas */
+.product-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Estilo de los pasos de instalación */
+.steps-block {
+    margin-top: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.step-number {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* Tarjeta lateral de especificaciones */
+.specs-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 20px;
+    position: sticky;
+    top: 100px; /* Se queda fija al hacer scroll */
+}
+
+.specs-card h4 {
+    color: var(--text-white);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    padding-bottom: 10px;
+}
+
+.specs-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.specs-card li {
+    color: var(--text-gray);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+/* --- BOTÓN WHATSAPP PULIDO --- */
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: transparent;
+    border-radius: 30px;
+    text-decoration: none !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid currentColor; /* Usa el color definido en la tarjeta */
+    position: relative; /* Indispensable para que el z-index funcione */
+    z-index: 10;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Icono dinámico de WhatsApp antes del texto */
+.btn-download::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1); /* Lo hace blanco por defecto */
+}
+
+.btn-download:hover {
+    background: #25D366; /* Color oficial WhatsApp al flotar */
+    border-color: #25D366;
+    color: #000 !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-download:hover::before {
+    filter: brightness(0); /* Lo hace negro para contrastar con el fondo verde */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 900px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- SECCIÓN DE SOPORTE ACTUALIZADA --- */
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* El contenedor del formulario con efecto cristal */
+.glass-form {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 24px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre grupos de campos */
+    max-width: 100%; 
+}
+
+/* Localiza el botón dentro del formulario de soporte */
+.glass-form .btn-download {
+    width: 100%;
+    background: var(--accent); /* Tu color cian */
+    color: #000 !important;    /* Texto negro obligatorio */
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.glass-form .btn-download:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    background: #fff; /* Se pone blanco al pasar el mouse */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-group label {
+    color: var(--text-white);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Evita que se salga del contenedor */
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--accent);
+    background: rgba(0, 242, 255, 0.08);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    outline: none;
+}
+
+/* Estilo para las FAQs y laterales */
+.info-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.faq-item summary {
+    color: var(--text-white);
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding-bottom: 10px;
+}
+/* Estilo del botón de YouTube */
+.social-btn.youtube {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 0, 0, 0.1); /* Rojo muy suave de fondo */
+    color: #ff4d4d; /* Texto rojo brillante */
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-btn.youtube:hover {
+    background: #ff0000;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.social-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/*PRODUCTOS*/
+/* --- ESTILOS DE PRODUCTOS --- */
+/* =========================================
+   EXPLORADOR DE CATEGORÍAS (Menú Principal)
+   ========================================= */
+   .categories-explorer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-color: #00f2ff;
+    background: rgba(0, 242, 255, 0.05);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* =========================================
+   PÁGINA DE RECARGAS (Tarjetas de Operadoras)
+   ========================================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Las tarjetas se quedan en nivel base */
+}
+
+/* El botón que se ve azul en tu captura */
+.btn-download, .item-count {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    color: #00f2ff !important;
+    border: 1px solid #00f2ff;
+    border-radius: 30px;
+    text-decoration: none !important;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background: #00f2ff;
+    color: #000 !important;
+}
+
+/* Botón Volver */
+.btn-back-nav {
+    display: inline-block;
+    color: #00f2ff !important;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Reset general para que los enlaces no sean azul oscuro */
+.category-card, .product-card, .btn-back-nav {
+    color: #ffffff !important; /* Forzamos blanco para los textos generales */
+}
+
+/* Color de los Títulos */
+.category-card h3, .product-card h3 {
+    color: var(--accent) !important; /* Cian Neón para resaltar el nombre */
+    margin-bottom: 15px;
+}
+
+/* Color de las Descripciones */
+.category-card p, .product-card p {
+    color: rgba(255, 255, 255, 0.7) !important; /* Blanco suave/grisáceo para lectura cómoda */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Color del texto dentro de los botones */
+.item-count, .btn-download {
+    color: var(--accent) !important; /* Cian para el texto del botón */
+}
+
+.category-card:hover .item-count, 
+.product-card:hover .btn-download {
+    color: #000000 !important; /* Negro cuando el fondo se vuelve cian al pasar el mouse */
+}
+
+/* --- RECUPERAR EFECTO BOTÓN VOLVER --- */
+.btn-back-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave */
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(0, 242, 255, 0.03);
+}
+
+/* El efecto que se perdió */
+.btn-back-nav:hover {
+    color: #fff !important;
+    background: rgba(0, 242, 255, 0.15);
+    transform: translateX(-10px); /* Se mueve a la izquierda al pasar el mouse */
+    text-shadow: 0 0 15px var(--accent);
+    box-shadow: -5px 0 20px rgba(0, 242, 255, 0.1);
+}
+
+/* Flecha animada opcional */
+.btn-back-nav::before {
+    content: '←';
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.btn-back-nav:hover::before {
+    transform: scale(1.2);
+}
+/* Estilo de la lista de precios dentro de la tarjeta */
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.price-list li {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between; /* Alinea precio a la derecha */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.price-list li span {
+    color: var(--accent); /* Resalta el nombre del paquete */
+    font-weight: 700;
+}
+
+.price-list li:last-child {
+    border-bottom: none;
+}
+
+/* Efecto hover sobre la lista */
+.product-card:hover .price-list li {
+    color: #fff;
+}
+
+.logo-container {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+.op-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Esto evita que el logo se estire feo */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.product-card:hover .logo-container {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+/* =========================================
+   PÁGINA DE LICENCIAS Y SOFTWARE
+   ========================================= */
+/* Estilo específico para Software */
+.software-card {
+    background: #12141a; /* El gris antracita que elegimos */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Iconos de Software (mientras pones los logos reales) */
+.software-card .logo-container {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, rgba(0, 242, 255, 0.1), rgba(0, 0, 0, 0));
+}
+
+.software-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+    font-size: 0.85rem;
+}
+
+.price-list li {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.price-list span {
+    color: var(--accent); /* Resalta el nombre de la característica */
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.price-tag {
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent);
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: 1px dashed var(--accent);
+}
+
+.operator-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--accent);
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+@keyframes pulse-green {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* =========================================
+   PÁGINA DE HARDWARE
+   ========================================= */
+   /* Estilo para las tarjetas de Hardware */
+.hardware-card:hover {
+    border-color: #ff9d00; /* Un tono naranja/ámbar industrial */
+    box-shadow: 0 0 30px rgba(255, 157, 0, 0.2);
+}
+
+.hardware-card .logo-container {
+    background: linear-gradient(135deg, rgba(255, 157, 0, 0.1), rgba(0, 0, 0, 0));
+    font-size: 2.8rem;
+}
+
+/* Ajuste del botón para Hardware */
+/* Para Hardware (Naranja) */
+.hardware-card .btn-download {
+    color: #ff9d00 !important;
+    border-color: #ff9d00;
+}
+
+.hardware-card .btn-download:hover {
+    background: #ff9d00;
+    color: #000 !important;
+}
+
+/* =========================================
+   PÁGINA DE DIGITAL
+   ========================================= */
+
+   /* =========================================
+   PÁGINA DE RECARGAS (Tarjetas de Operadoras)
+   ========================================= */
+   /* Estilo para las tarjetas de Contenido Digital */
+.digital-card:hover {
+    border-color: #ff00ff; /* Fucsia Neón */
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+.digital-card .logo-container {
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 0, 0, 0));
+    font-size: 2.8rem;
+}
+
+/* Para Digital (Fucsia) */
+.digital-card .btn-download {
+    color: #ff00ff !important;
+    border-color: #ff00ff;
+}
+
+.digital-card .btn-download:hover {
+    background: #ff00ff;
+    color: #000 !important;
+}
+
+.digital-card .price-list li span {
+    color: #ff00ff; /* Resalta con fucsia */
+}
+/* Estilo para los títulos de sub-categoría */
+.category-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 60px 0 30px 0; /* Espacio arriba para separar grupos */
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 0, 255, 0.3);
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Espaciado extra para que no se peguen las grillas */
+.products-grid {
+    margin-bottom: 50px;
+}
+.search-container {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 40px;
+}
+
+#productSearch {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+#productSearch:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+/****BUSCADOR*/
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+/*PULIDO DE TARJETAS*/
+.product-card {
+    position: relative;
+    overflow: hidden; /* Para que los brillos no se salgan */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Para Recargas y Licencias (Cian - Ya lo tienes como default) */
+.product-card .btn-download {
+    color: var(--accent) !important;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .section-header h1 {
+        font-size: 2rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .search-container {
+        padding: 0 15px;
+    }
+
+    .price-list li {
+        font-size: 0.85rem; /* Texto un poco más pequeño para que no salte de línea */
+    }
+}
+
+main.container {
+    animation: pageReveal 0.8s ease-out;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- BOTÓN FLOTANTE OMNIPRESENTE (CORREGIDO) --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50px; /* AQUÍ ESTABA EL ERROR: se eliminó 'btn-dow' */
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    z-index: 9999; /* Aumentado para que siempre esté arriba */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.whatsapp-float img {
+    width: 25px;
+    height: 25px;
+}
+
+.float-text {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff !important; /* Asegurar visibilidad */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: #128C7E;
+}
+
+/* Animación de aviso */
+@keyframes shake {
+    0%, 80%, 100% { transform: rotate(0deg); }
+    85% { transform: rotate(5deg); }
+    95% { transform: rotate(-5deg); }
+}
+
+.whatsapp-float {
+    animation: shake 5s infinite;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+    }
+    .float-text { display: none; } 
+}
+
+/*
+HISTORIAS
+*/
+
+/* --- DISEÑO DE CONTENEDOR (GRID PRINCIPAL) --- */
+.blog-container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sidebar a la izquierda, contenido a la derecha */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 120px auto 60px; /* Margen superior para el header fijo */
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.blog-sidebar {
+    background: #12141a; /* Tu Gris Antracita */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    position: sticky;
+    top: 100px; /* Se queda fijo al hacer scroll */
+}
+
+.sidebar-box h3, .sidebar-nav h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent); /* Tu color cian */
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.sidebar-box:first-child h3 { margin-top: 0; }
+
+/* Buscador mini */
+.search-mini input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.85rem;
+}
+
+/* Lista de Capítulos */
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li { margin-bottom: 10px; }
+
+.sidebar-nav a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    color: white;
+    padding-left: 8px;
+    border-left: 2px solid var(--accent);
+}
+
+/* Etiquetas de Filtro */
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-tags .tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-tags .tag:hover {
+    background: var(--accent);
+    color: #000;
+}
+
+/* --- GRID DE TARJETAS (CONTENIDO PRINCIPAL) --- */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.story-card {
+    background: #12141a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.65rem;
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--accent);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.card-date {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.story-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.story-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-read {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .blog-container {
+        grid-template-columns: 1fr; /* Sidebar se mueve arriba o desaparece */
+    }
+    .blog-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 30px;
+    }
+}
+
+/*las historias cada una html*/
+/* --- ESTILOS EXCLUSIVOS PARA PÁGINAS DE HISTORIAS --- */
+
+/* 1. Fondo y Tipografía solo para historias */
+.story-page {
+    background: radial-gradient(circle at center, #1a1e26 0%, #0f1115 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Importamos la fuente solo para usarla aquí */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+
+.story-page h1, 
+.story-page h2, 
+.story-page .article-category {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1px;
+}
+
+/* 2. Textura de grano (Ruido) solo en historias */
+.story-page .noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1; /* Por debajo del contenido */
+}
+
+/* 3. Contenedor de lectura mejorado */
+.story-page .article-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    margin: 40px auto 60px !important; /* Reducido de 80px a 40px */
+    background: rgba(255, 255, 255, 0.02);
+    padding: 30px 40px; 
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.story-page .article-hero {
+    margin-bottom: 20px; /* Controla el espacio entre el título y la imagen/texto */
+}
+
+.story-page .article-hero h1 {
+    margin-top: 5px !important; /* Elimina el hueco arriba del título */
+    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: -2px;
+    line-height: 1.0;
+    color: #fff;
+}
+
+/* 4. Tipografía de cuerpo (más elegante para lectura larga) */
+.story-page .content-text p {
+    margin-bottom: 20px; /* Bajamos de 32px a 20px */
+}
+
+.story-page .content-text h2 {
+    color: var(--accent);
+    font-size: 1.6rem;
+    margin-top: 30px; /* Bajamos de 50px a 30px */
+    margin-bottom: 15px;
+}
+
+.story-page .btn-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.story-page .story-footer {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.story-page .source-card {
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px dashed var(--accent);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.story-page .source-icon {
+    font-size: 2rem;
+}
+
+.story-page .source-info h4 {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.story-page .source-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+/* --- COMPACTAR IMAGEN Y TEXTO --- */
+
+/* --- CONTROL DE ALTO Y ANCHO DE IMAGEN PARA PLANTILLA --- */
+
+.story-page .featured-image {
+    /* 1. Mantenemos tus estilos visuales originales */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 
+                0 0 15px rgba(0, 242, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    
+    /* 2. Control de Ancho (Mantenemos tu 60%) */
+    width: 50%; 
+    max-width: 800px; 
+    margin: 0 auto 30px; /* Centrado horizontal */
+    display: block;
+
+    /* 3. ESTA ES LA CLAVE: Control de Alto Estandarizado */
+    /* Ajusta este valor para cambiar la altura máxima en TODAS las historias */
+    max-height: 450px; /* Un alto contenido que no "empuja" mucho el texto */
+    
+    /* Corrección de espacio fantasma por defecto */
+    line-height: 0; 
+    font-size: 0;
+}
+
+/* 4. Asegurar que la imagen dentro del div se adapte SIN DEFORMARSE */
+.story-page .featured-image img {
+    width: 100%;
+    height: 100%; /* Ocupa todo el alto del contenedor (350px) */
+    
+    /* IMPORTANTE: Esta propiedad recorta la imagen para llenar el espacio */
+    object-fit: cover; 
+    
+    /* Centra el recorte para que no se corten las caras o el texto */
+    object-position: center; 
+    
+    display: block;
+}
+
+/* Este es el párrafo que está al lado de la imagen */
+.story-page .content-text p.lead-wrapped {
+    line-height: 2; /* Aumentamos el espacio entre líneas */
+    margin-bottom: 25px;
+    text-align: justify; /* Opcional: para un look más de libro */
+}
+
+.story-page blockquote {
+    margin: 40px 0; /* Más espacio arriba y abajo */
+    padding: 20px 30px;
+    background: rgba(0, 242, 255, 0.03); /* Un fondo casi invisible para dar contexto */
+    border-radius: 0 15px 15px 0;
+}
+
+
+/* El texto principal que debe subir */
+.story-page .lead-wrapped {
+    margin-top: 0 !important; /* Fuerza a que no haya espacio arriba */
+    padding-top: 0 !important;
+}
+
+/* Limpiar el flotado para que el resto del contenido (h2) no se desordene */
+.story-page .content-text h2 {
+    clear: both; 
+    padding-top: 20px;
+}
+
+
+
