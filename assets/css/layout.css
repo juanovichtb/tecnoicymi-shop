@@ -1,4 +1,6 @@
 
+
+
 /*ESTILOS HEADER*/
 /* Asegura que el Header se vea profesional ahora que el archivo carga bien */
 .main-header {
@@ -116,13 +118,26 @@
 .category-block:nth-child(3) { animation-delay: 0.5s; }
 
 /*ESTILOS FOOTER*/
-.main-footer {
-    background: #12141a !important; 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 20px 0; /* Muy poco relleno arriba y abajo */
-    width: 100%;
+/* Reseteo básico para que el cálculo de altura funcione */
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
+/* El contenedor principal ocupa el 100% de la pantalla */
+.content-wrapper {
+    min-height: 100%;
+    display: block; /* Esto asegura que tus productos mantengan su diseño original */
+}
+
+/* Ajuste para el footer */
+.main-footer {
+    background: #12141a !important;
+    width: 100%;
+    position: relative;
+    /* Si el footer 'tapa' contenido, podemos darle un margin-top negativo 
+       o simplemente dejar que el flujo natural lo ponga al final */
+}
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;

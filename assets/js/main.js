@@ -11,24 +11,24 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function getRootPath() {
         const path = window.location.pathname;
-
+    
         // Nivel 3: software/sistemas-operativos/archivo.html
         if (path.includes('/sistemas-operativos/') ||
             path.includes('/ofimatica/') ||
             path.includes('/multimedia/')) {
             return '../../../';
         }
-
-        // Nivel 2: recursos/software/index.html
-        if (path.includes('/recursos/software/')) {
+    
+        // Nivel 2: recursos/software/index.html O recursos/guias/index.html
+        if (path.includes('/recursos/software/') || path.includes('/recursos/guias/') || path.includes('/recursos/historias/')) {
             return '../../';
         }
-
+    
         // Nivel 1: recursos/index.html o soporte/index.html
         if (path.includes('/recursos/') || path.includes('/soporte/') || path.includes('/productos/') ) {
             return '../';
         }
-
+    
         // Nivel 0: index.html (Raíz)
         return '';
     }

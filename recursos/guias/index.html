@@ -10,118 +10,121 @@
     <link rel="stylesheet" href="../../assets/css/components.css">
 </head>
 
-<body class="blog-layout">
-    <div class="blob"></div>
+<body>
+    <div class="content-wrapper">
+        <div class="blob"></div>
 
-    <div id="header-placeholder"></div>
+        <div id="header-placeholder"></div>
 
-    <main class="blog-container">
+        <main class="blog-container">
 
-        <aside class="blog-sidebar">
-            <div class="sidebar-box">
-                <h3>Buscar</h3>
-                <div class="search-mini">
-                    <input type="text" id="sideSearch" placeholder="Ej: Windows..." onkeyup="filterSidebar()">
-                </div>
-            </div>
-
-            <nav class="sidebar-nav">
-                <h3>Capítulos</h3>
-                <ul id="storyList">
-                    <li><a href="mcafee.html">💻 McAffe Antivirus</a></li>
-                    <li><a href="office.html">🤖 Office 365</a></li>
-                </ul>
-
-                <h3>Categorías</h3>
-                <div class="filter-tags">
-                    <span class="tag" onclick="filterByTag('aplicaciones')">Aplicaciones</span>
-                    <span class="tag" onclick="filterByTag('aplicaciones')">Guía de Instalación</span>
-                    <span class="tag" onclick="filterByTag('multimedia')">Multimedia</span>
-                    <span class="tag" onclick="filterByTag('office')">Office</span>
-                    <span class="tag" onclick="filterByTag('windows')">Windows</span>
-                    <span class="tag" onclick="filterByTag('all')">Todos</span>
-                </div>
-            </nav>
-        </aside>
-
-        <section class="blog-content">
-            <header class="section-header">
-                <a href="../index.html" class="btn-back-nav">Volver a Recursos</a>
-                <h1>Guías Rápidas</h1>
-                <p>Configuración sin complicaciones. Guías detalladas para activar tus herramientas digitales de forma segura y eficiente.</p>
-            </header>
-
-            <div class="stories-grid" id="storiesGrid">
-
-                <article class="story-card" data-category="aplicaciones">
-                    <div class="card-tag">Guía de Instalación</div>
-                    <div class="card-info">
-                        <span class="card-date">Actualizado 2026</span>
-                        <h3>McAfee Antivirus</h3>
-                        <p>Configuración paso a paso para la instalación y activación de la protección total en tu equipo.</p>
-                        <a href="mcafee.html" class="btn-read">Ver Guía →</a>
+            <aside class="blog-sidebar">
+                <div class="sidebar-box">
+                    <h3>Buscar</h3>
+                    <div class="search-mini">
+                        <input type="text" id="sideSearch" placeholder="Ej: Windows..." onkeyup="filterSidebar()">
                     </div>
-                </article>
+                </div>
 
-                <article class="story-card" data-category="office">
-                    <div class="card-tag">Guía de Instalación</div>
-                    <div class="card-info">
-                        <span class="card-date">Actualizado 2026</span>
-                        <h3>Office 365</h3>
-                        <p>Configuración paso a paso para la instalación y activación de la suite de office 365.</p>
-                        <a href="office.html" class="btn-read">Ver Guía →</a>
+                <nav class="sidebar-nav">
+                    <h3>Capítulos</h3>
+                    <ul id="storyList">
+                        <li><a href="mcafee.html">💻 McAffe Antivirus</a></li>
+                        <li><a href="office.html">🤖 Office 365</a></li>
+                    </ul>
+
+                    <h3>Categorías</h3>
+                    <div class="filter-tags">
+                        <span class="tag" onclick="filterByTag('aplicaciones')">Aplicaciones</span>
+                        <span class="tag" onclick="filterByTag('aplicaciones')">Guía de Instalación</span>
+                        <span class="tag" onclick="filterByTag('multimedia')">Multimedia</span>
+                        <span class="tag" onclick="filterByTag('office')">Office</span>
+                        <span class="tag" onclick="filterByTag('windows')">Windows</span>
+                        <span class="tag" onclick="filterByTag('all')">Todos</span>
                     </div>
-                </article>
+                </nav>
+            </aside>
+
+            <section class="blog-content">
+                <header class="section-header">
+                    <a href="../index.html" class="btn-back-nav">Volver a Recursos</a>
+                    <h1>Guías Rápidas</h1>
+                    <p>Configuración sin complicaciones. Guías detalladas para activar tus herramientas digitales de
+                        forma segura y eficiente.</p>
+                </header>
+
+                <div class="stories-grid" id="storiesGrid">
+
+                    <article class="story-card" data-category="aplicaciones">
+                        <div class="card-tag">Guía de Instalación</div>
+                        <div class="card-info">
+                            <span class="card-date">Actualizado 2026</span>
+                            <h3>McAfee Antivirus</h3>
+                            <p>Configuración paso a paso para la instalación y activación de la protección total en tu
+                                equipo.</p>
+                            <a href="mcafee.html" class="btn-read">Ver Guía →</a>
+                        </div>
+                    </article>
+
+                    <article class="story-card" data-category="office">
+                        <div class="card-tag">Guía de Instalación</div>
+                        <div class="card-info">
+                            <span class="card-date">Actualizado 2026</span>
+                            <h3>Office 365</h3>
+                            <p>Configuración paso a paso para la instalación y activación de la suite de office 365.</p>
+                            <a href="office.html" class="btn-read">Ver Guía →</a>
+                        </div>
+                    </article>
 
 
 
 
 
-            </div>
-        </section>
-    </main>
-    <script>
-        // 1. Filtrar por CATEGORÍA
-        function filterByTag(category) {
-            console.log("Filtrando por:", category); // Para que veas en consola que funciona
-            const cards = document.querySelectorAll('.story-card');
-            const filterTags = document.querySelectorAll('.filter-tags .tag');
+                </div>
+            </section>
+        </main>
+        <script>
+            // 1. Filtrar por CATEGORÍA
+            function filterByTag(category) {
+                console.log("Filtrando por:", category); // Para que veas en consola que funciona
+                const cards = document.querySelectorAll('.story-card');
+                const filterTags = document.querySelectorAll('.filter-tags .tag');
 
-            // Actualizar estilo visual de los botones de filtro
-            filterTags.forEach(t => {
-                if (t.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && t.innerText.toLowerCase() === 'todos')) {
-                    t.style.background = 'var(--accent)';
-                    t.style.color = '#000';
-                } else {
-                    t.style.background = 'rgba(255, 255, 255, 0.05)';
-                    t.style.color = '#fff';
-                }
-            });
+                // Actualizar estilo visual de los botones de filtro
+                filterTags.forEach(t => {
+                    if (t.innerText.toLowerCase() === category.toLowerCase() || (category === 'all' && t.innerText.toLowerCase() === 'todos')) {
+                        t.style.background = 'var(--accent)';
+                        t.style.color = '#000';
+                    } else {
+                        t.style.background = 'rgba(255, 255, 255, 0.05)';
+                        t.style.color = '#fff';
+                    }
+                });
 
-            // Mostrar u ocultar tarjetas del grid
-            cards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                if (category === 'all' || cardCategory === category) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+                // Mostrar u ocultar tarjetas del grid
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'all' || cardCategory === category) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.4s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
 
-        // 2. Filtrar Títulos en la BARRA LATERAL
-        function filterSidebar() {
-            let input = document.getElementById('sideSearch').value.toLowerCase();
-            let links = document.querySelectorAll('#storyList li');
+            // 2. Filtrar Títulos en la BARRA LATERAL
+            function filterSidebar() {
+                let input = document.getElementById('sideSearch').value.toLowerCase();
+                let links = document.querySelectorAll('#storyList li');
 
-            links.forEach(li => {
-                let text = li.innerText.toLowerCase();
-                li.style.display = text.includes(input) ? "" : "none";
-            });
-        }
-    </script>
-
+                links.forEach(li => {
+                    let text = li.innerText.toLowerCase();
+                    li.style.display = text.includes(input) ? "" : "none";
+                });
+            }
+        </script>
+    </div>
     <div id="footer-placeholder"></div>
 
     <script src="../../assets/js/main.js"></script>

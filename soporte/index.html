@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,65 +9,69 @@
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
+
 <body>
-    <div class="blob"></div>
-    
-    <div id="header-placeholder"></div>
+    <div class="content-wrapper">
+        <div class="blob"></div>
 
-    <main class="container">
-        <header class="section-header">
-            <span class="badge">Asistencia</span>
-            <h1>¿Cómo podemos ayudarte?</h1>
-            <p>Reporta o solicita nuevo software.</p>
-        </header>
-    
-        <div class="support-grid">
-            
-            <section class="support-form-container">
-                <form class="glass-form" action="https://formspree.io/f/xdalpoav" method="POST">
-                    <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Tu nombre" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label>Correo Electrónico</label>
-                        <input type="email" name="email" placeholder="correo@ejemplo.com" required>
-                    </div>
-       
-                    <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" rows="5" placeholder="Cuéntanos más detalles..." required></textarea>
-                    </div>
-    
-                    <button type="submit" class="btn-download" target="_blank">
-                        Enviar Mensaje
-                    </button>
-                </form>
-            </section>
-    
-            <aside class="support-info">
-                <div class="info-card social-card">
-                    <h3>Síguenos en YouTube</h3>
-                    <p>Mira los tutoriales de instalación y las últimas novedades tecnológicas en nuestro canal oficial.</p>
-                    
-                    <div class="social-links">
-                        <a href="https://www.youtube.com/@tecnoicymi" target="_blank" class="social-btn youtube">
-                            <span>▶</span> Ir al Canal
-                        </a>
-                    </div>
-                </div>
-    
-                <div class="info-card community-card">
-                    <h3>Comunidad</h3>
-                    <p>¿Tienes dudas rápidas? Únete a nuestro grupo de ayuda.</p>
-                    <a href="#" class="card-action">Telegram Oficial →</a>
-                </div>
-            </aside>
-    
-        </div>
-    </main>
+        <div id="header-placeholder"></div>
 
+        <main class="container">
+            <header class="section-header">
+                <span class="badge">Asistencia</span>
+                <h1>¿Cómo podemos ayudarte?</h1>
+                <p>Reporta o solicita nuevo software.</p>
+            </header>
+
+            <div class="support-grid">
+
+                <section class="support-form-container">
+                    <form class="glass-form" action="https://formspree.io/f/xdalpoav" method="POST">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea name="mensaje" rows="5" placeholder="Cuéntanos más detalles..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-download" target="_blank">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </section>
+
+                <aside class="support-info">
+                    <div class="info-card social-card">
+                        <h3>Síguenos en YouTube</h3>
+                        <p>Mira los tutoriales de instalación y las últimas novedades tecnológicas en nuestro canal
+                            oficial.</p>
+
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@tecnoicymi" target="_blank" class="social-btn youtube">
+                                <span>▶</span> Ir al Canal
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="info-card community-card">
+                        <h3>Comunidad</h3>
+                        <p>¿Tienes dudas rápidas? Únete a nuestro grupo de ayuda.</p>
+                        <a href="#" class="card-action">Telegram Oficial →</a>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+    </div>
     <div id="footer-placeholder"></div>
 
     <script src="../assets/js/main.js"></script>
@@ -75,4 +80,5 @@
         <span class="float-text">¿Necesitas ayuda?</span>
     </a>
 </body>
+
 </html>
