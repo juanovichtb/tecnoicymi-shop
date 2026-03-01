@@ -309,11 +309,45 @@ INDEX PRINCIPLA HOME*/
 
 
 /* Buscador */
+/* --- ESTILO DEL BUSCADOR (CATÁLOGO) --- */
 .search-box {
-    margin: 25px auto 0 auto;
-    max-width: 450px;
-    position: relative;
-    z-index: 10; /* Para que no se tape con el fondo */
+    max-width: 500px;      /* Ancho ideal para que no sea gigante */
+    margin: 20px auto 40px; /* Centrado y con aire abajo */
+    padding: 0 20px;       /* Margen de seguridad para móvil */
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;   /* Forma de píldora moderna */
+    color: white;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box; /* CLAVE: evita que el padding lo estire de más */
+}
+
+/* Efecto al hacer clic para buscar */
+.search-box input:focus {
+    border-color: var(--accent);
+    background: rgba(0, 242, 255, 0.08);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+/* --- AJUSTE PARA MÓVIL --- */
+@media (max-width: 768px) {
+    .search-box {
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    
+    .search-box input {
+        padding: 12px 20px; /* Un poco más delgado en móvil */
+        font-size: 0.9rem;   /* Texto más fino */
+    }
 }
 
 #softwareSearch {
@@ -475,13 +509,6 @@ INDEX PRINCIPLA HOME*/
 
 /* --- SECCIÓN DE SOPORTE ACTUALIZADA --- */
 
-.support-grid {
-    display: grid;
-    grid-template-columns: 1fr 350px;
-    gap: 40px;
-    margin-top: 30px;
-}
-
 /* El contenedor del formulario con efecto cristal */
 .glass-form {
     background: var(--glass);
@@ -494,7 +521,12 @@ INDEX PRINCIPLA HOME*/
     gap: 25px; /* Espacio entre grupos de campos */
     max-width: 100%; 
 }
-
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esto es automático y no falla */
+    gap: 30px;
+    margin-top: 30px;
+}
 /* Localiza el botón dentro del formulario de soporte */
 .glass-form .btn-download {
     width: 100%;
@@ -965,10 +997,41 @@ INDEX PRINCIPLA HOME*/
 .products-grid {
     margin-bottom: 50px;
 }
+/* --- ESTILO DEL BUSCADOR --- */
+/* --- ESTILO LIMPIO PARA SEARCH-CONTAINER --- */
 .search-container {
-    position: relative;
-    z-index: 5;
-    margin-bottom: 40px;
+    width: 100%;
+    max-width: 500px;      /* Controla el ancho en PC */
+    margin: 20px auto;     /* Lo centra */
+    padding: 0 20px;       /* Crea el margen de seguridad en móvil */
+    box-sizing: border-box; /* VITAL: El padding no suma ancho */
+}
+
+.search-container input {
+    width: 100%;           /* Ocupa el ancho del contenedor (menos los 20px de padding) */
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    backdrop-filter: blur(10px);
+    outline: none;
+    box-sizing: border-box; /* OBLIGATORIO: Mantiene el input dentro de la pantalla */
+    transition: all 0.3s ease;
+}
+
+/* Ajuste específico para pantallas pequeñas */
+@media (max-width: 768px) {
+    .search-container {
+        margin: 10px auto;
+        padding: 0 15px;    /* Un poco más de espacio en los bordes del celular */
+    }
+    
+    .search-container input {
+        font-size: 0.9rem;
+        padding: 10px 15px; /* Más compacto en móvil */
+    }
 }
 
 #productSearch {

@@ -218,3 +218,72 @@ html, body {
         transform: translateY(0);
     }
 }
+
+/* --- RESPONSIVIDAD PARA MÓVILES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste del Header */
+    .main-header {
+        height: auto; /* Dejamos que el alto se adapte al contenido apilado */
+        padding: 10px 0;
+    }
+
+    .header-container {
+        flex-direction: column; /* Apila Logo arriba y Menú abajo */
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .nav-menu ul {
+        gap: 15px; /* Menos espacio entre links para que no se corten */
+        justify-content: center;
+    }
+
+    .nav-menu a {
+        font-size: 0.85rem; /* Un poco más pequeño para ahorrar espacio */
+    }
+
+    .logo-text {
+        font-size: 1.1rem; /* Reducimos el nombre de la marca */
+    }
+
+    /* 2. Ajuste del Footer */
+    .footer-container {
+        flex-direction: column; /* Apila info, links y copy */
+        text-align: center;
+        gap: 25px;
+        padding: 30px 20px;
+    }
+
+    .footer-info {
+        flex-direction: column; /* Logo sobre el slogan */
+        gap: 8px;
+    }
+
+    .footer-links ul {
+        flex-direction: column; /* Links uno debajo del otro */
+        gap: 12px;
+    }
+
+    .footer-copy {
+        margin-top: 10px;
+        opacity: 0.5;
+    }
+
+    /* 3. Ajuste de la Imagen de Historia (Plantilla) */
+    /* Como ya definimos la imagen al 60%, en móvil debe ser 100% */
+    .story-page .featured-image {
+        width: 100% !important;
+        max-height: 250px; /* Más bajita en móvil para ver el texto pronto */
+        margin-bottom: 20px;
+    }
+}
+
+/* --- AJUSTE EXTRA PARA PANTALLAS MUY PEQUEÑAS (iPhone SE, etc) --- */
+@media (max-width: 480px) {
+    .nav-menu ul {
+        flex-wrap: wrap; /* Si no caben los links, que bajen a otra línea */
+        justify-content: center;
+    }
+}
+
