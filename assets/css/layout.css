@@ -287,3 +287,28 @@ html, body {
     }
 }
 
+/* Arreglo específico para el botón volver en Guías */
+@media (max-width: 768px) {
+    .story-page .article-hero {
+        padding-top: 80px !important; /* Baja todo el contenido para que no lo tape el menú */
+        text-align: left;
+    }
+
+    .story-page .btn-back-nav {
+        display: inline-flex !important;
+        align-items: center;
+        background: var(--primary-color, #0a84ff);
+        color: white !important;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        position: relative; 
+        left: 0;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
