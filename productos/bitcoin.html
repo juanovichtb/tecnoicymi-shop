@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invertir en Bitcoin o Esclavitud | Tecnoicymi</title>
+  <meta property="og:title" content="📖 Invertir en Bitcoin o Esclavitud — Libro Digital">
+  <meta property="og:description" content="Hazte millonario con Bitcoin. Libro digital (EPUB) del autor ecuatoriano JJCHAGERBEN. Entrega inmediata.">
+  <meta property="og:type" content="product">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #080808;
+      --surface:      #111111;
+      --surface-2:    #161616;
+      --surface-3:    #1c1c1c;
+      --border:       rgba(255,255,255,0.07);
+      --border-gold:  rgba(247,181,0,0.25);
+      --text:         #f2f2f2;
+      --text-muted:   #888;
+      --text-faint:   #444;
+      --gold:         #f7b500;
+      --gold-bright:  #ffd254;
+      --gold-dim:     #b87d00;
+      --orange:       #f76b1c;
+      --green:        #22c55e;
+      --font-d: 'Space Grotesk', sans-serif;
+      --font-b: 'Inter', sans-serif;
+      --r: 14px;
+      --r-sm: 8px;
+      --r-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100dvh;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-text {
+      font-family: var(--font-d);
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logo-dot {
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--gold);
+    }
+    .nav-wa {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      background: rgba(37,211,102,0.1);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: var(--r-full);
+      text-decoration: none;
+      color: #4ade80;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all .2s;
+    }
+    .nav-wa:hover { background: rgba(37,211,102,0.18); }
+
+    /* ── HERO SPLIT ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: clamp(50px,8vw,90px) 24px clamp(40px,6vw,70px);
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .hero-left { order: 2; }
+      .hero-right { order: 1; display: flex; justify-content: center; }
+    }
+
+    /* BOOK COVER */
+    .book-wrap {
+      perspective: 900px;
+    }
+    .book-3d {
+      width: 220px;
+      height: 310px;
+      position: relative;
+      transform: rotateY(-18deg) rotateX(4deg);
+      transform-style: preserve-3d;
+      animation: bookFloat 5s ease-in-out infinite;
+      filter: drop-shadow(0 40px 60px rgba(247,181,0,0.2)) drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+    }
+    @keyframes bookFloat {
+      0%,100% { transform: rotateY(-18deg) rotateX(4deg) translateY(0); }
+      50%      { transform: rotateY(-18deg) rotateX(4deg) translateY(-12px); }
+    }
+    .book-cover {
+      width: 220px;
+      height: 310px;
+      border-radius: 4px 10px 10px 4px;
+      background: linear-gradient(160deg, #1a0a00 0%, #2d1200 30%, #0a0a00 60%, #000 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 18px;
+      border: 1px solid rgba(247,181,0,0.3);
+    }
+    /* grain texture */
+    .book-cover::before {
+      content:'';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: .5;
+      pointer-events: none;
+    }
+    /* gold horizontal lines */
+    .book-cover::after {
+      content:'';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .book-btc-symbol {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 16px rgba(247,181,0,0.6));
+    }
+    .book-title-cover {
+      font-family: var(--font-d);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+      line-height: 1.3;
+      z-index: 1;
+      position: relative;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .book-subtitle-cover {
+      font-size: 9px;
+      color: rgba(247,181,0,0.6);
+      text-align: center;
+      z-index: 1;
+      position: relative;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .book-author-cover {
+      position: absolute;
+      bottom: 16px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+    .book-spine {
+      position: absolute;
+      left: -14px;
+      top: 0;
+      width: 14px;
+      height: 310px;
+      background: linear-gradient(180deg, #2d1200 0%, #1a0a00 100%);
+      border-radius: 4px 0 0 4px;
+      border: 1px solid rgba(247,181,0,0.2);
+      border-right: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .spine-text {
+      writing-mode: vertical-rl;
+      font-size: 8px;
+      color: rgba(247,181,0,0.5);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transform: rotate(180deg);
+    }
+    /* badge on cover */
+    .cover-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--gold);
+      color: #000;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--r-full);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .book-bottom-line {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    /* ── HERO LEFT ── */
+    .category-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(247,181,0,0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--r-full);
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .hero-title {
+      font-family: var(--font-d);
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-author {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .hero-author strong { color: var(--gold-bright); font-weight: 600; }
+    .stars-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .stars { color: var(--gold); font-size: 16px; letter-spacing: 1px; }
+    .stars-label { font-size: 13px; color: var(--text-muted); }
+    .isbn-chip {
+      font-size: 12px;
+      color: var(--text-faint);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 3px 10px;
+    }
+
+    /* ── BUY BOX ── */
+    .buy-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .buy-box::before {
+      content:'';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--orange), var(--gold));
+    }
+    .format-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(247,181,0,0.08);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--r-full);
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .price-display {
+      font-family: var(--font-d);
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .price-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 20px;
+      background: #25d366;
+      color: #fff;
+      font-family: var(--font-d);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all .2s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+      margin-bottom: 12px;
+    }
+    .btn-wa:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.4); }
+    .btn-wa:active { transform: none; }
+    .delivery-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .sec-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      max-width: 1080px;
+      margin: 0 auto 60px;
+    }
+
+    /* ── GENERAL SECTION ── */
+    .section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 70px;
+    }
+    .sec-title {
+      font-family: var(--font-d);
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .sec-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 36px;
+    }
+
+    /* ── DESCRIPTION ── */
+    .desc-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: Georgia, serif;
+      font-size: 80px;
+      color: var(--gold);
+      opacity: 0.15;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      line-height: 1;
+    }
+    .desc-text {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text);
+      position: relative;
+      z-index: 1;
+    }
+    .desc-text p + p { margin-top: 14px; }
+    .desc-highlight {
+      display: inline;
+      background: rgba(247,181,0,0.1);
+      padding: 1px 4px;
+      border-radius: 4px;
+      color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    /* ── WHAT YOU LEARN ── */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(260px,100%), 1fr));
+      gap: 14px;
+    }
+    .learn-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color .2s, transform .2s;
+    }
+    .learn-item:hover { border-color: var(--border-gold); transform: translateY(-3px); }
+    .learn-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+    .learn-title { font-family: var(--font-d); font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .learn-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    /* ── AUTHOR ── */
+    .author-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 32px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    @media (max-width: 600px) { .author-card { flex-direction: column; align-items: center; text-align: center; } }
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-d);
+      font-size: 28px;
+      font-weight: 700;
+      color: #000;
+      flex-shrink: 0;
+      box-shadow: 0 0 20px rgba(247,181,0,0.3);
+    }
+    .author-name { font-family: var(--font-d); font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .author-handle { font-size: 13px; color: var(--gold); margin-bottom: 12px; font-weight: 600; }
+    .author-bio { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── BOOK DETAILS ── */
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(200px,100%), 1fr));
+      gap: 12px;
+    }
+    .detail-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 18px 20px;
+    }
+    .detail-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 6px; }
+    .detail-value { font-family: var(--font-d); font-size: 15px; font-weight: 600; color: #fff; }
+
+    /* ── CTA FOOTER ── */
+    .cta-footer {
+      background: linear-gradient(135deg, #0f0800 0%, #1a0f00 50%, #0a0800 100%);
+      border-top: 1px solid var(--border-gold);
+      padding: clamp(60px,10vw,100px) 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-footer::before {
+      content: '₿';
+      position: absolute;
+      font-size: 400px;
+      color: rgba(247,181,0,0.025);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .cta-footer h2 {
+      font-family: var(--font-d);
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .cta-footer p { color: var(--text-muted); margin-bottom: 36px; max-width: 420px; margin-inline: auto; position: relative; }
+    .btn-wa-lg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 44px;
+      background: #25d366;
+      color: #fff;
+      font-family: var(--font-d);
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all .2s;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+      position: relative;
+    }
+    .btn-wa-lg:hover { background: #1db954; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+    .cta-footer-note { margin-top: 20px; font-size: 13px; color: var(--text-faint); position: relative; }
+    .cta-footer-note a { color: var(--text-faint); text-decoration: none; }
+
+    /* ── FLOATING WA ── */
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      z-index: 200;
+      transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<nav class="top-bar">
+  <a href="https://www.tecnoicymi.com" class="logo-text" target="_blank" rel="noopener noreferrer">
+    <span class="logo-dot"></span>Tecnoicymi
+  </a>
+  <a href="https://wa.me/593982541923?text=Hola%2C%20quiero%20el%20libro%20Invertir%20en%20Bitcoin%20o%20Esclavitud%20%F0%9F%93%96" class="nav-wa" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Comprar
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- BOOK COVER -->
+  <div class="hero-right">
+    <div class="book-wrap">
+      <div class="book-3d">
+        <div class="book-spine"><span class="spine-text">Bitcoin o Esclavitud</span></div>
+        <div class="book-cover">
+          <div class="cover-badge">Disponible</div>
+          <div class="book-btc-symbol">₿</div>
+          <div class="book-title-cover">Invertir en Bitcoin<br>o Esclavitud</div>
+          <div class="book-subtitle-cover">Hazte millonario con Bitcoin</div>
+          <div class="book-author-cover">JJCHAGERBEN</div>
+          <div class="book-bottom-line"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO TEXT -->
+  <div class="hero-left">
+    <div class="category-chip">₿ Finanzas · Criptomonedas · Bitcoin</div>
+    <h1 class="hero-title">Invertir en Bitcoin<br><span>o Esclavitud</span></h1>
+    <p class="hero-author">por <strong>Jonathan Jesús Chagerben Arteaga</strong> (JJCHAGERBEN)</p>
+    <div class="stars-row">
+      <span class="stars">★★★★★</span>
+    </div>
+    <span class="isbn-chip">ISBN: 978-9942-51-665-7</span>
+
+    <div style="margin-top:28px;">
+      <div class="buy-box">
+        <div class="format-tag">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="color:var(--gold)"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+          Libro Digital · Formato EPUB
+        </div>
+        <div class="price-display">Precio<br>a consultar</div>
+        <p class="price-note">Escríbeme para recibir el precio y el archivo al instante 👇</p>
+        <a href="https://wa.me/593982541923?text=Hola%20%F0%9F%91%8B%2C%20quiero%20comprar%20el%20libro%20*Invertir%20en%20Bitcoin%20o%20Esclavitud*%20en%20formato%20digital%20(EPUB)%20%F0%9F%93%96%20%C2%BFCu%C3%A1l%20es%20el%20precio%3F"
+           class="btn-wa" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Comprar por WhatsApp
+        </a>
+        <div class="delivery-info">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Entrega digital inmediata tras el pago
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- DESCRIPTION -->
+<section class="section">
+  <h2 class="sec-title">Acerca del libro</h2>
+  <p class="sec-sub">Un grito de guerra financiero escrito desde Ecuador para el mundo</p>
+  <div class="desc-box">
+    <div class="quote-mark">"</div>
+    <div class="desc-text">
+      <p>¿Sigues obedeciendo? ¿O ya despertaste? <span class="desc-highlight">Te han engañado.</span> Te hicieron creer que el dinero era papel. Te enseñaron a trabajar por migajas mientras ellos imprimen riqueza de la nada. Y cuando por fin te cansas… te dan una pastilla para dormir.</p>
+      <p>Este libro es <span class="desc-highlight">un grito de guerra</span>. Una guía para salir del rebaño, romper las cadenas del sistema fiat y construir tu propia soberanía financiera.</p>
+      <p>Invertir en Bitcoin no es solo multiplicar tu dinero. Es decirle al sistema: <span class="desc-highlight">no más</span>. Es mirar a tu hijo a los ojos y decirle que lo hiciste libre.</p>
+      <p>Si estás listo para despertar, para dejar de ser esclavo y tomar el control de tu vida… <strong style="color:#fff">este libro es para ti.</strong> JJCHAGERBEN te guía en el camino hacia la libertad financiera.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- WHAT YOU LEARN -->
+<section class="section">
+  <h2 class="sec-title">¿Qué aprenderás?</h2>
+  <p class="sec-sub">Conocimiento real para salir del sistema y construir riqueza</p>
+  <div class="learn-grid">
+    <div class="learn-item">
+      <span class="learn-icon">₿</span>
+      <div>
+        <div class="learn-title">Qué es Bitcoin y por qué importa</div>
+        <div class="learn-desc">Entiende la tecnología detrás de la primera criptomoneda y su impacto en el sistema financiero.</div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-icon">💸</span>
+      <div>
+        <div class="learn-title">Cómo funciona el dinero fiat</div>
+        <div class="learn-desc">Descubre cómo el sistema bancario crea dinero de la nada y por qué eso te empobrece.</div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-icon">📈</span>
+      <div>
+        <div class="learn-title">Estrategias para invertir en BTC</div>
+        <div class="learn-desc">DCA, HODLing y manejo del riesgo para construir patrimonio en Bitcoin paso a paso.</div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-icon">🔐</span>
+      <div>
+        <div class="learn-title">Seguridad y custodia</div>
+        <div class="learn-desc">Wallets, llaves privadas y cómo proteger tu inversión sin depender de terceros.</div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-icon">🧠</span>
+      <div>
+        <div class="learn-title">Mentalidad millonaria</div>
+        <div class="learn-desc">Rompe los paradigmas que te mantienen pobre y adopta la mentalidad de quien construye riqueza real.</div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-icon">🌎</span>
+      <div>
+        <div class="learn-title">Soberanía financiera</div>
+        <div class="learn-desc">Cómo liberarte del sistema y tomar el control de tu vida económica sin pedir permiso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- AUTHOR -->
+<section class="section">
+  <h2 class="sec-title">Sobre el autor</h2>
+  <p class="sec-sub">Un emprendedor ecuatoriano con una misión clara</p>
+  <div class="author-card">
+    <div class="author-avatar">JJ</div>
+    <div>
+      <div class="author-name">Jonathan Jesús Chagerben Arteaga</div>
+      <div class="author-handle">@JJCHAGERBEN · jjchagerben.com</div>
+      <div class="author-bio">Emprendedor ecuatoriano, inversor en Bitcoin y defensor de la soberanía financiera. Ha dedicado años a estudiar el sistema monetario, las criptomonedas y las estrategias para construir riqueza fuera del sistema fiat. Su libro está disponible en Amazon para todo el mundo y en Ecuador a través de canales digitales.</div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- BOOK DETAILS -->
+<section class="section">
+  <h2 class="sec-title">Detalles del libro</h2>
+  <p class="sec-sub">Información editorial</p>
+  <div class="details-grid">
+    <div class="detail-item"><div class="detail-label">Formato</div><div class="detail-value">EPUB Digital</div></div>
+    <div class="detail-item"><div class="detail-label">Idioma</div><div class="detail-value">Español</div></div>
+    <div class="detail-item"><div class="detail-label">Editorial</div><div class="detail-value">Vayas</div></div>
+    <div class="detail-item"><div class="detail-label">ISBN</div><div class="detail-value">978-9942-51-665-7</div></div>
+    <div class="detail-item"><div class="detail-label">Autor</div><div class="detail-value">JJCHAGERBEN</div></div>
+    <div class="detail-item"><div class="detail-label">Entrega</div><div class="detail-value">Inmediata · Digital</div></div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<footer class="cta-footer">
+  <h2>¿Listo para despertar?<br>El conocimiento está aquí 📖</h2>
+  <p>Recibe el libro digital al instante. Escríbeme ahora por WhatsApp.</p>
+  <a href="https://wa.me/593982541923?text=Hola%20%F0%9F%91%8B%2C%20quiero%20comprar%20el%20libro%20*Invertir%20en%20Bitcoin%20o%20Esclavitud*%20en%20formato%20digital%20(EPUB)%20%F0%9F%93%96%20%C2%BFCu%C3%A1l%20es%20el%20precio%3F"
+     class="btn-wa-lg" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Quiero este libro ahora
+  </a>
+  <p class="cta-footer-note">
+    Tecnoicymi · Quito, Ecuador ·
+    <a href="https://www.tecnoicymi.com" target="_blank">tecnoicymi.com</a>
+  </p>
+</footer>
+
+<!-- FLOATING WA BUTTON -->
+<a href="https://wa.me/593982541923?text=Hola%2C%20quiero%20el%20libro%20Invertir%20en%20Bitcoin%20o%20Esclavitud%20%F0%9F%93%96" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Tecnoicymi">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
