@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecciones que te debió dar tu hermano mayor</title>
+    <meta name="description" content="Libro digital en PDF: 120 Lecciones que te debió dar tu hermano mayor. Desarrollo personal, dinero, mentalidad y relaciones. Comprar.">
+    <meta property="og:title" content="📘 120 Lecciones que te debió dar tu hermano mayor">
+    <meta property="og:description" content="Libro digital en PDF sobre mentalidad, dinero, relaciones y desarrollo personal. Entrega inmediata.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.tecnoicymi.com/120-lecciones-hermano-mayor.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg: #0f0f0d;
+            --surface: #171714;
+            --surface-2: #1f1f1b;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f3f0e8;
+            --text-muted: #b0aa9f;
+            --text-faint: #7d776d;
+            --gold: #c8a96b;
+            --gold-soft: rgba(200, 169, 107, 0.14);
+            --gold-line: rgba(200, 169, 107, 0.28);
+            --cta: #c8a96b;
+            --cta-hover: #b7924f;
+            --cta-text: #15130f;
+            --cta-shadow: rgba(200, 169, 107, 0.28);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Inter', sans-serif;
+            --radius: 18px;
+            --radius-sm: 10px;
+            --radius-full: 9999px;
+            --shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100dvh;
+            background:
+                radial-gradient(circle at top right, rgba(200, 169, 107, 0.08), transparent 30%),
+                radial-gradient(circle at bottom left, rgba(200, 169, 107, 0.05), transparent 25%),
+                var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 14px 22px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(15, 15, 13, 0.82);
+            backdrop-filter: blur(12px);
+        }
+
+        .mini-buy {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: var(--radius-full);
+            background: rgba(200, 169, 107, 0.12);
+            border: 1px solid rgba(200, 169, 107, 0.25);
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 700;
+            transition: .2s ease;
+        }
+
+        .mini-buy:hover {
+            background: rgba(200, 169, 107, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: clamp(42px, 8vw, 88px) 22px 60px;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 54px;
+            align-items: center;
+        }
+
+        .book-wrap {
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .book {
+            position: relative;
+            width: 270px;
+            height: 380px;
+            transform: rotateY(-18deg) rotateX(4deg);
+            transform-style: preserve-3d;
+            animation: floatBook 5s ease-in-out infinite;
+            filter: drop-shadow(0 30px 45px rgba(0, 0, 0, 0.55));
+        }
+
+        @keyframes floatBook {
+            0%, 100% {
+                transform: rotateY(-18deg) rotateX(4deg) translateY(0);
+            }
+            50% {
+                transform: rotateY(-18deg) rotateX(4deg) translateY(-10px);
+            }
+        }
+
+        .book-front {
+            position: absolute;
+            inset: 0;
+            border-radius: 6px 16px 16px 6px;
+            overflow: hidden;
+            background:
+                linear-gradient(160deg, rgba(255, 255, 255, 0.02), transparent 35%),
+                linear-gradient(180deg, #141410 0%, #1d1b17 40%, #12110e 100%);
+            border: 1px solid var(--gold-line);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            padding: 22px 22px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .book-front::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                180deg,
+                transparent,
+                transparent 26px,
+                rgba(200, 169, 107, 0.02) 27px,
+                transparent 28px
+            );
+            pointer-events: none;
+        }
+
+        .book-spine {
+            position: absolute;
+            left: -16px;
+            top: 5px;
+            width: 16px;
+            height: 370px;
+            background: linear-gradient(180deg, #2a2419 0%, #18150f 100%);
+            border-left: 1px solid rgba(255, 255, 255, 0.03);
+            border-right: 1px solid rgba(0, 0, 0, 0.35);
+            border-radius: 6px 0 0 6px;
+        }
+
+        .book-badge {
+            align-self: flex-start;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--gold-line);
+            background: var(--gold-soft);
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+        }
+
+        .book-center {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .roman {
+            font-family: var(--font-display);
+            font-size: 60px;
+            line-height: 1;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .book-title {
+            font-family: var(--font-display);
+            font-size: 34px;
+            line-height: 0.97;
+            font-weight: 700;
+            letter-spacing: -.02em;
+            margin-bottom: 16px;
+        }
+
+        .book-sub {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            color: var(--text-muted);
+        }
+
+        .book-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-faint);
+            font-size: 11px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            padding: 7px 14px;
+            border: 1px solid var(--gold-line);
+            background: var(--gold-soft);
+            border-radius: var(--radius-full);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .09em;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            line-height: .95;
+            font-weight: 700;
+            letter-spacing: -.03em;
+            margin-bottom: 16px;
+            max-width: 620px;
+        }
+
+        .hero p.lead {
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin-bottom: 24px;
+        }
+
+        .micro-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .pill {
+            padding: 7px 13px;
+            border-radius: var(--radius-full);
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .buy-box {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent), var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            max-width: 470px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buy-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), #e2c38a, var(--gold));
+        }
+
+        .buy-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            background: rgba(200, 169, 107, 0.10);
+            border: 1px solid rgba(200, 169, 107, 0.22);
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 6vw, 3.2rem);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .price-note {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .buy-btn,
+        .buy-btn-lg {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(180deg, #d6b57a 0%, var(--cta) 100%);
+            color: var(--cta-text);
+            font-weight: 800;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: .2s ease;
+            box-shadow: 0 10px 30px var(--cta-shadow);
+        }
+
+        .buy-btn {
+            width: 100%;
+            padding: 16px 22px;
+            font-size: 16px;
+        }
+
+        .buy-btn-lg {
+            padding: 18px 38px;
+            font-size: 18px;
+        }
+
+        .buy-btn:hover,
+        .buy-btn-lg:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(180deg, #e0bf84 0%, var(--cta-hover) 100%);
+        }
+
+        .trust {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--text-faint);
+            font-size: 13px;
+        }
+
+        .separator {
+            max-width: 1120px;
+            height: 1px;
+            margin: 0 auto 64px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 22px 76px;
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.7rem, 3vw, 2.5rem);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .section .sub {
+            color: var(--text-muted);
+            margin-bottom: 34px;
+            font-size: 15px;
+        }
+
+        .summary-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            position: relative;
+        }
+
+        .summary-box::before {
+            content: '“';
+            position: absolute;
+            left: 18px;
+            top: 4px;
+            font-family: var(--font-display);
+            font-size: 92px;
+            line-height: 1;
+            color: rgba(200, 169, 107, 0.12);
+        }
+
+        .summary-box p {
+            position: relative;
+            z-index: 1;
+            font-size: 16px;
+            color: var(--text);
+            max-width: 75ch;
+        }
+
+        .summary-box p + p {
+            margin-top: 14px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-line);
+        }
+
+        .card .icon {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .detail {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .detail-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--text-faint);
+            margin-bottom: 8px;
+        }
+
+        .detail-value {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .cta {
+            padding: clamp(56px, 8vw, 92px) 22px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(200, 169, 107, 0.05), transparent 35%), var(--bg);
+        }
+
+        .cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: .95;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            font-size: 16px;
+        }
+
+        .cta small {
+            display: block;
+            margin-top: 20px;
+            color: var(--text-faint);
+        }
+
+        .floating-buy {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #d6b57a 0%, var(--cta) 100%);
+            color: #15130f;
+            box-shadow: 0 12px 30px rgba(200, 169, 107, 0.28);
+            text-decoration: none;
+            z-index: 60;
+            transition: transform .2s ease;
+        }
+
+        .floating-buy:hover {
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 960px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-copy {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .grid-3,
+            .detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .trust {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topbar {
+                padding: 12px 16px;
+            }
+
+            .mini-buy span {
+                display: none;
+            }
+
+            .hero {
+                gap: 36px;
+            }
+
+            .book {
+                width: 230px;
+                height: 330px;
+            }
+
+            .book-front {
+                padding: 18px;
+            }
+
+            .book-spine {
+                height: 320px;
+            }
+
+            .roman {
+                font-size: 52px;
+            }
+
+            .book-title {
+                font-size: 29px;
+            }
+
+            .grid-3,
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buy-box,
+            .summary-box,
+            .card,
+            .detail {
+                padding: 22px;
+            }
+
+            .trust {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="topbar">
+        <a class="mini-buy" href="https://payhip.com/b/KiJxm" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M7 4h10l2 3v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v2h10V6H7zm2 6h6v2H9v-2z"/>
+            </svg>
+            <span>Comprar</span>
+        </a>
+    </nav>
+
+    <section class="hero">
+        <div class="book-wrap">
+            <div class="book">
+                <div class="book-spine"></div>
+                <div class="book-front">
+                    <span class="book-badge">PDF digital</span>
+                    <div class="book-center">
+                        <div class="roman">120</div>
+                        <div class="book-title">Lecciones<br>que te debió dar<br>tu hermano mayor</div>
+                        <div class="book-sub">Mentalidad · Dinero · Relaciones</div>
+                    </div>
+                    <div class="book-footer">
+                        <span>Edición digital</span>
+                        <span>Entrega inmediata</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-copy">
+            <div class="eyebrow">Libro digital para hombres que quieren subir de nivel</div>
+            <h1>Lecciones que te debió dar tu hermano mayor</h1>
+            <p class="lead">Un libro sobre mentalidad, dinero, relaciones y decisiones de vida, pensado para quienes quieren dejar el camino del hombre común y empezar a tomar control de su realidad.</p>
+
+            <div class="micro-pills">
+                <span class="pill">PDF inmediato</span>
+                <span class="pill">Desarrollo personal</span>
+                <span class="pill">Dinero</span>
+                <span class="pill">Relaciones</span>
+                <span class="pill">Mentalidad masculina</span>
+            </div>
+
+            <div class="buy-box">
+                <div class="buy-tag">Disponible ahora</div>
+                <div class="price">Precio a consultar</div>
+                <div class="price-note">Accede al libro digital y recíbelo al instante después de comprar.</div>
+                <a class="buy-btn" href="https://payhip.com/b/KiJxm" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M7 4h10l2 3v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v2h10V6H7zm2 6h6v2H9v-2z"/>
+                    </svg>
+                    Comprar ahora
+                </a>
+                <div class="trust">
+                    <span>📄 Formato PDF</span>
+                    <span>⚡ Entrega inmediata</span>
+                    <span>🔒 Pago seguro</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+        <h2>¿De qué trata?</h2>
+        <p class="sub">Una guía intensa sobre vida, éxito y criterio propio</p>
+        <div class="summary-box">
+            <p>Este libro reúne lecciones sobre <strong>éxito, juego, dinero y relaciones</strong>, presentadas como un compendio de conocimientos esenciales para quienes quieren transformar su realidad y pensar distinto. Según la descripción comercial, el contenido nace de años de mensajes compartidos por Iván Barca a sus seguidores y hermanos.</p>
+            <p>La propuesta del libro es llevar al lector a explorar temas como <strong>dinero, mentalidad y el alma de la mujer</strong>, para que luego decida si quiere profundizar más o seguir el camino del hombre común.</p>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+        <h2>Lo que puedes encontrar</h2>
+        <p class="sub">Puntos clave que ayudan a vender mejor el libro</p>
+        <div class="grid-3">
+            <article class="card">
+                <div class="icon">🧠</div>
+                <h3>Mentalidad y carácter</h3>
+                <p>Ideas para pensar con más criterio, dejar excusas y actuar con más dirección.</p>
+            </article>
+            <article class="card">
+                <div class="icon">💸</div>
+                <h3>Dinero y ambición</h3>
+                <p>Lecciones orientadas a riqueza, éxito personal y una visión más agresiva del progreso.</p>
+            </article>
+            <article class="card">
+                <div class="icon">🎯</div>
+                <h3>Juego y estrategia</h3>
+                <p>Consejos sobre cómo moverte con más inteligencia en la vida y en tus decisiones.</p>
+            </article>
+            <article class="card">
+                <div class="icon">❤️</div>
+                <h3>Relaciones</h3>
+                <p>Reflexiones sobre mujeres, vínculos y lectura del comportamiento humano.</p>
+            </article>
+            <article class="card">
+                <div class="icon">🔥</div>
+                <h3>Estilo directo</h3>
+                <p>Contenido con tono frontal, pensado para sacudir ideas cómodas y provocar cambio.</p>
+            </article>
+            <article class="card">
+                <div class="icon">📘</div>
+                <h3>Lectura digital</h3>
+                <p>Ideal para leer en celular, tablet o laptop, con entrega inmediata después de comprar.</p>
+            </article>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+
+    <section class="section">
+        <h2>Detalles del producto</h2>
+        <p class="sub">Información rápida para el comprador</p>
+        <div class="detail-grid">
+            <div class="detail">
+                <div class="detail-label">Producto</div>
+                <div class="detail-value">Lecciones que te debió dar tu hermano mayor</div>
+            </div>
+            <div class="detail">
+                <div class="detail-label">Formato</div>
+                <div class="detail-value">PDF digital</div>
+            </div>
+            <div class="detail">
+                <div class="detail-label">Entrega</div>
+                <div class="detail-value">Inmediata</div>
+            </div>
+            <div class="detail">
+                <div class="detail-label">Temas</div>
+                <div class="detail-value">Mentalidad, dinero, relaciones</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Si este libro es para ti,<br>cómpralo ahora</h2>
+        <p>Recibe el PDF de forma rápida y directa desde Payhip.</p>
+        <a class="buy-btn-lg" href="https://payhip.com/b/KiJxm" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M7 4h10l2 3v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v2h10V6H7zm2 6h6v2H9v-2z"/>
+            </svg>
+            Quiero este libro
+        </a>
+        <small>Entrega digital inmediata</small>
+    </section>
+
+    <a class="floating-buy" href="https://payhip.com/b/KiJxm" target="_blank" rel="noopener noreferrer" aria-label="Comprar libro">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M7 4h10l2 3v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v2h10V6H7zm2 6h6v2H9v-2z"/>
+        </svg>
+    </a>
+</body>
+</html>
