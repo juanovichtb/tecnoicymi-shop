@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Red Expediente No Humano</title>
+    <title>La noche de los tres signos</title>
+
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -24,17 +25,20 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1359617912738607&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+
+    <script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+
     <style>
         :root {
-            --bg: #f6f1e8;
-            --bg2: #efe6d8;
+            --bg: #f3efe9;
+            --bg2: #ebe4db;
             --card: #ffffff;
-            --card2: #fbf8f2;
-            --text: #1e1b17;
-            --muted: #5f5b56;
-            --accent: #8a5c2c;
-            --accent2: #4c5bd5;
-            --line: rgba(30, 27, 23, .09);
+            --card2: #faf7f2;
+            --text: #1d1a17;
+            --muted: #5d5852;
+            --accent: #7a4d2b;
+            --accent2: #2f3f73;
+            --line: rgba(29, 26, 23, .09);
             --shadow: 0 18px 50px rgba(59, 42, 18, .10);
             --max: 1120px;
             --radius: 24px;
@@ -53,9 +57,9 @@
             font-family: Arial, Helvetica, sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at 12% 0%, rgba(138, 92, 44, .08), transparent 24%),
-                radial-gradient(circle at 88% 0%, rgba(76, 91, 213, .08), transparent 22%),
-                linear-gradient(180deg, var(--bg) 0%, #faf6ef 55%, #f2eadf 100%);
+                radial-gradient(circle at 12% 0%, rgba(122, 77, 43, .08), transparent 24%),
+                radial-gradient(circle at 88% 0%, rgba(47, 63, 115, .08), transparent 22%),
+                linear-gradient(180deg, var(--bg) 0%, #f8f4ee 55%, #ede6dc 100%);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
@@ -112,8 +116,8 @@
             padding: .5rem .85rem;
             margin-bottom: 16px;
             border-radius: 999px;
-            border: 1px solid rgba(138, 92, 44, .18);
-            background: rgba(138, 92, 44, .06);
+            border: 1px solid rgba(122, 77, 43, .18);
+            background: rgba(122, 77, 43, .06);
         }
 
         h1,
@@ -136,7 +140,7 @@
             font-size: 1.12rem;
             font-weight: 800;
             color: var(--text);
-            max-width: 34ch;
+            max-width: 36ch;
             margin-bottom: 10px;
         }
 
@@ -171,6 +175,8 @@
             margin-top: 20px;
         }
 
+        
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -190,12 +196,12 @@
         .btn-primary {
             background: linear-gradient(135deg, #1faa59, #0f8a43);
             color: #fff;
-            box-shadow: 0 14px 30px rgba(31, 170, 89, .22);
+            box-shadow: 0 14px 30px rgba(178, 59, 59, .22);
         }
 
         .btn-primary:hover {
             transform: translateY(-1px);
-            box-shadow: 0 18px 36px rgba(31, 170, 89, .28);
+            box-shadow: 0 18px 36px rgba(178, 59, 59, .28);
         }
 
         .btn-secondary {
@@ -238,7 +244,7 @@
             inset: -20% -10% auto auto;
             width: 220px;
             height: 220px;
-            background: radial-gradient(circle, rgba(138, 92, 44, .12), transparent 60%);
+            background: radial-gradient(circle, rgba(122, 77, 43, .12), transparent 60%);
             pointer-events: none;
         }
 
@@ -250,26 +256,6 @@
             position: relative;
             z-index: 1;
             background: #ddd6ca;
-        }
-
-        .cover-placeholder {
-            position: absolute;
-            inset: 16px;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            padding: 18px;
-            border-radius: 18px;
-            color: #685f56;
-            font-weight: 800;
-            background: linear-gradient(180deg, rgba(250, 246, 239, .12), rgba(250, 246, 239, .62));
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .cover-placeholder span {
-            opacity: .8;
-            font-weight: 700
         }
 
         .quote-card {
@@ -306,20 +292,15 @@
             letter-spacing: -.03em;
         }
 
-        .section-card p:last-child,
-        .author-card p:last-child {
-            margin-top: 14px;
-            color: var(--muted);
-            max-width: 70ch;
-        }
-
         .story-text {
             display: grid;
             gap: 14px;
             margin-top: 14px;
         }
 
-        .story-text p {
+        .story-text p,
+        .author-card p,
+        .benefit-card p {
             color: var(--muted);
             max-width: 72ch;
         }
@@ -349,7 +330,7 @@
             inset: auto -20% -35% auto;
             width: 140px;
             height: 140px;
-            background: radial-gradient(circle, rgba(76, 91, 213, .12), transparent 66%);
+            background: radial-gradient(circle, rgba(47, 63, 115, .12), transparent 66%);
             pointer-events: none;
         }
 
@@ -360,7 +341,7 @@
             place-items: center;
             border-radius: 12px;
             margin-bottom: 14px;
-            background: rgba(138, 92, 44, .10);
+            background: rgba(122, 77, 43, .10);
             color: var(--accent);
             font-weight: 900;
         }
@@ -368,10 +349,6 @@
         .benefit-card h3 {
             font-size: 1.08rem;
             margin-bottom: 8px;
-        }
-
-        .benefit-card p {
-            color: var(--muted)
         }
 
         .author-card {
@@ -391,7 +368,7 @@
             font-family: Georgia, "Times New Roman", serif;
             font-size: 2rem;
             color: #fff;
-            background: linear-gradient(135deg, rgba(76, 91, 213, .88), rgba(138, 92, 44, .9));
+            background: linear-gradient(135deg, rgba(47, 63, 115, .88), rgba(122, 77, 43, .9));
             border: 1px solid rgba(30, 27, 23, .08);
         }
 
@@ -409,7 +386,7 @@
 
         .book-cover {
             aspect-ratio: 2/3;
-            background: linear-gradient(135deg, rgba(138, 92, 44, .12), rgba(76, 91, 213, .10));
+            background: linear-gradient(135deg, rgba(122, 77, 43, .12), rgba(47, 63, 115, .10));
             display: grid;
             place-items: center;
             color: #695f56;
@@ -509,40 +486,43 @@
         <section class="hero" aria-label="Presentación del libro">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Suspenso psicológico · Misterio · Toque paranormal</p>
-                    <h1>Red Expediente No Humano</h1>
-                    <p class="hook">Hay verdades que no deberían existir.</p>
-                    <p class="subtitle">Una novela pensada para lectores que buscan misterio, tensión emocional y una
-                        atmósfera inquietante que crece página a página.</p>
+                    <p class="eyebrow">Thriller · Ciencia ficción oscura · Suspenso psicológico</p>
+                    <h1>La noche de los tres signos</h1>
+                    <p class="hook">Una noche. Una petición imposible. Un secreto que no debió cruzar el cielo.</p>
+                    <p class="subtitle">
+                        Una novela inquietante, oscura y profundamente humana sobre el precio de mirar demasiado de
+                        cerca
+                        aquello que quizá nunca estuvo destinado a ser comprendido.
+                    </p>
                     <div class="signal-row">
                         <span class="signal">Lectura inmersiva</span>
                         <span class="signal">Atmósfera cinematográfica</span>
                         <span class="signal">Suspenso comercial</span>
                     </div>
                     <div class="cta-group">
-                        <a class="btn btn-primary" href="https://payhip.com/b/mCk46">
-                            <!-- Reemplazar con Direct Checkout Link de Payhip -->
+                        <a class="btn btn-primary" href="https://payhip.com/b/CtKk6">
                             Comprar ahora
                         </a>
                         <a class="btn btn-secondary" href="#sinopsis">Ver historia</a>
                     </div>
-                    <p class="microcopy">Ideal si te atraen las historias oscuras, intensas y con un trasfondo
-                        paranormal sutil.</p>
+                    <p class="microcopy">
+                        Ideal para lectores que disfrutan de OVNIs, misterio, tensión emocional y ciencia ficción con
+                        tono oscuro.
+                    </p>
                 </div>
 
                 <div class="hero-visual">
                     <div class="cover-card">
-                        <div class="cover-frame">
-                            <img src="../../assets/img/libros/expedienteNoHumano.png"
-                                alt="Portada de Red Expediente No Humano" class="cover-img" />
-                        </div>
+                        <img src="../../assets/img/libros/Lanochetressignos.png"
+                            alt="Portada de La noche de los tres signos" class="cover-img" />
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-mark">“</p>
+                        <p class="quote-text">
+                            Hay encuentros que no llegan para cambiar una noche. Llegan para cambiar una vida entera.
+                        </p>
                     </div>
                 </div>
-                <div class="quote-card">
-                    <p class="quote-mark">“</p>
-                    <p class="quote-text">No todas las presencias terminan de irse.</p>
-                </div>
-            </div>
             </div>
         </section>
 
@@ -550,19 +530,34 @@
             <div class="container">
                 <div class="section-card">
                     <p class="section-kicker">La historia</p>
-                    <h2>Una familia. Una casa cerrada. Una verdad que rompe la calma.</h2>
+                    <h2>Cuando lo imposible pide ayuda, nada vuelve a ser igual</h2>
                     <div class="story-text">
-                        <p>Cuando comienzan a suceder hechos extraños y a aparecer señales que nadie puede explicar, la
-                            normalidad se resquebraja. Lo que parecía una inquietud aislada se transforma en una cadena
-                            de revelaciones que empuja a los personajes hacia algo más oscuro, más profundo y más
-                            difícil de ignorar.</p>
-                        <p>Entre silencios, recuerdos confusos y una sensación persistente de amenaza, la historia
-                            avanza hacia un territorio donde la lógica empieza a fallar. Cada paso acerca a la familia a
-                            una verdad incómoda, de esas que alteran lo que uno creía saber sobre el mundo.</p>
-                        <p>En ese descenso a lo desconocido, la presencia que ronda la historia no solo inquieta:
-                            también deja la impresión de que algo está observando desde el otro lado. Y cuando las
-                            respuestas comienzan a aparecer, ya es demasiado tarde para seguir pensando que todo tiene
-                            una explicación simple.</p>
+                        <p>
+                            Elisa y Mateo viven en una zona apartada, lejos del ruido de la ciudad y cerca de una calma
+                            que
+                            pronto dejará de existir. Una noche, una presencia extraña aparece en la oscuridad y les
+                            habla con
+                            una serenidad imposible.
+                        </p>
+                        <p>
+                            Lo que sigue no es un sueño ni una confusión pasajera. Es una cadena de encuentros,
+                            preguntas y
+                            silencios que empujan a la pareja hacia una verdad más amplia, más inquietante y mucho más
+                            peligrosa
+                            de lo que imaginaban.
+                        </p>
+                        <p>
+                            Mientras buscan respuestas entre médicos, investigadores y testimonios contradictorios,
+                            descubren
+                            que el fenómeno no es solo íntimo ni biológico: puede ser parte de un plan mayor, antiguo y
+                            silencioso,
+                            relacionado con el destino de la Tierra.
+                        </p>
+                        <p>
+                            <strong>La noche de los tres signos</strong> es una novela de thriller y ciencia ficción
+                            oscura sobre
+                            culpa, silencio y el precio de enfrentarse a lo inexplicable.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -571,30 +566,30 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <p class="section-kicker">Lo que obtienes</p>
+                    <p class="section-kicker">Lo que ofrece</p>
                     <h2>Una experiencia pensada para atrapar</h2>
                 </div>
 
                 <div class="benefits-grid">
                     <article class="benefit-card">
                         <div class="benefit-icon">01</div>
-                        <h3>Enganche inmediato</h3>
-                        <p>Una entrada fuerte que despierta curiosidad desde el inicio.</p>
+                        <h3>Suspenso sostenido</h3>
+                        <p>La tensión crece página a página sin perder intensidad.</p>
                     </article>
                     <article class="benefit-card">
                         <div class="benefit-icon">02</div>
-                        <h3>Tensión constante</h3>
-                        <p>La historia avanza con misterio, dudas y una inquietud que no afloja.</p>
+                        <h3>Atmósfera oscura</h3>
+                        <p>Una historia con sensación inquietante, elegante y cinematográfica.</p>
                     </article>
                     <article class="benefit-card">
                         <div class="benefit-icon">03</div>
-                        <h3>Toque paranormal sutil</h3>
-                        <p>Guiños a lo inexplicable sin perder el enfoque comercial.</p>
+                        <h3>Toque paranormal</h3>
+                        <p>Lo inexplicable aparece con sutileza y potencia narrativa.</p>
                     </article>
                     <article class="benefit-card">
                         <div class="benefit-icon">04</div>
-                        <h3>Lectura fácil de vender</h3>
-                        <p>Perfecta para lectores que aman el suspenso psicológico y la atmósfera oscura.</p>
+                        <h3>Lectura comercial</h3>
+                        <p>Ideal para lectores de OVNIs, misterio y ciencia ficción oscura.</p>
                     </article>
                 </div>
             </div>
@@ -603,25 +598,46 @@
         <section class="section">
             <div class="container">
                 <div class="section-card author-card">
-                    <div class="author-avatar" aria-hidden="true">A</div>
+                    <div class="author-avatar" aria-hidden="true">L</div>
                     <div>
                         <p class="section-kicker">Autor</p>
                         <h2>Una obra creada para lectores curiosos</h2>
-                        <p>Diseñada para quienes disfrutan de libros que mezclan misterio, tensión emocional y una
-                            sensación persistente de que detrás de cada silencio hay algo más.</p>
+                        <p>
+                            Diseñada para quienes disfrutan de historias intensas, misteriosas y emocionalmente
+                            cargadas,
+                            donde el silencio dice más que cualquier explicación.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section" aria-label="Próximos libros">
+        <section class="section" aria-label="Más libros">
             <div class="container">
                 <div class="section-header">
                     <p class="section-kicker">Más historias</p>
-                    <h2 class="books-title">Si te gustó esta historia, explora los próximos lanzamientos</h2>
+                    <h2 class="books-title">Si te gustó esta historia, explora otros lanzamientos</h2>
                 </div>
 
                 <div class="books-grid">
+                    <article class="book-card">
+                        <div class="book-cover">
+                            <div class="cover-frame">
+                                <div>
+                                    <img src="../../assets/img/libros/expedienteNoHumano.png"
+                                        alt="Portada de Expediente No Humano" class="cover-img" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="book-content">
+                            <h3>Red Expediente No Humano</h3>
+                            <p>Una novela de suspenso psicológico con misterio y un toque paranormal sutil.
+                                Una familia, una casa en silencio y una presencia imposible de explicar abren la puerta
+                                a algo mucho más inquietante de lo que parece.</p>
+                            <a class="book-link" href="../otros/expedientenoHumano.html">Ver libro</a>
+                        </div>
+                    </article>
+
                     <article class="book-card">
                         <div class="book-cover">
                             <div class="cover-frame">
@@ -640,30 +656,13 @@
                             <a class="book-link" href="../otros/lamanodeluz.html">Ver libro</a>
                         </div>
                     </article>
-
-                    <article class="book-card">
-                        <div class="book-cover">
-                            <div class="cover-frame">
-                                <div>
-                                    <img src="../../assets/img/libros/Lanochetressignos.png"
-                                        alt="Portada la noche de los tres signos" class="cover-img" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="book-content">
-                            <h3>La Noche de los Tres Signos</h3>
-                            <p>Cuando una presencia desconocida entra en su vida, Elisa y Mateo ya no solo deben
-                                enfrentar el miedo: también la culpa, la duda y el peso de una decisión que no saben si
-                                tomaron libremente.</p>
-                            <a class="book-link" href="../otros/LaNocheDeLosTresSignos.html">Ver libro</a>
-                        </div>
-                    </article>
                 </div>
+
+                
             </div>
         </section>
 
-        <a href="https://payhip.com/b/mCk46" class="floating-cta" aria-label="Comprar ahora">
-            <!-- Reemplazar con Direct Checkout Link de Payhip -->
+        <a href="https://payhip.com/b/CtKk6" class="floating-cta" aria-label="Comprar ahora">
             Comprar ahora
         </a>
     </main>
