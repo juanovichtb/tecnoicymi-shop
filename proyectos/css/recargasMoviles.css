@@ -1288,3 +1288,74 @@ button {
     transition-duration: .01ms !important;
   }
 }
+/* Fix overflow móvil en cards */
+.packages,
+.packages-grid,
+.package-card,
+.package-card__top,
+.package-card__name,
+.package-card__price,
+.package-card__data,
+.package-card__validity,
+.package-card__benefit,
+.package-card__action {
+  min-width: 0;
+}
+
+.packages-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.package-card {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.package-card__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--space-3);
+}
+
+.package-card__name,
+.package-card__data,
+.package-card__validity,
+.package-card__benefit {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.package-card__price {
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .packages {
+    padding: var(--space-4);
+  }
+
+  .package-card {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+  }
+
+  .package-card__top {
+    grid-template-columns: 1fr;
+  }
+
+  .package-card__price {
+    text-align: left;
+    font-size: 1.55rem;
+  }
+
+  .package-card__data {
+    font-size: 1.5rem;
+  }
+
+  .package-card__action {
+    width: 100%;
+  }
+}
