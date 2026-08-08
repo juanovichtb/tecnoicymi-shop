@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "ultima_actualizacion": "2026-08-07",
+  "moneda": "USD",
+  "fuente": "Catálogo proporcionado por TECNOICYMI",
+  "contacto": {
+    "whatsapp": "593982541923"
+  },
+  "enlaces": {
+    "licencias": "https://www.tecnoicymi.com/soporte/tecnoicymi-licencias",
+    "youtube": "https://www.youtube.com/@tecnoicymi",
+    "website": "https://www.tecnoicymi.com",
+    "recargas": "https://www.tecnoicymi.com/productos/recargas.html",
+    "donaciones": "https://www.paypal.com/ncp/payment/2FS8SD7C4H8CE"
+  },
+  "aviso": "Los planes, precios, beneficios y disponibilidad pueden cambiar. Verifica la información antes de realizar el pago.",
+  "operadoras": [
+    {
+      "id": "claro",
+      "nombre": "Claro",
+      "planes": [
+        {
+          "precio_usd": 1.05,
+          "datos": "1GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "+512MB",
+            "llamadas ilimitadas",
+            "1GB WhatsApp gratis",
+            "100 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 1.5,
+          "datos": "2GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "recargas ilimitadas",
+            "1GB gratis",
+            "llamadas ilimitadas",
+            "100 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 2.05,
+          "datos": "4GB",
+          "vigencia": "4 horas",
+          "detalles": [
+            "solo megas",
+            "ilimitadas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 2.05,
+          "datos": "2GB",
+          "vigencia": "2 días",
+          "detalles": [
+            "+1GB",
+            "200 SMS a Claro",
+            "llamadas ilimitadas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 2.5,
+          "datos": "2GB",
+          "vigencia": "3 días",
+          "detalles": [
+            "+3GB",
+            "1GB WhatsApp gratis",
+            "200 SMS a Claro"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.1,
+          "datos": "5GB",
+          "vigencia": "3 días",
+          "detalles": [
+            "+2GB",
+            "WhatsApp gratis",
+            "300 SMS a Claro",
+            "llamadas +40 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.5,
+          "datos": "5GB",
+          "vigencia": "7 días",
+          "detalles": [
+            "2GB WhatsApp gratis",
+            "300 SMS a Claro"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 4.0,
+          "datos": "5GB",
+          "vigencia": "10 días",
+          "detalles": [
+            "+5GB",
+            "WhatsApp gratis",
+            "llamadas +40 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 5.15,
+          "datos": "3GB",
+          "vigencia": "15 días",
+          "detalles": [
+            "+5GB",
+            "4GB WhatsApp/redes",
+            "10GB",
+            "llamadas <50 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 5.5,
+          "datos": "6GB",
+          "vigencia": "15 días",
+          "detalles": [
+            "+4GB",
+            "4GB WhatsApp/redes",
+            "10GB",
+            "llamadas <40 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 8.0,
+          "datos": "8GB",
+          "vigencia": "25 días",
+          "detalles": [
+            "+4GB",
+            "4GB WhatsApp",
+            "15GB",
+            "llamadas +80 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 10.5,
+          "datos": "10GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "6GB",
+            "WhatsApp/Facebook gratis",
+            "llamadas +100 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 12.5,
+          "datos": "13GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "13GB",
+            "5GB WhatsApp/Facebook",
+            "15GB",
+            "llamadas +120 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 15.5,
+          "datos": "17GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "3GB",
+            "2GB Facebook/Instagram",
+            "llamadas +280 min a todas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 20.5,
+          "datos": "20GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "5GB",
+            "2GB Facebook/Instagram",
+            "5GB WhatsApp/redes",
+            "llamadas +350 min a todas"
+          ],
+          "activo": true
+        }
+      ]
+    },
+    {
+      "id": "movistar",
+      "nombre": "Movistar",
+      "planes": [
+        {
+          "precio_usd": 1.05,
+          "datos": "1GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "llamadas ilimitadas a Movistar",
+            "10 SMS",
+            "10 min"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 1.5,
+          "datos": "2GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "combo agrandado",
+            "WhatsApp gratis",
+            "10 SMS",
+            "30 min"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.0,
+          "datos": "5GB",
+          "vigencia": "7 días",
+          "detalles": [
+            "llamadas ilimitadas a Movistar",
+            "40 min todo destino"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.0,
+          "datos": "nan",
+          "vigencia": "2 días",
+          "detalles": [
+            "bono ilimitado",
+            "llamadas ilimitadas a todas las operadoras"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 5.0,
+          "datos": "6GB",
+          "vigencia": "15 días",
+          "detalles": [
+            "80 min todo destino",
+            "llamadas ilimitadas a Movistar"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 9.0,
+          "datos": "10GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "+2GB redes sociales",
+            "100 min",
+            "15 min LDI"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 10.25,
+          "datos": "12GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "+2GB redes sociales",
+            "120 min",
+            "25 min LDI"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 15.5,
+          "datos": "17GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "+2GB redes/apps",
+            "10 SMS",
+            "150 min",
+            "30 min LDI"
+          ],
+          "activo": true
+        }
+      ]
+    },
+    {
+      "id": "cnt",
+      "nombre": "CNT",
+      "planes": [
+        {
+          "precio_usd": 1.0,
+          "datos": "1GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "WhatsApp/Facebook incluidos",
+            "llamadas ilimitadas",
+            "15 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 2.0,
+          "datos": "2GB",
+          "vigencia": "3 días",
+          "detalles": [
+            "WhatsApp/Facebook",
+            "llamadas ilimitadas",
+            "15 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.0,
+          "datos": "4GB",
+          "vigencia": "7 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "llamadas ilimitadas",
+            "35 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.0,
+          "datos": "3GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "combo mixto",
+            "llamadas y SMS ilimitados"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 5.0,
+          "datos": "5GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "llamadas ilimitadas",
+            "30 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 6.0,
+          "datos": "7GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "llamadas ilimitadas",
+            "100 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 10.0,
+          "datos": "15GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "llamadas ilimitadas",
+            "200 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 10.0,
+          "datos": "25GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "recargas ilimitadas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 15.0,
+          "datos": "20GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "300 min",
+            "50 SMS"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 20.0,
+          "datos": "25GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Facebook/Instagram",
+            "300 min",
+            "50 SMS",
+            "30 min internacional"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 20.0,
+          "datos": "45GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "recargas ilimitadas"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 1.0,
+          "datos": "1GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "extra: Spotify/YouTube/Waze/Instagram",
+            "precio del extra $1"
+          ],
+          "activo": true
+        }
+      ]
+    },
+    {
+      "id": "tuenti",
+      "nombre": "Tuenti",
+      "planes": [
+        {
+          "precio_usd": 1.0,
+          "datos": "1GB",
+          "vigencia": "1 día",
+          "detalles": [
+            "WhatsApp gratis",
+            "navegación libre",
+            "llamadas ilimitadas",
+            "50 SMS",
+            "10 min"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 3.0,
+          "datos": "5GB",
+          "vigencia": "7 días",
+          "detalles": [
+            "WhatsApp/Spotify gratis",
+            "llamadas ilimitadas",
+            "50 SMS",
+            "30 min"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 5.0,
+          "datos": "6GB",
+          "vigencia": "15 días",
+          "detalles": [
+            "WhatsApp/Spotify gratis",
+            "llamadas ilimitadas",
+            "50 SMS",
+            "70 min"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 9.0,
+          "datos": "10GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "combo Gigas",
+            "WhatsApp/Spotify gratis",
+            "100 min",
+            "15 min LDI"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 10.0,
+          "datos": "12GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Spotify/redes gratis",
+            "100 min",
+            "25 min LDI"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 15.0,
+          "datos": "17GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Spotify/redes libres",
+            "minutos ilimitados",
+            "150 min TD"
+          ],
+          "activo": true
+        },
+        {
+          "precio_usd": 25.0,
+          "datos": "25GB",
+          "vigencia": "30 días",
+          "detalles": [
+            "WhatsApp/Spotify/redes libres",
+            "minutos ilimitados",
+            "60 min LDI"
+          ],
+          "activo": true
+        }
+      ]
+    }
+  ]
+}
