@@ -139,14 +139,14 @@
      const buyButtons = document.querySelectorAll('[data-cta="comprar"]');
    
      buyButtons.forEach((btn) => {
-       btn.setAttribute("href", URL_PAGO);
+       btn.setAttribute("href", "https://payhip.com/b/WPAlG");
        btn.setAttribute("target", "_blank");
        btn.setAttribute("rel", "noopener noreferrer");
      });
    
      const checkoutBtn = document.getElementById("checkoutBtn");
      if (checkoutBtn) {
-       checkoutBtn.setAttribute("href", URL_PAGO);
+       checkoutBtn.setAttribute("href", "https://payhip.com/b/WPAlG");
        checkoutBtn.setAttribute("target", "_blank");
        checkoutBtn.setAttribute("rel", "noopener noreferrer");
      }
