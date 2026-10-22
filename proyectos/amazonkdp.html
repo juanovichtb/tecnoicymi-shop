@@ -1,603 +1,1182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cómo publiqué mi primer libro en Amazon KDP</title>
-  <meta name="description" content="Una historia real y una guía práctica para quienes sueñan con publicar su primer libro en Amazon KDP, aunque no sepan por dónde empezar." />
-  <style>
-    :root{
-      --bg:#0b1020;
-      --bg2:#111827;
-      --card:#ffffff;
-      --text:#202938;
-      --muted:#667085;
-      --accent:#ff7a18;
-      --accent2:#7c3aed;
-      --accent3:#10b981;
-      --soft:#f5f7fb;
-      --line:#e5e7eb;
-      --shadow:0 24px 70px rgba(17,24,39,.14);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(124,58,237,.12), transparent 34%),
-        radial-gradient(circle at top right, rgba(255,122,24,.12), transparent 28%),
-        linear-gradient(180deg, #f8fafc 0%, #ffffff 36%, #f7f8fc 100%);
-      line-height:1.75;
-    }
-    a{color:inherit}
-    .wrap{max-width:1160px;margin:0 auto;padding:24px}
-    .hero{
-      position:relative;
-      overflow:hidden;
-      border-radius:32px;
-      background:linear-gradient(135deg, #0b1020 0%, #111827 52%, #1f2937 100%);
-      color:#fff;
-      box-shadow:var(--shadow);
-      padding:34px;
-    }
-    .hero:before{
-      content:"";
-      position:absolute;inset:-120px -140px auto auto;
-      width:360px;height:360px;border-radius:50%;
-      background:radial-gradient(circle, rgba(255,122,24,.24), transparent 62%);
-      filter:blur(8px);
-    }
-    .hero:after{
-      content:"";
-      position:absolute;inset:auto auto -120px -120px;
-      width:320px;height:320px;border-radius:50%;
-      background:radial-gradient(circle, rgba(124,58,237,.24), transparent 62%);
-      filter:blur(8px);
-    }
-    .hero-grid{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.18fr .82fr;
-      gap:28px;
-      align-items:center;
-      z-index:1;
-    }
-    .eyebrow{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      padding:8px 14px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:999px;
-      background:rgba(255,255,255,.08);
-      color:#e5e7eb;
-      font-size:.92rem;
-      letter-spacing:.02em;
-      margin-bottom:18px;
-    }
-    h1{
-      font-size:clamp(2.5rem, 5vw, 4.7rem);
-      line-height:1;
-      margin:0 0 18px 0;
-      letter-spacing:-.04em;
-      max-width:12ch;
-    }
-    .subtitle{
-      font-size:1.12rem;
-      color:#d1d5db;
-      max-width:62ch;
-      margin:0 0 20px 0;
-    }
-    .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-    .btn{
-      text-decoration:none;
-      font-weight:800;
-      padding:14px 20px;
-      border-radius:14px;
-      transition:.2s ease;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid transparent;
-    }
-    .btn-primary{background:linear-gradient(135deg, var(--accent), #ff9b44); color:#111827}
-    .btn-primary:hover{transform:translateY(-1px)}
-    .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.18)}
-    .btn-secondary:hover{background:rgba(255,255,255,.06)}
-    .book{
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:26px;
-      min-height:520px;
-      padding:24px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      backdrop-filter: blur(8px);
-    }
-    .cover{
-      min-height:350px;
-      border-radius:22px;
-      background:
-        linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
-        radial-gradient(circle at 30% 20%, rgba(255,122,24,.45), transparent 24%),
-        radial-gradient(circle at 78% 14%, rgba(124,58,237,.35), transparent 18%),
-        linear-gradient(135deg, #111827, #1f2937);
-      border:1px solid rgba(255,255,255,.12);
-      padding:28px;
-      display:flex;
-      align-items:flex-end;
-      position:relative;
-      overflow:hidden;
-    }
-    .cover:before{
-      content:"";
-      position:absolute;
-      inset:auto -20px -30px auto;
-      width:210px;height:210px;border-radius:50%;
-      border:1px solid rgba(255,255,255,.18);
-      opacity:.6;
-    }
-    .cover h2{
-      margin:0;
-      font-size:2rem;
-      line-height:1.05;
-      max-width:9ch;
-      letter-spacing:-.03em;
-    }
-    .cover p{margin:10px 0 0 0;color:#e5e7eb;max-width:26ch}
-    .mini{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:12px;
-      margin-top:14px;
-    }
-    .mini div{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      padding:14px;
-      color:#e5e7eb;
-      min-height:90px;
-    }
-    .mini strong{display:block;color:#fff;margin-bottom:4px}
-    .section{
-      margin-top:28px;
-      border-radius:28px;
-      background:rgba(255,255,255,.74);
-      border:1px solid rgba(229,231,235,.9);
-      box-shadow:0 18px 48px rgba(15,23,42,.05);
-      padding:30px;
-      backdrop-filter: blur(6px);
-    }
-    .section h2{
-      margin:0 0 10px 0;
-      font-size:2rem;
-      letter-spacing:-.03em;
-    }
-    .section p{margin:0 0 14px 0}
-    .intro{
-      display:grid;
-      grid-template-columns: .92fr 1.08fr;
-      gap:24px;
-      align-items:start;
-    }
-    .story-card{
-      border-radius:24px;
-      background:linear-gradient(180deg,#ffffff,#f8fafc);
-      border:1px solid var(--line);
-      padding:24px;
-      box-shadow:0 14px 40px rgba(15,23,42,.06);
-      position:sticky;
-      top:18px;
-    }
-    .story-card .quote{
-      font-size:1.08rem;
-      color:#111827;
-      margin:0 0 14px 0;
-    }
-    .quote-mark{
-      font-size:2.2rem;
-      color:var(--accent);
-      line-height:1;
-      margin-bottom:8px;
-    }
-    .timeline{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-    }
-    .t-item{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:20px;
-      padding:18px;
-    }
-    .t-item b{display:block;margin-bottom:8px}
-    .t-item span{color:var(--muted)}
-    .ribbon{
-      margin-top:18px;
-      padding:16px 18px;
-      border-radius:18px;
-      background:linear-gradient(135deg, rgba(255,122,24,.12), rgba(124,58,237,.10));
-      border:1px solid rgba(255,122,24,.22);
-      color:#111827;
-    }
-    .steps{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-    .step{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:22px;
-      padding:20px;
-      min-height:190px;
-    }
-    .step .num{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:40px;height:40px;
-      border-radius:14px;
-      background:linear-gradient(135deg, var(--accent), #ff9b44);
-      color:#111827;
-      font-weight:900;
-      margin-bottom:14px;
-    }
-    .step strong{display:block;margin-bottom:10px;font-size:1.05rem}
-    .step span{color:var(--muted)}
-    .split{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-      margin-top:18px;
-    }
-    .panel{
-      border:1px solid var(--line);
-      border-radius:24px;
-      background:var(--soft);
-      padding:22px;
-    }
-    .panel h3{margin:0 0 10px 0}
-    .panel ul{margin:12px 0 0 18px;padding:0}
-    .panel li{margin:10px 0}
-    .books{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:18px;
-    }
-    .book-card{
-      border-radius:22px;
-      padding:20px;
-      background:#fff;
-      border:1px solid var(--line);
-      min-height:190px;
-    }
-    .book-card:nth-child(1){background:linear-gradient(180deg,#fff,#fff7ed)}
-    .book-card:nth-child(2){background:linear-gradient(180deg,#fff,#f5f3ff)}
-    .book-card:nth-child(3){background:linear-gradient(180deg,#fff,#ecfdf5)}
-    .book-card h3{margin:0 0 10px 0}
-    .book-card p{color:var(--muted)}
-    .cta{
-      background:linear-gradient(135deg, #111827, #0b1020);
-      color:#fff;
-      border:none;
-    }
-    .cta p{color:#d1d5db}
-    .cta .btn-secondary{border-color:rgba(255,255,255,.18)}
-    .footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:.95rem;
-      padding:22px 0 8px;
-    }
-    @media (max-width: 980px){
-      .hero-grid,.intro,.split,.steps,.books,.timeline{grid-template-columns:1fr}
-      .book{min-height:auto}
-      h1{max-width:100%}
-      .story-card{position:relative; top:auto}
-      .mini{grid-template-columns:1fr}
-    }
-  </style>
-  <style>
-    .btn-sitio{
-      display:inline-block;
-      padding:14px 22px;
-      border-radius:14px;
-      background:linear-gradient(135deg,#ff7a18,#ff9b44);
-      color:#111827;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow:0 10px 25px rgba(255,122,24,.22);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-    .btn-sitio:hover{
-      transform:translateY(-2px);
-      box-shadow:0 14px 30px rgba(255,122,24,.28);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cómo publiqué mi primer libro en Amazon KDP | TECNOICYMI</title>
+    <meta name="description" content="Mi experiencia real publicando un ebook en Amazon KDP desde Ecuador: registro, perfil fiscal, regalías, Kindle Create y publicación paso a paso.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#101827">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cómo publiqué mi primer libro en Amazon KDP">
+    <meta property="og:description" content="Una experiencia real para quienes quieren publicar su primer libro y no saben por dónde empezar.">
+    <meta property="og:url" content="https://www.tecnoicymi.com/libros/como-publique-mi-primer-libro.html">
+    <meta property="og:site_name" content="TECNOICYMI">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cómo publiqué mi primer libro en Amazon KDP">
+    <meta name="twitter:description" content="Mi recorrido como autor independiente: dudas, herramientas y pasos para publicar un primer ebook.">
+
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-soft: #F1F5F9;
+            --night: #101827;
+            --blue: #2563EB;
+            --blue-dark: #1D4ED8;
+            --cyan: #06B6D4;
+            --text: #1E293B;
+            --muted: #475569;
+            --line: #E2E8F0;
+            --shadow: 0 16px 44px rgba(15, 23, 42, 0.07);
+            --radius: 24px;
+            --content: 1120px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at 0% 0%, rgba(6, 182, 212, 0.07), transparent 28rem),
+                var(--bg);
+            color: var(--text);
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--cyan);
+            outline-offset: 4px;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            overflow-wrap: anywhere;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Space Grotesk", sans-serif;
+            line-height: 1.2;
+            letter-spacing: -0.035em;
+        }
+
+        h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+        }
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 1.16rem;
+        }
+
+        p {
+            margin: 0 0 16px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .wrap {
+            width: min(var(--content), calc(100% - 40px));
+            margin-inline: auto;
+            padding: 24px 0 20px;
+        }
+
+        .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(28px, 5vw, 58px);
+            border-radius: 30px;
+            background: var(--night);
+            color: #FFFFFF;
+            box-shadow: 0 24px 70px rgba(16, 24, 39, 0.15);
+        }
+
+        .hero::before,
+        .hero::after {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        .hero::before {
+            width: 390px;
+            height: 390px;
+            top: -190px;
+            right: -100px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.23), transparent 70%);
+        }
+
+        .hero::after {
+            width: 420px;
+            height: 420px;
+            bottom: -280px;
+            left: 10%;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.28), transparent 70%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+            gap: clamp(30px, 5vw, 64px);
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 13px;
+            margin-bottom: 23px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #CFFAFE;
+            font-size: 0.84rem;
+            font-weight: 600;
+        }
+
+        .eyebrow::before {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--cyan);
+            content: "";
+        }
+
+        .hero h1 {
+            max-width: 13ch;
+            margin: 0 0 22px;
+            font-size: clamp(2.5rem, 5.6vw, 4.6rem);
+            line-height: 1.04;
+            letter-spacing: -0.06em;
+        }
+
+        .hero h1 span {
+            color: #67E8F9;
+        }
+
+        .subtitle {
+            max-width: 61ch;
+            margin-bottom: 0;
+            color: #CBD5E1;
+            font-size: clamp(1rem, 1.7vw, 1.12rem);
+        }
+
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 19px;
+            border: 1px solid transparent;
+            border-radius: 13px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background: var(--blue-dark);
+        }
+
+        .btn-secondary {
+            border-color: rgba(255, 255, 255, 0.24);
+            background: transparent;
+            color: #FFFFFF;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-light {
+            border-color: var(--line);
+            background: #FFFFFF;
+            color: var(--text);
+        }
+
+        .btn-light:hover {
+            background: var(--surface-soft);
+        }
+
+        .book-preview {
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .cover {
+            position: relative;
+            display: flex;
+            min-height: 335px;
+            align-items: flex-end;
+            overflow: hidden;
+            padding: 27px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 19px;
+            background:
+                radial-gradient(circle at 82% 18%, rgba(6, 182, 212, 0.4), transparent 25%),
+                radial-gradient(circle at 18% 25%, rgba(37, 99, 235, 0.65), transparent 34%),
+                linear-gradient(145deg, #172554, #101827 72%);
+        }
+
+        .cover::before,
+        .cover::after {
+            position: absolute;
+            content: "";
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .cover::before {
+            width: 220px;
+            height: 220px;
+            top: -90px;
+            right: -60px;
+        }
+
+        .cover::after {
+            width: 155px;
+            height: 155px;
+            top: -55px;
+            right: -28px;
+            border-color: rgba(103, 232, 249, 0.45);
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-label {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: #A5F3FC;
+            font-size: 0.73rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .cover h2 {
+            max-width: 10ch;
+            margin: 0 0 12px;
+            color: #FFFFFF;
+            font-size: clamp(1.8rem, 3vw, 2.45rem);
+            line-height: 1.06;
+        }
+
+        .cover p {
+            max-width: 27ch;
+            color: #CBD5E1;
+            font-size: 0.92rem;
+        }
+
+        .mini {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 9px;
+            margin-top: 12px;
+        }
+
+        .mini-item {
+            min-width: 0;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 13px;
+            color: #CBD5E1;
+            font-size: 0.78rem;
+            line-height: 1.5;
+        }
+
+        .mini-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+            font-size: 0.83rem;
+        }
+
+        .section {
+            margin-top: 24px;
+            padding: clamp(23px, 4vw, 38px);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: var(--shadow);
+        }
+
+        .section-intro {
+            max-width: 76ch;
+            margin-bottom: 22px;
+            color: var(--muted);
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        .story-card {
+            padding: 25px;
+            border: 1px solid #DBEAFE;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #EFF6FF, #FFFFFF 78%);
+        }
+
+        .quote-mark {
+            margin-bottom: 6px;
+            color: var(--blue);
+            font-family: Georgia, serif;
+            font-size: 3.5rem;
+            line-height: 0.9;
+        }
+
+        .quote {
+            color: #334155;
+            font-size: 0.98rem;
+        }
+
+        .story-note {
+            margin-top: 18px;
+            padding-top: 15px;
+            border-top: 1px solid #DBEAFE;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .ribbon {
+            margin-top: 22px;
+            padding: 17px 19px;
+            border-left: 4px solid var(--cyan);
+            border-radius: 0 13px 13px 0;
+            background: #ECFEFF;
+            color: #164E63;
+            font-weight: 600;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .t-item {
+            display: flex;
+            gap: 13px;
+            padding: 17px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: #FFFFFF;
+        }
+
+        .t-number {
+            display: flex;
+            width: 33px;
+            height: 33px;
+            flex: 0 0 33px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #DBEAFE;
+            color: var(--blue-dark);
+            font-weight: 800;
+        }
+
+        .t-item b {
+            display: block;
+            margin-bottom: 3px;
+            font-size: 0.94rem;
+        }
+
+        .t-item span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.55;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .panel {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--surface-soft);
+        }
+
+        .panel h3 {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .panel h3::before {
+            width: 7px;
+            height: 22px;
+            border-radius: 5px;
+            background: var(--blue);
+            content: "";
+        }
+
+        .panel ul {
+            margin: 12px 0 0;
+            padding-left: 21px;
+        }
+
+        .panel li {
+            margin: 9px 0;
+            padding-left: 3px;
+        }
+
+        .panel li::marker {
+            color: var(--blue);
+        }
+
+        .note {
+            margin-top: 20px;
+            padding: 16px 18px;
+            border: 1px solid #BAE6FD;
+            border-radius: 14px;
+            background: #F0F9FF;
+            color: #0C4A6E;
+            font-size: 0.92rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .step {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #FFFFFF;
+        }
+
+        .step .num {
+            display: flex;
+            width: 39px;
+            height: 39px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            background: #DBEAFE;
+            color: var(--blue-dark);
+            font-weight: 800;
+        }
+
+        .step strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .step span {
+            color: var(--muted);
+            font-size: 0.91rem;
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 0.91rem;
+        }
+
+        .books {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .book-card {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #FFFFFF;
+        }
+
+        .book-card:first-child {
+            border-top: 3px solid var(--blue);
+        }
+
+        .book-card:nth-child(2) {
+            border-top: 3px solid var(--cyan);
+        }
+
+        .book-card:nth-child(3) {
+            border-top: 3px solid #94A3B8;
+        }
+
+        .book-card p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .book-status {
+            display: inline-block;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 0.79rem;
+            font-weight: 600;
+        }
+
+        .cta {
+            overflow: hidden;
+            border-color: transparent;
+            background:
+                radial-gradient(circle at 95% 0%, rgba(6, 182, 212, 0.17), transparent 18rem),
+                var(--night);
+            color: #FFFFFF;
+        }
+
+        .cta h2 {
+            color: #FFFFFF;
+        }
+
+        .cta p {
+            max-width: 70ch;
+            color: #CBD5E1;
+        }
+
+        .cta .btn-secondary {
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .footer {
+            padding: 28px 12px 12px;
+            color: var(--muted);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--blue-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid,
+            .intro {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                max-width: 14ch;
+            }
+
+            .book-preview {
+                max-width: 560px;
+            }
+
+            .steps {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 620px) {
+            .wrap {
+                width: min(100% - 24px, var(--content));
+                padding-top: 12px;
+            }
+
+            .hero {
+                padding: 25px 21px;
+                border-radius: 23px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.45rem, 12vw, 3.5rem);
+            }
+
+            .btns {
+                flex-direction: column;
+            }
+
+            .btns .btn {
+                width: 100%;
+            }
+
+            .book-preview {
+                padding: 12px;
+            }
+
+            .cover {
+                min-height: 290px;
+                padding: 22px;
+            }
+
+            .mini {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-item {
+                padding: 12px 14px;
+            }
+
+            .section {
+                margin-top: 15px;
+                padding: 23px 19px;
+                border-radius: 20px;
+            }
+
+            .timeline,
+            .split,
+            .steps,
+            .books {
+                grid-template-columns: 1fr;
+            }
+
+            .panel {
+                padding: 19px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
     </style>
 </head>
+
 <body>
-  <div class="wrap">
+    <main class="wrap">
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <div class="eyebrow">Una historia real para quien sueña con publicar</div>
-          <h1>Mi primer libro en Amazon KDP</h1>
-          <p class="subtitle">
-            No empecé sabiendo. Empecé con una ilusión enorme, muchas dudas y la sensación de estar parado frente a una puerta sin saber cómo abrirla. Esta página cuenta ese camino, paso a paso, con la esperanza de que te sientas acompañado si tú también quieres publicar tu primer libro.
-          </p>
-          <div class="btns">
-            <a class="btn btn-primary" href="../otros/Expedientenohumano.html" target="_blank" rel="noopener">Ir a mis libros</a>
-            <a class="btn btn-secondary" href="#historia">Leer la historia</a>
-            
-          </div>
-        </div>
+        <!-- PRESENTACIÓN -->
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow">Una experiencia real, desde Ecuador</div>
 
-        <div class="book">
-          <div class="cover">
-            <div>
-              <h2>Cómo publiqué mi primer libro</h2>
-              <p>Una guía nacida desde la experiencia real, pensada para ayudarte a dar ese primer paso.</p>
+                    <h1 id="page-title">
+                        Mi primer libro en <span>Amazon KDP</span>
+                    </h1>
+
+                    <p class="subtitle">
+                        No empecé sabiendo. Empecé con una ilusión enorme, muchas dudas y la sensación de estar frente a una puerta sin saber cómo abrirla.
+
+                        Esta página cuenta ese camino, paso a paso, con la esperanza de acompañarte si tú también quieres publicar tu primer libro.
+                    </p>
+
+                    <div class="btns">
+                        <a class="btn btn-primary" href="#mi-libro">
+                            Conocer mi libro <span aria-hidden="true">→</span>
+                        </a>
+                        <a class="btn btn-secondary" href="#historia">
+                            Leer mi historia
+                        </a>
+                    </div>
+                </div>
+
+                <div class="book-preview" aria-label="Resumen de esta guía">
+                    <div class="cover">
+                        <div class="cover-content">
+                            <span class="cover-label">De la idea a la publicación</span>
+                            <h2>Cómo publiqué mi primer libro</h2>
+                            <p>Una experiencia personal para quienes quieren dar el primer paso como autores.</p>
+                        </div>
+                    </div>
+
+                    <div class="mini">
+                        <div class="mini-item">
+                            <strong>Para quién</strong>
+                            Para quien quiere publicar y no sabe por dónde empezar.
+                        </div>
+                        <div class="mini-item">
+                            <strong>Qué encontrarás</strong>
+                            Mi recorrido, herramientas y aprendizajes.
+                        </div>
+                        <div class="mini-item">
+                            <strong>La idea central</strong>
+                            Avanzar paso a paso, sin pretender saberlo todo.
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="mini">
-            <div><strong>Para quién es</strong>Quien quiere publicar y no sabe por dónde empezar.</div>
-            <div><strong>Qué encontrarás</strong>Pasos reales, dudas resueltas y compañía.</div>
-            <div><strong>Qué sentirás</strong>Claridad, impulso y ganas de continuar.</div>
-          </div>
+        </section>
 
-        </div>
-      </div>
-    </section>
+        <!-- HISTORIA -->
+        <section class="section intro" id="historia" aria-labelledby="story-title">
+            <aside class="story-card">
+                <div class="quote-mark" aria-hidden="true">“</div>
 
-    <section class="section intro" id="historia">
-      <div class="story-card">
-        <div class="quote-mark">“</div>
-        <p class="quote">
-          Durante mucho tiempo quise publicar mi primer libro en Amazon, pero no sabía por dónde empezar. Sabía que quería hacerlo, pero cuando entré por primera vez no entendía qué era KDP, dónde había que registrarse, qué archivo subir ni qué herramienta usar para convertir mi manuscrito.
-        </p>
-        <p class="quote">
-          Con el tiempo, fui encontrando cada pieza del proceso y logré publicar mi ebook. Esta guía está pensada para ahorrarte esa confusión inicial y mostrarte el camino de forma clara, como si alguien estuviera sentado contigo frente a la pantalla.
-        </p>
-      </div>
+                <p class="quote">
+                    Durante mucho tiempo quise publicar mi primer libro en Amazon, pero no sabía por dónde empezar. Sabía que quería hacerlo, pero cuando entré por primera vez no entendía qué era KDP, dónde había que registrarse, qué archivo subir ni qué herramienta usar para preparar mi manuscrito.
+                </p>
 
-      <div>
-        <h2>La puerta de entrada</h2>
-        <p>
-          Mi primer impulso fue abrir el navegador y escribir “Amazon KDP”. Eso me llevó a la página correcta de Kindle Direct Publishing, donde finalmente entendí dónde tenía que unirme.
-        </p>
-        <p>
-          Si estás perdido como yo lo estaba, empieza exactamente así: abre Google o tu navegador y escribe Amazon KDP. Entra al sitio oficial y busca la opción <b>Join KDP</b> o <b>Unirse a KDP</b> para crear tu cuenta.
-        </p>
-        <div class="ribbon">
-          La parte más difícil al comienzo no es escribir el libro; es saber por dónde entra uno al sistema.
-        </div>
+                <p class="quote">
+                    Con el tiempo, fui encontrando cada pieza del proceso y logré publicar mi ebook. Esta guía está pensada para compartir ese recorrido y ayudarte a reducir la confusión inicial, como si alguien estuviera sentado contigo frente a la pantalla.
+                </p>
 
-        <div class="timeline">
-          <div class="t-item">
-            <b>1. Encontrar KDP</b>
-            <span>Buscar el sitio correcto y dejar de dar vueltas.</span>
-          </div>
-          <div class="t-item">
-            <b>2. Crear la cuenta</b>
-            <span>Registrar tu perfil, pagos e impuestos.</span>
-          </div>
-          <div class="t-item">
-            <b>3. Preparar el manuscrito</b>
-            <span>Transformar el archivo para que Amazon lo acepte.</span>
-          </div>
-          <div class="t-item">
-            <b>4. Publicar</b>
-            <span>Revisar, enviar y ver tu libro en Amazon.</span>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="story-note">
+                    No es una historia de alguien que lo sabía todo desde el principio. Es la experiencia de alguien que empezó, aprendió y siguió adelante.
+                </div>
+            </aside>
 
-    <section class="section">
-      <h2>Lo que aprendí al empezar</h2>
-      <p>
-        Una vez dentro de KDP, el sistema me pidió crear la cuenta o iniciar sesión con mi cuenta de Amazon. Ahí completé mi nombre, correo, contraseña y luego revisé los datos de autor, pagos e impuestos.
-      </p>
-      <p>
-        Después de registrarme, el sistema me envió un código de verificación al correo. Luego tuve que aceptar los términos para seguir adelante y entrar al panel principal. Ese paso era importante porque, si no confirmaba el correo o no aceptaba los términos, no podía continuar.
-      </p>
-      <div class="split">
-        <div class="panel">
-          <h3>Datos que llené</h3>
-          <ul>
-            <li>Nombre y correo.</li>
-            <li>Dirección, ciudad y país.</li>
-            <li>Datos de pago y perfil fiscal.</li>
-            <li>Verificación del correo y aceptación de términos.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Lo que entendí</h3>
-          <ul>
-            <li>No hace falta inventar nada.</li>
-            <li>Los campos existen para ordenar tu cuenta.</li>
-            <li>Si algo no se entiende, se resuelve paso a paso.</li>
-            <li>El proceso asusta menos cuando se mira con calma.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+            <div>
+                <h2 id="story-title">La puerta de entrada</h2>
 
-    <section class="section">
-      <h2>Pagos, país y documentos</h2>
-      <p>
-        En el perfil llené mis datos personales, dirección, ciudad, país y teléfono. Amazon recomienda usar información legal y válida, porque esos datos se usan para el perfil de pagos y el registro de impuestos.
-      </p>
-      <p>
-        Luego vino la parte de pagos. Amazon me pidió un BIC o SWIFT, que es el código internacional que identifica al banco en transferencias internacionales. Yo tenía cuenta en Banco Guayaquil, así que usé el código correspondiente a ese banco.
-      </p>
-      <p>
-        Después llegué a la sección fiscal. Ahí Amazon me pidió completar el perfil tributario para evitar demoras en pagos y aplicar la retención correcta. Como yo no tenía RUC, tuve que revisar qué opción elegir cuando el sistema preguntaba por el TIN.
-      </p>
-    </section>
+                <p>
+                    Mi primer impulso fue abrir el navegador y buscar “Amazon KDP”. Así llegué a Kindle Direct Publishing, la plataforma de autopublicación de Amazon.
+                </p>
 
-    <section class="section">
-      <h2>La parte que más confundía</h2>
-      <p>
-        Esa sección fue una de las más confusas. Vi opciones como “Tengo un TIN no estadounidense” y luego la pregunta de por qué no podía proporcionarlo.
-      </p>
-      <p>
-        Si te pasa lo mismo, no te bloquees. Lo importante es entender que Amazon está pidiendo un identificador fiscal, no tu cédula por costumbre, y que debes seleccionar la opción que mejor describa tu situación real.
-      </p>
-      <p>
-        En mi caso, elegí la opción que explicaba que no podía conseguir el TIN en ese momento. Amazon ofrece esa alternativa precisamente para casos donde el autor no tiene el identificador fiscal local listo.
-      </p>
-    </section>
+                <p>
+                    Si estás empezando, busca el sitio oficial de Kindle Direct Publishing e inicia sesión con tu cuenta de Amazon o crea una cuenta siguiendo las opciones disponibles.
+                </p>
 
-    <section class="section">
-      <h2>Elegir la tienda y el territorio</h2>
-      <div class="split">
-        <div class="panel">
-          <h3>La tienda principal</h3>
-          <p>
-            Luego KDP me preguntó por la tienda principal. Yo dejé Amazon.com porque era la tienda donde me sentía más cómodo moviéndome y donde revisaba mejor mi publicación.
-          </p>
-          <p class="muted">La tienda principal importa porque define dónde esperas vender la mayor parte de tus copias y puede afectar la moneda del precio de lista.</p>
-        </div>
-        <div class="panel">
-          <h3>Los territorios</h3>
-          <p>
-            Después me apareció la parte de territorios. Como el libro era mío y no tenía restricciones de terceros, elegí todos los territorios.
-          </p>
-          <p class="muted">Si tienes derechos completos, esta suele ser la opción más simple para un ebook.</p>
-        </div>
-      </div>
-    </section>
+                <div class="ribbon">
+                    A veces, la primera dificultad no es escribir el libro: es descubrir cuál es el primer paso.
+                </div>
 
-    <section class="section">
-      <h2>DRM, regalías y precio</h2>
-      <p>
-        Más adelante me preguntaron si quería aplicar DRM. Elegí que sí, porque DRM limita la copia y distribución no autorizada del ebook. Eso no afecta que yo también venda en Payhip; puedo tener el libro en KDP y al mismo tiempo en mi tienda directa.
-      </p>
-      <p>
-        En el apartado de regalías elegí el 70%, porque Amazon indica que ese plan exige un precio de lista entre $2.99 y $9.99. Por eso puse el ebook en $2.99.
-      </p>
-    </section>
+                <div class="timeline" aria-label="Resumen de mi proceso">
+                    <div class="t-item">
+                        <div class="t-number">1</div>
+                        <div>
+                            <b>Encontrar KDP</b>
+                            <span>Localizar la plataforma oficial y familiarizarme con ella.</span>
+                        </div>
+                    </div>
 
-    <section class="section">
-      <h2>El manuscrito y Kindle Create</h2>
-      <p>
-        Después vino la parte del archivo interior. Yo ya tenía mi manuscrito en Word, pero Amazon me sugería prepararlo mejor para Kindle.
-      </p>
-      <p>
-        Ahí descubrí que necesitaba Kindle Create. Busqué la herramienta en Google, descargué el programa e instalé la aplicación para convertir mi documento en un formato que KDP aceptara mejor.
-      </p>
-      <p>
-        Dentro de Kindle Create, cargué mi archivo DOCX, revisé la importación, dejé que el programa procesara el contenido y luego exporté el resultado en formato KPF. Ese fue el archivo que finalmente usé para subir a KDP.
-      </p>
+                    <div class="t-item">
+                        <div class="t-number">2</div>
+                        <div>
+                            <b>Configurar la cuenta</b>
+                            <span>Completar el perfil personal, de pagos y fiscal.</span>
+                        </div>
+                    </div>
 
-      <div class="split">
-        <div class="panel">
-          <h3>Lo que me ayudó</h3>
-          <ul>
-            <li>Buscar Kindle Create en Google.</li>
-            <li>Instalar el programa en mi equipo.</li>
-            <li>Abrir el DOCX y convertirlo.</li>
-            <li>Exportar a KPF y revisar la vista previa.</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Lo que cambia al final</h3>
-          <ul>
-            <li>El archivo queda más ordenado.</li>
-            <li>La publicación se vuelve más sencilla.</li>
-            <li>El libro se ve mejor en pantalla.</li>
-            <li>La experiencia del lector mejora.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+                    <div class="t-item">
+                        <div class="t-number">3</div>
+                        <div>
+                            <b>Preparar el manuscrito</b>
+                            <span>Convertir y revisar el archivo del libro.</span>
+                        </div>
+                    </div>
 
-    <section class="section">
-      <h2>Antes de publicar</h2>
-      <p>
-        Antes de hacer clic en publicar, revisé la vista previa del libro. Ese paso es vital porque te permite detectar errores de formato, capítulos mal puestos o saltos raros en el interior.
-      </p>
-      <p>
-        Si algo se ve extraño, es mejor corregirlo antes de enviar el libro a revisión. Una vez publicado, arreglar errores puede ser más tedioso.
-      </p>
-      <p>
-        Cuando todo se veía bien, le di a publicar. Amazon revisa el contenido y luego el libro aparece en sus tiendas, normalmente después de un periodo de revisión.
-      </p>
-    </section>
+                    <div class="t-item">
+                        <div class="t-number">4</div>
+                        <div>
+                            <b>Enviar a publicación</b>
+                            <span>Revisar los detalles y enviar el libro a Amazon.</span>
+                        </div>
+                    </div>
+                </div>
 
-    <section class="section">
-      <h2>La idea detrás de esta guía</h2>
-      <p>
-        Esta página no está hecha para sonar perfecta ni para aparentar experiencia que no tenía al empezar. Está hecha para mostrar el camino real, con dudas reales, para que otra persona no se sienta sola al publicar.
-      </p>
-      <p>
-        Quise que el sitio diera orgullo, pertenencia y ganas de compartirlo, porque esa sensación también forma parte del sueño de publicar un libro.
-      </p>
-    </section>
+                <div class="btns">
+                    <a class="btn btn-light" href="https://kdp.amazon.com/" target="_blank" rel="noopener noreferrer">
+                        Visitar Amazon KDP <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <section class="section">
-      <h2>Mi primer libro publicado</h2>
-      <p>
-        Este proyecto nació de la ilusión de publicar el primer libro y de aprender cada paso por el camino.
-        Ahora quiero que esta misma experiencia sirva para ayudarte a ti.
-      </p>
-      <div class="btns">
-        <a class="btn btn-primary" href="../otros/Expedientenohumano.html" target="_blank" rel="noopener">Ir a mis libros y comprarlo</a>
-        <a href="https://www.tecnoicymi.com" target="_blank" rel="noopener noreferrer" class="btn-sitio">
-            Visitar mi sitio web
-          </a>
-      </div>
-    </section>
+        <!-- REGISTRO -->
+        <section class="section" id="registro">
+            <h2>Lo que aprendí al empezar</h2>
 
-    <section class="section">
-      <h2>Próximos libros</h2>
-      <p>
-        Esta página también funcionará como una vitrina para los siguientes libros que publique.
-        Así, quien llegue hoy podrá conocer este primer trabajo y volver más adelante por nuevos títulos.
-      </p>
+            <p>
+                Una vez dentro de KDP, el sistema me permitió crear una cuenta o iniciar sesión con mi cuenta de Amazon. Después tuve que revisar los datos de mi perfil, los pagos y la información fiscal.
+            </p>
 
-      <div class="books">
-        <div class="book-card">
-          <h3>Libro 1</h3>
-          <p>Cómo publiqué mi primer libro en Amazon KDP.</p>
-        </div>
-        <div class="book-card">
-          <h3>Libro 2</h3>
-          <p>Próximamente.</p>
-        </div>
-        <div class="book-card">
-          <h3>Libro 3</h3>
-          <p>Próximamente.</p>
-        </div>
-      </div>
-    </section>
+            <p>
+                Durante el proceso también tuve que completar la verificación solicitada y aceptar las condiciones correspondientes para poder continuar.
+            </p>
 
-    <section class="section cta">
-      <h2>Empieza aquí</h2>
-      <p>
-        Si quieres aprender cómo dar el primer paso y además llevarte mi primer libro, este es el lugar correcto.
-        Haz clic y accede a la página del libro en Amazon.
-      </p>
-      <div class="btns">
-        <a class="btn btn-primary" href="https://a.co/d/0g7EpiKC" target="_blank" rel="noopener">Comprar ahora</a>
-        <a class="btn btn-secondary" href="#historia">Volver al inicio</a>
-      </div>
-    </section>
+            <div class="split">
+                <div class="panel">
+                    <h3>Los datos que completé</h3>
+                    <ul>
+                        <li>Nombre y correo electrónico.</li>
+                        <li>Dirección, ciudad y país.</li>
+                        <li>Información de pagos.</li>
+                        <li>Perfil fiscal y verificaciones solicitadas.</li>
+                    </ul>
+                </div>
 
-    <div class="footer">
-      Página creada para acompañar a nuevos autores y dirigir lectores al libro publicado en Amazon KDP.
-    </div>
-  </div>
+                <div class="panel">
+                    <h3>Lo que entendí</h3>
+                    <ul>
+                        <li>Es importante proporcionar información real y coherente.</li>
+                        <li>Cada sección cumple una función dentro de la cuenta.</li>
+                        <li>Conviene leer las instrucciones antes de seleccionar una opción.</li>
+                        <li>El proceso resulta más manejable cuando se avanza con calma.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGOS Y DATOS FISCALES -->
+        <section class="section" id="pagos">
+            <h2>Pagos, país y documentos</h2>
+
+            <p>
+                En el perfil completé mis datos personales, dirección, ciudad, país y teléfono. También tuve que revisar la configuración de pagos y el registro fiscal.
+            </p>
+
+            <p>
+                Una parte importante fue entender la información bancaria solicitada para recibir los pagos. Entre los datos que pueden aparecer están los códigos bancarios internacionales, como BIC o SWIFT, según el método de pago y la entidad financiera.
+            </p>
+
+            <p>
+                Después llegué a la sección fiscal. Como estaba publicando desde Ecuador y no tenía RUC, tuve que prestar especial atención a las opciones relacionadas con mi identificación tributaria.
+            </p>
+
+            <div class="note">
+                <strong>Importante:</strong> los requisitos fiscales y bancarios dependen de tu situación y de las opciones que KDP muestre en tu cuenta. No selecciones una alternativa solo porque otra persona la utilizó. Revisa las instrucciones oficiales y consulta a un profesional tributario si tienes dudas.
+            </div>
+        </section>
+
+        <!-- PERFIL FISCAL -->
+        <section class="section" id="perfil-fiscal">
+            <h2>La parte que más me confundía</h2>
+
+            <p>
+                Esa sección fue una de las más confusas para mí. Encontré preguntas sobre identificadores fiscales, incluido el TIN, y opciones relacionadas con la posibilidad de proporcionar esa información.
+            </p>
+
+            <p>
+                En mi caso, tuve que detenerme a leer y entender qué estaba preguntando el sistema antes de continuar.
+            </p>
+
+            <p>
+                Si te sucede lo mismo, no asumas que la opción correcta para otro autor también lo será para ti. Comprueba qué identificador corresponde a tu situación y qué alternativa describe realmente tus circunstancias.
+            </p>
+
+            <div class="ribbon">
+                No se trata de marcar una casilla para avanzar cuanto antes, sino de comprender qué estás declarando.
+            </div>
+        </section>
+
+        <!-- TIENDA Y TERRITORIOS -->
+        <section class="section" id="territorios">
+            <h2>Elegir la tienda y los territorios</h2>
+
+            <div class="split">
+                <div class="panel">
+                    <h3>La tienda principal</h3>
+
+                    <p>
+                        Durante la configuración, KDP me preguntó por la tienda principal. Elegí Amazon.com, una tienda que conocía y en la que estaba acostumbrado a consultar publicaciones.
+                    </p>
+
+                    <p class="muted">
+                        La elección debe ajustarse a las opciones que ofrezca KDP y a tu estrategia de publicación. Comprueba cómo afecta al precio, la moneda y la disponibilidad de tu libro.
+                    </p>
+                </div>
+
+                <div class="panel">
+                    <h3>Los territorios</h3>
+
+                    <p>
+                        También tuve que revisar los derechos territoriales. Como entendía que tenía los derechos necesarios sobre mi libro, seleccioné la opción que correspondía a mi caso.
+                    </p>
+
+                    <p class="muted">
+                        La disponibilidad territorial depende de los derechos que poseas. Selecciona todos los territorios únicamente si tienes los derechos necesarios para hacerlo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DRM Y REGALÍAS -->
+        <section class="section" id="regalias">
+            <h2>DRM, regalías y precio</h2>
+
+            <p>
+                Más adelante me encontré con la opción de aplicar DRM al ebook. En mi caso, decidí activarlo porque quería utilizar la protección que ofrece la plataforma frente a determinados usos no autorizados.
+            </p>
+
+            <p>
+                También tuve que elegir un plan de regalías y definir el precio de venta. Elegí el 70 % y establecí un precio de 2,99 dólares para mi ebook, de acuerdo con las condiciones que estaba revisando en ese momento.
+            </p>
+
+            <div class="note">
+                <strong>Antes de decidir:</strong> los porcentajes de regalías, los rangos de precios y las condiciones de cada plan pueden variar según el mercado y las reglas vigentes de KDP. Consulta las condiciones oficiales antes de fijar tu precio. Activar DRM tampoco garantiza que un archivo no pueda copiarse o compartirse.
+            </div>
+        </section>
+
+        <!-- KINDLE CREATE -->
+        <section class="section" id="kindle-create">
+            <h2>El manuscrito y Kindle Create</h2>
+
+            <p>
+                Yo ya tenía mi manuscrito en Word, pero necesitaba preparar el archivo para que se presentara correctamente como ebook.
+            </p>
+
+            <p>
+                En ese momento descubrí Kindle Create. Busqué la herramienta, descargué el programa desde una fuente oficial e instalé la aplicación en mi computadora.
+            </p>
+
+            <p>
+                Dentro de Kindle Create, importé mi archivo DOCX, revisé el resultado y utilicé las opciones del programa para preparar el libro. Finalmente, exporté el proyecto en formato KPF, que utilicé para cargarlo en KDP.
+            </p>
+
+            <div class="split">
+                <div class="panel">
+                    <h3>Los pasos que seguí</h3>
+                    <ul>
+                        <li>Buscar Kindle Create.</li>
+                        <li>Descargar e instalar el programa.</li>
+                        <li>Importar el archivo DOCX.</li>
+                        <li>Revisar el formato y exportar el proyecto.</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Lo que aprendí</h3>
+                    <ul>
+                        <li>Es necesario revisar cómo se importó el documento.</li>
+                        <li>La conversión no sustituye una revisión manual.</li>
+                        <li>La vista previa ayuda a detectar problemas.</li>
+                        <li>El formato influye en la experiencia de lectura.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btns">
+                <a class="btn btn-light" href="https://kdp.amazon.com/" target="_blank" rel="noopener noreferrer">
+                    Consultar recursos oficiales de KDP <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- REVISIÓN -->
+        <section class="section" id="revision">
+            <h2>Antes de publicar</h2>
+
+            <p>
+                Antes de enviar el libro, revisé la vista previa. Este paso me permitió comprobar cómo se veía el contenido y buscar posibles errores de formato, capítulos mal ubicados o saltos inesperados.
+            </p>
+
+            <p>
+                Si encuentras algo extraño, corrige el documento y vuelve a revisar la versión preparada. Conviene comprobar tanto el interior como los datos de publicación antes de enviar el libro.
+            </p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="num">01</div>
+                    <strong>Revisar el interior</strong>
+                    <span>Comprueba títulos, capítulos, párrafos, saltos de página y legibilidad.</span>
+                </div>
+
+                <div class="step">
+                    <div class="num">02</div>
+                    <strong>Comprobar los detalles</strong>
+                    <span>Verifica el título, el nombre del autor, la descripción, los derechos y el precio.</span>
+                </div>
+
+                <div class="step">
+                    <div class="num">03</div>
+                    <strong>Enviar a revisión</strong>
+                    <span>Envía la publicación y espera a que Amazon complete su proceso de revisión.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFLEXIÓN -->
+        <section class="section" id="reflexion">
+            <h2>La idea detrás de esta guía</h2>
+
+            <p>
+                Esta página no está hecha para aparentar que sabía todo desde el principio. Está hecha para compartir el camino real, con dudas y aprendizajes, para que otra persona no se sienta sola cuando intente publicar su primer libro.
+            </p>
+
+            <p>
+                Publicar fue también una manera de demostrarme que podía aprender algo nuevo y llevar una idea hasta el siguiente paso. Quiero compartir esa sensación de avance y animar a otros a explorar sus propias posibilidades.
+            </p>
+
+            <p>
+                No necesitas conocer todas las respuestas antes de comenzar. Necesitas informarte, tomar decisiones con cuidado y estar dispuesto a aprender durante el proceso.
+            </p>
+        </section>
+
+        <!-- LIBRO -->
+        <section class="section" id="mi-libro">
+            <h2>Mi primer libro publicado</h2>
+
+            <p>
+                Este proyecto nació de la ilusión de publicar mi primer libro y de aprender cada paso sobre la marcha. Hoy quiero que esa experiencia también pueda servirte como punto de partida.
+            </p>
+
+            <p>
+                Si quieres conocer mis publicaciones, puedes visitar la sección de libros de TECNOICYMI o consultar el enlace de Amazon.
+            </p>
+
+            <div class="btns">
+                <a
+                    class="btn btn-primary"
+                    href="../otros/Expedientenohumano.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Explorar mis libros <span aria-hidden="true">→</span>
+                </a>
+
+                <a
+                    class="btn btn-light"
+                    href="https://a.co/d/0g7EpiKC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ver libro en Amazon <span aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                    class="btn btn-light"
+                    href="https://www.tecnoicymi.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Visitar TECNOICYMI
+                </a>
+            </div>
+        </section>
+
+        <!-- PRÓXIMOS LIBROS -->
+        <section class="section" id="proximos-libros">
+            <h2>Un proyecto que continúa</h2>
+
+            <p class="section-intro">
+                Esta página también puede servir como punto de encuentro para futuras publicaciones. La idea es que puedas conocer nuevos títulos a medida que estén disponibles.
+            </p>
+
+            <div class="books">
+                <article class="book-card">
+                    <h3>Mi primer libro</h3>
+                    <p>El comienzo de mi recorrido como autor independiente.</p>
+                    <span class="book-status">Mi experiencia de publicación</span>
+                </article>
+
+                <article class="book-card">
+                    <h3>Próxima publicación</h3>
+                    <p>Un nuevo proyecto editorial en preparación.</p>
+                    <span class="book-status">Próximamente</span>
+                </article>
+
+                <article class="book-card">
+                    <h3>Más historias por contar</h3>
+                    <p>Nuevas ideas y proyectos para compartir con los lectores.</p>
+                    <span class="book-status">Próximamente</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="section cta" aria-labelledby="cta-title">
+            <h2 id="cta-title">Tu primer paso puede empezar hoy</h2>
+
+            <p>
+                Si tienes una idea para un libro, no necesitas resolverlo todo en un solo día. Infórmate, prepara tu manuscrito y avanza una etapa a la vez. Este fue mi camino; ahora puedes comenzar a construir el tuyo.
+            </p>
+
+            <div class="btns">
+                <a
+                    class="btn btn-primary"
+                    href="https://a.co/d/0g7EpiKC"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Ver el libro en Amazon <span aria-hidden="true">↗</span>
+                </a>
+
+                <a class="btn btn-secondary" href="#page-title">
+                    Volver al inicio ↑
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>
+                Una experiencia personal de publicación independiente, compartida por
+                <a href="https://www.tecnoicymi.com" target="_blank" rel="noopener noreferrer">TECNOICYMI</a>.
+            </p>
+            <p>La información sobre KDP se basa en mi experiencia y no sustituye las instrucciones oficiales vigentes.</p>
+        </footer>
+
+    </main>
 </body>
 </html>

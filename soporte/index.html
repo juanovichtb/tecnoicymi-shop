@@ -1,84 +1,336 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte | Tecnoicymi</title>
+
+    <title>Soporte y Asistencia | Tecnoicymi</title>
+    <meta name="description" content="Contacta con Tecnoicymi para solicitar asistencia, reportar problemas o consultar sobre software. Envíanos tu mensaje y te ayudaremos.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F8FAFC">
+
+    <meta property="og:title" content="Soporte y Asistencia | Tecnoicymi">
+    <meta property="og:description" content="¿Necesitas ayuda con software o tienes una consulta? Ponte en contacto con Tecnoicymi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tecnoicymi.com/soporte/">
+    <meta property="og:site_name" content="TECNOICYMI">
+
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+
+    <style>
+        .support-page .support-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+            gap: 24px;
+            align-items: start;
+        }
+
+        .support-page .support-form-container,
+        .support-page .support-info {
+            min-width: 0;
+        }
+
+        .support-page .glass-form {
+            padding: clamp(22px, 4vw, 34px);
+        }
+
+        .support-page .form-intro {
+            margin: 0 0 24px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .support-page .form-group {
+            margin-bottom: 20px;
+        }
+
+        .support-page .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .support-page .form-group input,
+        .support-page .form-group textarea {
+            width: 100%;
+            max-width: 100%;
+            font: inherit;
+        }
+
+        .support-page .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .support-page .form-note {
+            margin: 12px 0 0;
+            color: #64748B;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .support-page .submit-button {
+            width: 100%;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .support-page .info-card {
+            padding: 24px;
+            margin-bottom: 18px;
+        }
+
+        .support-page .info-card h2,
+        .support-page .info-card h3 {
+            margin-top: 0;
+        }
+
+        .support-page .info-card p {
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .support-page .social-btn,
+        .support-page .card-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .support-page .social-btn:focus-visible,
+        .support-page .card-action:focus-visible {
+            outline: 3px solid #06B6D4;
+            outline-offset: 4px;
+        }
+
+        .support-page .community-pending {
+            display: inline-block;
+            margin-top: 4px;
+            color: #64748B;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 760px) {
+            .support-page .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-page .support-info {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 14px;
+            }
+
+            .support-page .info-card {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .support-page .support-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body class="support-page">
     <div class="content-wrapper">
-        <div class="blob"></div>
+        <div class="blob" aria-hidden="true"></div>
 
         <div id="header-placeholder"></div>
 
         <main class="container">
             <header class="section-header">
                 <span class="badge">Asistencia</span>
+
                 <h1>¿Cómo podemos ayudarte?</h1>
-                <p>Reporta o solicita nuevo software.</p>
+
+                <p>
+                    Cuéntanos qué necesitas: puedes reportar un problema,
+                    solicitar información o consultar sobre software.
+                </p>
             </header>
 
             <div class="support-grid">
 
-                <section class="support-form-container">
-                    <form class="glass-form" action="https://formspree.io/f/xdalpoav" method="POST">
+                <!-- FORMULARIO DE CONTACTO -->
+                <section class="support-form-container" aria-labelledby="support-form-title">
+                    <form
+                        class="glass-form"
+                        action="https://formspree.io/f/xdalpoav"
+                        method="POST"
+                    >
+                        <h2 id="support-form-title">Envíanos tu consulta</h2>
+
+                        <p class="form-intro">
+                            Completa los campos y explícanos tu caso con el mayor
+                            detalle posible para que podamos orientarte mejor.
+                        </p>
+
                         <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" placeholder="Tu nombre" required>
+                            <label for="nombre">Nombre</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Tu nombre"
+                                autocomplete="name"
+                                maxlength="100"
+                                required
+                            >
                         </div>
 
                         <div class="form-group">
-                            <label>Correo Electrónico</label>
-                            <input type="email" name="email" placeholder="correo@ejemplo.com" required>
+                            <label for="email">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="correo@ejemplo.com"
+                                autocomplete="email"
+                                maxlength="254"
+                                required
+                            >
                         </div>
 
                         <div class="form-group">
-                            <label>Mensaje</label>
-                            <textarea name="mensaje" rows="5" placeholder="Cuéntanos más detalles..."
-                                required></textarea>
+                            <label for="tipo-consulta">¿En qué podemos ayudarte?</label>
+                            <select
+                                id="tipo-consulta"
+                                name="tipo_consulta"
+                                required
+                                style="width: 100%; max-width: 100%; font: inherit;"
+                            >
+                                <option value="" selected disabled>Selecciona una opción</option>
+                                <option value="Soporte técnico">Soporte técnico</option>
+                                <option value="Problema con software">Problema con software</option>
+                                <option value="Solicitud de software">Solicitud de software</option>
+                                <option value="Consulta sobre productos o servicios">Consulta sobre productos o servicios</option>
+                                <option value="Otro">Otro motivo</option>
+                            </select>
                         </div>
 
-                        <button type="submit" class="btn-download" target="_blank">
-                            Enviar Mensaje
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                placeholder="Cuéntanos qué sucede o qué necesitas..."
+                                maxlength="5000"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-download submit-button">
+                            Enviar mensaje
                         </button>
+
+                        <p class="form-note">
+                            Utilizaremos los datos que nos facilites para responder
+                            a tu consulta. No incluyas contraseñas ni información
+                            confidencial en el mensaje.
+                        </p>
                     </form>
                 </section>
 
-                <aside class="support-info">
-                    <div class="info-card social-card">
-                        <h3>Síguenos en YouTube</h3>
-                        <p>Mira los tutoriales de instalación y las últimas novedades tecnológicas en nuestro canal
-                            oficial.</p>
+                <!-- CANALES DE CONTACTO -->
+                <aside class="support-info" aria-label="Otros canales de ayuda">
+
+                    <section class="info-card social-card">
+                        <h2>Síguenos en YouTube</h2>
+
+                        <p>
+                            Descubre tutoriales, novedades tecnológicas y contenido
+                            sobre herramientas digitales en nuestro canal oficial.
+                        </p>
 
                         <div class="social-links">
-                            <a href="https://www.youtube.com/@tecnoicymi" target="_blank" class="social-btn youtube">
-                                <span>▶</span> Ir al Canal
+                            <a
+                                href="https://www.youtube.com/@tecnoicymi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn youtube"
+                                aria-label="Visitar el canal de YouTube de Tecnoicymi"
+                            >
+                                <span aria-hidden="true">▶</span>
+                                Ir al canal
+                                <span aria-hidden="true">↗</span>
                             </a>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="info-card community-card">
-                        <h3>Comunidad</h3>
-                        <p>¿Tienes dudas rápidas? Únete a nuestro grupo de ayuda.</p>
-                        <a href="#" class="card-action">Telegram Oficial →</a>
-                    </div>
+                    <section class="info-card community-card">
+                        <h2>Comunidad</h2>
+
+                        <p>
+                            ¿Tienes dudas rápidas o quieres mantenerte al tanto
+                            de las novedades? Estamos preparando este espacio
+                            para nuestra comunidad.
+                        </p>
+
+                        <!-- Sustituye este bloque por el enlace oficial cuando esté disponible. -->
+                        <span class="community-pending">
+                            Comunidad: enlace pendiente de configurar.
+                        </span>
+                    </section>
+
+                    <section class="info-card">
+                        <h2>¿Prefieres WhatsApp?</h2>
+
+                        <p>
+                            También puedes escribirnos directamente para realizar
+                            una consulta.
+                        </p>
+
+                        <div class="social-links">
+                            <a
+                                href="https://wa.me/593982541923"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                            >
+                                Contactar por WhatsApp
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </section>
+
                 </aside>
-
             </div>
         </main>
     </div>
+
     <div id="footer-placeholder"></div>
 
     <script src="../assets/js/main.js"></script>
-    <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
+
+    <a
+        href="https://wa.me/593982541923"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar a Tecnoicymi por WhatsApp"
+    >
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt=""
+            loading="lazy"
+        >
         <span class="float-text">¿Necesitas ayuda?</span>
     </a>
 </body>
-
 </html>
+```

@@ -1,3 +1,4 @@
+
 /**
  * TECNOICYMI - Main JavaScript
  * Maneja la carga dinámica de componentes y la navegación inteligente.
@@ -11,51 +12,79 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function getRootPath() {
         const path = window.location.pathname;
-    
+
         // Nivel 3: software/sistemas-operativos/archivo.html
-        if (path.includes('/sistemas-operativos/') ||
+        if (
+            path.includes('/sistemas-operativos/') ||
             path.includes('/ofimatica/') ||
-            path.includes('/multimedia/')) {
+            path.includes('/multimedia/')
+        ) {
             return '../../../';
         }
-    
-        // Nivel 2: recursos/software/index.html O recursos/guias/index.html
-        if (path.includes('/recursos/software/') || path.includes('/recursos/guias/') || path.includes('/recursos/historias/')) {
+
+        // Nivel 2: recursos/software/index.html,
+        // recursos/guias/index.html o recursos/historias/
+        if (
+            path.includes('/recursos/software/') ||
+            path.includes('/recursos/guias/') ||
+            path.includes('/recursos/historias/')
+        ) {
             return '../../';
         }
-    
-        // Nivel 1: recursos/index.html o soporte/index.html
-        if (path.includes('/recursos/') || path.includes('/soporte/') || path.includes('/productos/') ) {
+
+        // Nivel 1: recursos/index.html, soporte/index.html
+        // o productos/index.html
+        if (
+            path.includes('/recursos/') ||
+            path.includes('/soporte/') ||
+            path.includes('/productos/')
+        ) {
             return '../';
         }
-    
-        // Nivel 0: index.html (Raíz)
+
+        // Nivel 0: index.html (raíz)
         return '';
     }
 
     const root = getRootPath();
 
-    // 1. Cargar el Header
+    // =========================================
+    // 1. CARGAR HEADER
+    // =========================================
+
     const headerPlaceholder = document.getElementById('header-placeholder');
+
     if (headerPlaceholder) {
         fetch(`${root}assets/partials/header.html`)
             .then(response => {
-                if (!response.ok) throw new Error('Error al cargar header');
+                if (!response.ok) {
+                    throw new Error('Error al cargar header');
+                }
+
                 return response.text();
             })
             .then(data => {
                 headerPlaceholder.innerHTML = data;
-                // Opcional: Aquí puedes añadir lógica para resaltar el link activo
+
+                // Aquí se puede añadir lógica para resaltar
+                // el enlace activo de navegación.
             })
             .catch(err => console.error(err));
     }
 
-    // 2. Cargar el Footer
+    // =========================================
+    // 2. CARGAR FOOTER
+    // =========================================
+
     const footerPlaceholder = document.getElementById('footer-placeholder');
+
     if (footerPlaceholder) {
         fetch(`${root}assets/partials/footer.html`)
             .then(response => {
-                if (!response.ok) throw new Error('Error al cargar footer');
+                if (!response.ok) {
+                    throw new Error('Error al cargar footer');
+                }
+
                 return response.text();
             })
             .then(data => {
@@ -64,8 +93,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(err => console.error(err));
     }
 
-    /*FILTRO BUSQEUDAS*/
-    // --- LÓGICA DE BÚSQUEDA Y FILTRADO ---
+    // =========================================
+    // 3. BÚSQUEDA Y FILTRADO DE SOFTWARE
+    // =========================================
+
     const searchInput = document.getElementById('softwareSearch');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
 
@@ -80,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 items.forEach(item => {
                     const text = item.textContent.toLowerCase();
+
                     if (text.includes(value)) {
                         item.classList.remove('hidden');
                         hasVisibleItems = true;
@@ -88,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-                // Si la categoría no tiene items visibles, se oculta el bloque completo
+                // Ocultar categorías sin resultados.
                 if (hasVisibleItems) {
                     block.classList.remove('hidden');
                 } else {
@@ -96,50 +128,65 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Ocultar botón "Cargar más" mientras se busca
-            if (value.length > 0) {
-                loadMoreBtn.classList.add('hidden');
-            } else {
-                loadMoreBtn.classList.remove('hidden');
-                // Aquí podrías reiniciar la paginación si quieres
+            // Ocultar o mostrar "Cargar más" si existe.
+            if (loadMoreBtn) {
+                if (value.length > 0) {
+                    loadMoreBtn.classList.add('hidden');
+                } else {
+                    loadMoreBtn.classList.remove('hidden');
+                }
             }
         });
     }
 
-    // --- LÓGICA CARGAR MÁS (SIMULADA) ---
-    // Supongamos que inicialmente solo mostramos 2 bloques de categorías
+    // =========================================
+    // 4. PAGINACIÓN DE CATEGORÍAS
+    // =========================================
+
+    // Mostrar inicialmente dos categorías.
     let visibleCategories = 2;
+
     const allCategories = document.querySelectorAll('.category-block');
 
     function initPaginacion() {
-        allCategories.forEach((cat, index) => {
-            if (index >= visibleCategories) cat.classList.add('hidden');
+        allCategories.forEach((category, index) => {
+            if (index >= visibleCategories) {
+                category.classList.add('hidden');
+            }
         });
     }
 
-    loadMoreBtn?.addEventListener('click', () => {
-        visibleCategories += 2; // Mostramos 2 más cada vez
-        allCategories.forEach((cat, index) => {
-            if (index < visibleCategories) cat.classList.remove('hidden');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            visibleCategories += 2;
+
+            allCategories.forEach((category, index) => {
+                if (index < visibleCategories) {
+                    category.classList.remove('hidden');
+                }
+            });
+
+            if (visibleCategories >= allCategories.length) {
+                loadMoreBtn.classList.add('hidden');
+            }
         });
+    }
 
-        if (visibleCategories >= allCategories.length) {
-            loadMoreBtn.classList.add('hidden');
-        }
-    });
-
-    // Arrancar paginación
+    // Iniciar paginación solo si hay categorías.
     if (allCategories.length > visibleCategories) {
         initPaginacion();
-    } else {
-        loadMoreBtn?.classList.add('hidden');
+    } else if (loadMoreBtn) {
+        loadMoreBtn.classList.add('hidden');
     }
 
-    // Movimiento suave del fondo (Blob)
+    // =========================================
+    // 5. MOVIMIENTO DEL FONDO (BLOB)
+    // =========================================
+
     document.addEventListener('mousemove', (e) => {
         const blob = document.querySelector('.blob');
+
         if (blob) {
-            // Usamos una pequeña fórmula para que el movimiento sea fluido
             const x = e.clientX;
             const y = e.clientY;
 
@@ -147,17 +194,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Lógica de Filtrado de Productos
+    // =========================================
+    // 6. FILTRADO DE PRODUCTOS
+    // =========================================
+
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', () => {
-            // Quitar clase active de todos y ponerla al clicado
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+
+            // Actualizar el botón activo.
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
             button.classList.add('active');
 
             const filter = button.getAttribute('data-filter');
 
+            // Mostrar u ocultar productos según la categoría.
             document.querySelectorAll('.product-item').forEach(item => {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                if (
+                    filter === 'all' ||
+                    item.getAttribute('data-category') === filter
+                ) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
@@ -166,7 +224,37 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    ///HISTORIAS
+    // =========================================
+    // 7. SIGNIFICADO DE TECNOICYMI
+    // =========================================
 
-   
+    const secretToggle = document.getElementById('secretToggle');
+    const secretText = document.getElementById('secretText');
+
+    if (secretToggle && secretText) {
+        secretToggle.addEventListener('click', () => {
+
+            const isExpanded =
+                secretToggle.getAttribute('aria-expanded') === 'true';
+
+            // Mostrar u ocultar el significado.
+            secretText.hidden = isExpanded;
+
+            // Actualizar el estado accesible del botón.
+            secretToggle.setAttribute(
+                'aria-expanded',
+                String(!isExpanded)
+            );
+
+            // Actualizar el texto del botón.
+            secretToggle.textContent = isExpanded
+                ? 'Descubre el significado →'
+                : 'Ocultar significado ↑';
+        });
+    }
+
+    // =========================================
+    // 8. HISTORIAS
+    // =========================================
+
 });

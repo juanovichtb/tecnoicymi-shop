@@ -1,124 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contenido Digital | Tecnoicymi</title>
+    <meta name="description" content="Descubre libros digitales, guías educativas imprimibles, relatos de misterio y recursos exclusivos en Tecnoicymi. Explora nuestro catálogo de contenido digital.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F8FAFC">
+
+    <meta property="og:title" content="Contenido Digital | Tecnoicymi">
+    <meta property="og:description" content="Libros, guías educativas, relatos y recursos digitales para aprender, explorar y descubrir nuevas ideas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tecnoicymi.com/productos/digital.html">
+    <meta property="og:image" content="https://www.tecnoicymi.com/assets/img/logo-icon.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contenido Digital | Tecnoicymi">
+    <meta name="twitter:description" content="Explora libros, guías educativas y relatos digitales en Tecnoicymi.">
+
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
+
 <body>
-    <div class="blob"></div>
+    <div class="blob" aria-hidden="true"></div>
     <div id="header-placeholder"></div>
 
     <main class="container">
         <header class="section-header">
             <a href="index.html" class="btn-back-nav">Volver a Departamentos</a>
+
             <h1>Contenido Digital</h1>
-            <p>Explora nuestros recursos exclusivos.</p>
+            <p>Libros, guías y relatos para aprender, descubrir y explorar nuevas ideas.</p>
         </header>
 
         <div class="search-container">
-            <input type="text" id="productSearch" placeholder="¿Qué estás buscando? (ej: perros, office, ssd...)" onkeyup="filterProducts()">
-            <i class="search-icon">🔍</i>
+            <div class="search-wrapper">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="¿Qué estás buscando? Ej.: Bitcoin, trazos, misterio..."
+                    aria-label="Buscar contenido digital"
+                    autocomplete="off"
+                >
+                <span class="search-icon" aria-hidden="true">🔍</span>
+            </div>
         </div>
-    
-        <h2 class="category-title"> Productos</h2>
-        <div class="products-grid">
 
-            <a href="../libros/bitcoin.html" class="category-card" target="_blank">
-                <div class="cat-icon">📖</div>
+        <div class="products-grid" id="digitalProducts">
+
+            <a
+                href="../libros/bitcoin.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">📖</div>
                 <h3>Invertir en Bitcoin o Esclavitud</h3>
                 <p>Una mirada a la historia del dinero, la inflación, el sistema monetario y Bitcoin, desde la perspectiva del autor.</p>
                 <span class="item-count">Ver Stock</span>
             </a>
 
-            <a href="../libros/sigma.html" class="category-card" target="_blank">
-                <div class="cat-icon">📖</div>
+            <a
+                href="../libros/sigma.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">📖</div>
                 <h3>SIGMA</h3>
                 <p>Explora comportamiento humano, relaciones, dinámica social, propósito, estrategia y desarrollo personal desde una perspectiva directa y pragmática.</p>
                 <span class="item-count">Ver Stock</span>
             </a>
 
-            <a href="../ofertas/trazos.html" class="category-card" target="_blank">
-                <div class="cat-icon">🌿✏️</div>
+            <a
+                href="../ofertas/trazos.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">🌿✏️</div>
                 <h3>Guía de Trazos sin Frustración</h3>
                 <p>Guía estructurada en PDF imprimible para padres y madres que quieren enseñar los primeros trazos y letras con calma, seguridad y sin correcciones constantes.</p>
                 <span class="item-count">Ver Stock</span>
             </a>
 
-            <a href="../ofertas/abecedarioMundo.html" class="category-card" target="_blank">
-                <div class="cat-icon">🌿✏️</div>
+            <a
+                href="../ofertas/abecedarioMundo.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">🌿✏️</div>
                 <h3>Libro Educativo para Colorear y Aprender</h3>
                 <p>Descubre países, animales y culturas mientras aprendes las letras. Más de 20 actividades educativas para colorear, imprimir y disfrutar en casa. Ideal para niños de 4 a 7 años.</p>
                 <span class="item-count">Ver Stock</span>
             </a>
 
-            <a href="../libros/Expedientenohumano.html" class="category-card" target="_blank">
-                <div class="cat-icon">📂</div>
+            <a
+                href="../libros/Expedientenohumano.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">📂</div>
                 <h3>Expediente No Humano</h3>
                 <p>Investigaciones, misterios, fenómenos y relatos fascinantes recopilados bajo una perspectiva de misterio y exploración crítica.</p>
                 <span class="item-count">Ver Expediente</span>
             </a>
 
-            <a href="../libros/lamanodeluz.html" class="category-card" target="_blank">
-                <div class="cat-icon">💡</div>
+            <a
+                href="../libros/lamanodeluz.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">💡</div>
                 <h3>La Mano de Luz</h3>
                 <p>Explora este contenido especial lleno de ideas, inspiración y relatos diseñados para conectar con la curiosidad y la reflexión.</p>
                 <span class="item-count">Ver Proyecto</span>
             </a>
 
-            <a href="../libros/LaNocheDeLosTresSignos.html" class="category-card" target="_blank">
-                <div class="cat-icon">🌙</div>
+            <a
+                href="../libros/LaNocheDeLosTresSignos.html"
+                class="category-card"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <div class="cat-icon" aria-hidden="true">🌙</div>
                 <h3>La Noche de los Tres Signos</h3>
                 <p>Sumérgete en este relato de misterio y atmósfera oscura diseñado para atrapar tu curiosidad de principio a fin.</p>
                 <span class="item-count">Leer Relato</span>
             </a>
 
         </div>
-    
 
-    
+        <p id="noResults" role="status" hidden>
+            No encontramos contenido que coincida con tu búsqueda.
+        </p>
     </main>
+
     <div id="footer-placeholder"></div>
+
     <script src="../assets/js/main.js"></script>
+
     <script>
-function filterProducts() {
-    let input = document.getElementById('productSearch').value.toLowerCase();
-    let grids = document.getElementsByClassName('products-grid');
-    let titles = document.getElementsByClassName('category-title');
+        (() => {
+            const searchInput = document.getElementById('productSearch');
+            const cards = document.querySelectorAll('#digitalProducts .category-card');
+            const noResults = document.getElementById('noResults');
+            const categoryTitle = document.querySelector('.category-title');
+            const productsGrid = document.getElementById('digitalProducts');
 
-    for (let i = 0; i < grids.length; i++) {
-        let cards = grids[i].getElementsByClassName('product-card');
-        let hasVisibleCards = false;
+            function filterProducts() {
+                const query = searchInput.value.trim().toLocaleLowerCase('es');
+                let visibleCount = 0;
 
-        for (let j = 0; j < cards.length; j++) {
-            let productName = cards[j].getElementsByTagName('h3')[0].innerText.toLowerCase();
-            let productDesc = cards[j].getElementsByTagName('p')[0].innerText.toLowerCase();
+                cards.forEach((card) => {
+                    const content = card.textContent.toLocaleLowerCase('es');
+                    const matches = content.includes(query);
 
-            if (productName.includes(input) || productDesc.includes(input)) {
-                cards[j].style.display = "";
-                hasVisibleCards = true;
-            } else {
-                cards[j].style.display = "none";
+                    card.hidden = !matches;
+
+                    if (matches) {
+                        visibleCount++;
+                    }
+                });
+
+                noResults.hidden = visibleCount > 0;
+                categoryTitle.hidden = visibleCount === 0;
+                productsGrid.hidden = visibleCount === 0;
             }
-        }
 
-        // Si la categoría no tiene productos visibles, esconde el título y el grid
-        if (hasVisibleCards) {
-            titles[i].style.display = "";
-            grids[i].style.display = "grid"; // O "" según tu CSS
-        } else {
-            titles[i].style.display = "none";
-            grids[i].style.display = "none";
-        }
-    }
-}
-        </script>
-        <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
-            <span class="float-text">¿Necesitas ayuda?</span>
-        </a>
+            searchInput.addEventListener('input', filterProducts);
+        })();
+    </script>
+
+    <a
+        href="https://wa.me/593982541923"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar a Tecnoicymi por WhatsApp"
+    >
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt=""
+            loading="lazy"
+        >
+        <span class="float-text">¿Necesitas ayuda?</span>
+    </a>
 </body>
 </html>

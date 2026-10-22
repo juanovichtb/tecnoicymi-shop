@@ -1,78 +1,140 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8FAFC">
+
     <title>Recursos | Tecnoicymi</title>
+    <meta name="description" content="Explora los recursos de Tecnoicymi: asesoría de equipos, minijuegos, herramientas interactivas, aplicaciones y guías tecnológicas.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Recursos | Tecnoicymi">
+    <meta property="og:description" content="Descubre herramientas interactivas, juegos, guías y recursos tecnológicos para aprender y divertirte.">
+    <meta property="og:url" content="https://www.tecnoicymi.com/recursos/">
+
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <!-- Tipografías de TECNOICYMI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos globales -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
+
 <body>
     <div class="content-wrapper">
-    <div class="blob"></div>
+        <div class="blob" aria-hidden="true"></div>
 
-    <div id="header-placeholder"></div>
+        <div id="header-placeholder"></div>
 
-    <main class="container">
-        <header class="section-header">
-            <span class="badge">Laboratorio Tecnológico</span>
-            <h1>Curiosidad en cada bit</h1>
-            <p>Aprende a dominar tus herramientas, descubre software único y explora historias que no conocías.</p>
-        </header>
+        <main class="container">
+            <header class="section-header">
+                <span class="badge">Laboratorio Tecnológico</span>
+                <h1>Curiosidad en cada bit</h1>
+                <p>
+                    Explora herramientas únicas, minijuegos interactivos y contenidos
+                    diseñados para agilizar tu mente y pasar un buen rato.
+                </p>
+            </header>
 
-        <section class="grid-recursos">
-            
-             <a href="../proyectos/asesoriaEquipos.html" class="category-card" target="_blank">
-                <div class="cat-icon">💻</div>
-                <h3>Asesoría de Equipos</h3>
-                <p>Orientación técnica especializada en hardware, optimización y selección de equipos tecnológicos a tu medida de forma directa y profesional.</p>
-                <span class="item-count">Ver Asesoría</span>
-            </a>
+            <section class="grid-recursos" aria-label="Catálogo de recursos">
 
-            <a href="https://tecnoicymi-boxeo.ai.studio/" class="category-card" target="_blank">
-                <div class="cat-icon">🎮</div>
-                <h3>Minijuego de Boxeo</h3>
-                <p>Pon a prueba tus reflejos en este divertido juego al estilo del dinosaurio de Google Chrome adaptado al cuadrilátero.</p>
-                <span class="item-count">Jugar Ahora</span>
-            </a>
+                <a href="../proyectos/asesoriaEquipos.html"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">💻</div>
+                    <h3>Asesoría de Equipos</h3>
+                    <p>
+                        Orientación técnica especializada en hardware, optimización
+                        y selección de equipos tecnológicos a tu medida de forma
+                        directa y profesional.
+                    </p>
+                    <span class="item-count">Ver Asesoría</span>
+                </a>
 
-            <a href="../proyectos/noeramicelular.html" class="category-card" target="_blank">
-                <div class="cat-icon">💬</div>
-                <h3>Chats Divertidos</h3>
-                <p>Crea conversaciones y capturas de WhatsApp simuladas para pasar un rato divertido, jugar bromas y sorprender a tus amigos.</p>
-                <span class="item-count">Probar Broma</span>
-            </a>
+                <a href="https://tecnoicymi-boxeo.ai.studio/"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">🎮</div>
+                    <h3>Minijuego de Boxeo</h3>
+                    <p>
+                        Pon a prueba tus reflejos en este divertido juego al estilo
+                        del dinosaurio de Google Chrome adaptado al cuadrilátero.
+                    </p>
+                    <span class="item-count">Jugar Ahora</span>
+                </a>
 
-            <a href="https://mi-diario-de-lectura.ai.studio/" class="category-card" target="_blank">
-                <div class="cat-icon">📓</div>
-                <h3>Diario de Lectura</h3>
-                <p>Un espacio interactivo para registrar tus lecturas, apuntar reflexiones, frases destacadas y organizar tu viaje a través de los libros.</p>
-                <span class="item-count">Explorar Diario</span>
-            </a>
+                <a href="../proyectos/noeramicelular.html"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">💬</div>
+                    <h3>Chats Divertidos</h3>
+                    <p>
+                        Crea conversaciones y capturas de WhatsApp simuladas para
+                        pasar un rato divertido, jugar bromas y sorprender a tus amigos.
+                    </p>
+                    <span class="item-count">Probar Broma</span>
+                </a>
 
-            <a href="https://generador-de-pareja-ideal.ai.studio/" class="category-card" target="_blank">
-                <div class="cat-icon">✨</div>
-                <h3>Generador de Pareja Ideal</h3>
-                <p>Una herramienta interactiva y divertida para explorar afinidades, características y pasar un momento entretenido descubriendo conexiones.</p>
-                <span class="item-count">Probar App</span>
-            </a>
+                <a href="https://mi-diario-de-lectura.ai.studio/"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">📓</div>
+                    <h3>Diario de Lectura</h3>
+                    <p>
+                        Un espacio interactivo para registrar tus lecturas, apuntar
+                        reflexiones, frases destacadas y organizar tu viaje a través
+                        de los libros.
+                    </p>
+                    <span class="item-count">Explorar Diario</span>
+                </a>
 
-            <a href="https://www.tecnoicymi.com/proyectos/amazonkdp.html" class="category-card" target="_blank">
-                <div class="cat-icon">📚</div>
-                <h3>Publicación en Amazon KDP</h3>
-                <p>Guías, recursos y estrategias prácticas para crear, formatear y publicar tus propios libros y cuadernos digitales en la plataforma de Amazon.</p>
-                <span class="item-count">Ver Guía</span>
-            </a>
+                <a href="https://generador-de-pareja-ideal.ai.studio/"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">✨</div>
+                    <h3>Generador de Pareja Ideal</h3>
+                    <p>
+                        Una herramienta interactiva y divertida para explorar
+                        afinidades, características y pasar un momento entretenido
+                        descubriendo conexiones.
+                    </p>
+                    <span class="item-count">Probar App</span>
+                </a>
 
+                <a href="https://www.tecnoicymi.com/proyectos/amazonkdp.html"
+                   class="category-card"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <div class="cat-icon" aria-hidden="true">📚</div>
+                    <h3>Publicación en Amazon KDP</h3>
+                    <p>
+                        Guías, recursos y estrategias prácticas para crear, formatear
+                        y publicar tus propios libros y cuadernos digitales en la
+                        plataforma de Amazon.
+                    </p>
+                    <span class="item-count">Ver Guía</span>
+                </a>
 
+            </section>
+        </main>
+    </div>
 
-        </section>
-    </main>
-</div>
     <div id="footer-placeholder"></div>
 
     <script src="../assets/js/main.js"></script>
-    
 </body>
 </html>
+```

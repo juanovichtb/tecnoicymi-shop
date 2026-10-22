@@ -1,231 +1,338 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8FAFC">
 
     <title>Tecnoicymi | Licencias Digitales y Software Pro</title>
+    <meta name="description" content="Explora el catálogo de licencias digitales de Tecnoicymi: Windows, Microsoft 365, antivirus, CapCut Pro, Canva Pro, Adobe Creative Cloud y herramientas de inteligencia artificial.">
+    <meta name="robots" content="index, follow">
 
-    <meta property="og:title" content="🚀 Tienda de Software Original | Tecnoicymi">
-    <meta property="og:description"
-        content="Licencias de Windows, Office, CapCut y Antivirus. Entrega inmediata y activación garantizada.">
-
+    <!-- Metadatos para compartir -->
+    <meta property="og:title" content="Tienda de Software y Licencias | Tecnoicymi">
+    <meta property="og:description" content="Descubre nuestro catálogo de software, herramientas creativas y soluciones digitales. Consulta disponibilidad y condiciones por WhatsApp.">
     <meta property="og:image" content="https://www.tecnoicymi.com/assets/img/producto/software/software.png">
-
     <meta property="og:url" content="https://www.tecnoicymi.com/productos/licencias.html">
-    <meta property="og:type" content="article">
-
+    <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Icono del sitio -->
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos globales -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
 <body>
-    <div class="blob"></div>
+    <div class="blob" aria-hidden="true"></div>
+
     <div id="header-placeholder"></div>
 
     <main class="container">
         <header class="section-header">
-            <a href="index.html" class="btn-back-nav">Volver a Departamentos</a>
             <h1>Licencias Originales</h1>
-            <p>Activación garantizada, soporte técnico y entrega digital inmediata.</p>
+            <p>Activación, soporte y soluciones digitales para tus necesidades.</p>
         </header>
 
-        <div class="search-container">
+        <!-- Buscador de productos -->
+        <section class="search-container" aria-label="Buscar licencias">
             <div class="search-wrapper">
-                <input type="text" id="productSearch" placeholder="Escribe para buscar..." onkeyup="filterProducts()">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Buscar Windows, Office, Canva..."
+                    aria-label="Buscar productos por nombre o características"
+                    oninput="filterProducts()"
+                >
             </div>
-        </div>
+        </section>
 
-        <div class="products-grid">
+        <!-- Catálogo de licencias -->
+        <section class="products-grid" aria-label="Catálogo de licencias digitales">
 
-            <div class="product-card software-card">
+            <!-- Windows 11 Pro -->
+            <article class="product-card software-card">
                 <div class="operator-badge">Más Popular</div>
+
                 <div class="logo-container">
-                    <img src="/assets/img/windows11-logo.svg" alt="windows11" class="op-img">
+                    <img
+                        src="/assets/img/windows11-logo.svg"
+                        alt="Windows 11"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
+
                 <h3>Windows 11 Pro</h3>
+
                 <ul class="price-list">
                     <li><span>Tipo:</span> OEM / Retail</li>
                     <li><span>Duración:</span> Permanente</li>
                     <li><span>Dispositivos:</span> 1 PC</li>
-                    <li><span>Arquitectura:</span> 64 Bits</li>
+                    <li><span>Arquitectura:</span> 64 bits</li>
                 </ul>
+
                 <div class="price-tag">$15.00 - Oferta Tech</div>
-                <a href="https://wa.me/593982541923?text=Hola, solicito licencia de Windows 11 Pro" class="btn-download"
-                    target="_blank">Comprar Ahora</a>
-            </div>
 
-            <div class="product-card software-card">
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20licencia%20de%20Windows%2011%20Pro"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
+
+            <!-- McAfee -->
+            <article class="product-card software-card">
                 <div class="logo-container">
-                    <img src="/assets/img/mcafee-logo.png" alt="Mcafee" class="op-img">
+                    <img
+                        src="/assets/img/mcafee-logo.png"
+                        alt="McAfee Antivirus"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
-                <h3>Mcafee Antivirus</h3>
+
+                <h3>McAfee Antivirus</h3>
+
                 <ul class="price-list">
-                    <li><span>Protección:</span> 3 Años</li>
+                    <li><span>Protección:</span> 3 años</li>
                     <li><span>Dispositivo:</span> 1 PC</li>
-                    <li><span>Soporte:</span> Oficial MCAFEE</li>
+                    <li><span>Soporte:</span> Oficial McAfee</li>
                 </ul>
+
                 <div class="price-tag">$25.00 - Seguridad Total</div>
-                <a href="https://wa.me/593982541923?text=Hola, solicito licencia de Mcafee 2 años 1 pc"
-                    class="btn-download" target="_blank">Comprar Ahora</a>
-            </div>
 
-            <div class="product-card software-card">
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20la%20licencia%20de%20McAfee%20para%201%20PC"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
+
+            <!-- Microsoft 365 -->
+            <article class="product-card software-card">
                 <div class="logo-container">
-                    <img src="/assets/img/office365-logo.png" alt="office365" class="op-img">
+                    <img
+                        src="/assets/img/office365-logo.png"
+                        alt="Microsoft 365"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
+
                 <h3>Microsoft 365</h3>
-                <ul class="price-list">
-                    <li><span>Duración:</span> Permanente</li>
-                    <li><span>Almacenamiento:</span> 1TB OneDrive</li>
-                    <li><span>Dispositivos:</span> 5 a la vez</li>
-                    <li><span>Apps:</span> Siempre actualizadas</li>
-                </ul>
-                <div class="price-tag">$15.00 - Ofecta Tech</div>
-                <a href="https://wa.me/593982541923?text=Hola, solicito cuenta de Microsoft 365" class="btn-download"
-                    target="_blank">Comprar Ahora</a>
-            </div>
 
-            <div class="product-card software-card">
+                <ul class="price-list">
+                    <li><span>Duración:</span> Consultar condiciones</li>
+                    <li><span>Almacenamiento:</span> 1 TB en OneDrive</li>
+                    <li><span>Dispositivos:</span> Hasta 5 a la vez</li>
+                    <li><span>Aplicaciones:</span> Actualizadas</li>
+                </ul>
+
+                <div class="price-tag">$15.00 - Oferta Tech</div>
+
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Microsoft%20365"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
+
+            <!-- CapCut Pro -->
+            <article class="product-card software-card">
                 <div class="logo-container">
-                    <img src="/assets/img/capcut-logo.png" alt="CapCut Pro" class="op-img">
+                    <img
+                        src="/assets/img/capcut-logo.png"
+                        alt="CapCut Pro"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
+
                 <h3>CapCut Pro</h3>
+
                 <ul class="price-list">
                     <li><span>Funciones:</span> Efectos y transiciones Pro</li>
-                    <li><span>Almacenamiento:</span> 100GB Cloud Space</li>
-                    <li><span>Calidad:</span> Exportación 4K y sin marca de agua</li>
-                    <li><span>Vigencia:</span> 1,3,4,5, 6 o 12 Meses</li>
+                    <li><span>Almacenamiento:</span> 100 GB en la nube</li>
+                    <li><span>Calidad:</span> Opciones avanzadas de exportación</li>
+                    <li><span>Vigencia:</span> 1, 3, 4, 5, 6 o 12 meses</li>
                 </ul>
+
                 <div class="price-tag">Desde $5.00 - Oferta Tech</div>
 
-                <a href="https://wa.me/593982541923?text=Hola, solicito información sobre las licencias de CapCut Pro (1, 6 o 12 meses)"
-                    class="btn-download" target="_blank">Comprar Ahora</a>
-            </div>
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20las%20licencias%20de%20CapCut%20Pro%20y%20sus%20periodos%20de%20vigencia"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
 
-            <div class="product-card software-card">
+            <!-- Canva Pro -->
+            <article class="product-card software-card">
                 <div class="logo-container">
-                    <img src="/assets/img/canva-logo.png" alt="Canva Pro" class="op-img">
+                    <img
+                        src="/assets/img/canva-logo.png"
+                        alt="Canva Pro"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3>Canva Pro - Full Acceso</h3>
 
                 <ul class="price-list">
-                    <li><span>Suscripción:</span> 1 Año Completo</li>
-                    <li><span>Tipo:</span> Cuenta Personal / Privada</li>
-                    <li><span>Premium:</span> +100M Fotos y Elementos</li>
-                    <li><span>Funciones:</span> Quitar Fondo y Programar</li>
-                    <li><span>Garantía:</span> Soporte Técnico Incluido</li>
+                    <li><span>Suscripción:</span> 1 año completo</li>
+                    <li><span>Tipo:</span> Cuenta personal / privada</li>
+                    <li><span>Contenido:</span> Fotos y elementos premium</li>
+                    <li><span>Funciones:</span> Quitar fondo y programar</li>
+                    <li><span>Garantía:</span> Soporte técnico incluido</li>
                 </ul>
 
                 <div class="price-tag">$10.00 - Oferta Tech</div>
 
-                <a href="https://wa.me/593982541923?text=Hola, solicito información de la suscripción Canva Pro por 1 año"
-                    class="btn-download" target="_blank">
-                    Comprar Ahora
-                </a>
-            </div>
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20de%20la%20suscripci%C3%B3n%20Canva%20Pro%20por%201%20a%C3%B1o"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
 
-            <div class="product-card software-card">
+            <!-- Adobe Creative Cloud -->
+            <article class="product-card software-card">
                 <div class="badge-premium">Edición Pro</div>
+
                 <div class="logo-container">
-                    <img src="/assets/img/adobe-logo.png" alt="Adobe Creative Cloud Pro" class="op-img">
+                    <img
+                        src="/assets/img/adobe-logo.png"
+                        alt="Adobe Creative Cloud Pro"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3>Adobe Creative Cloud Pro</h3>
 
                 <ul class="price-list">
-                    <li><span>Apps:</span> +20 Aplicaciones (Ps, Ai, Pr, Ae)</li>
-                    <li><span>IA Generativa:</span> Adobe Firefly Incluido</li>
-                    <li><span>Créditos:</span> 4000 créditos IA mensuales</li>
-                    <li><span>Recursos:</span> Adobe Fonts + Adobe Stock Free</li>
-                    <li><span>Extras:</span> 100GB Nube + Adobe Portfolio</li>
+                    <li><span>Aplicaciones:</span> Photoshop, Illustrator, Premiere y más</li>
+                    <li><span>IA generativa:</span> Adobe Firefly</li>
+                    <li><span>Créditos:</span> Consultar plan disponible</li>
+                    <li><span>Recursos:</span> Fuentes y recursos creativos</li>
+                    <li><span>Almacenamiento:</span> Consultar condiciones</li>
                 </ul>
 
                 <div class="price-tag">$60.00 - Oferta Tech</div>
 
-                <a href="https://wa.me/593982541923?text=Hola, solicito la licencia Adobe Creative Cloud Pro con IA Firefly (3 meses)"
-                    class="btn-download" target="_blank">
-                    Comprar Ahora
-                </a>
-            </div>
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20sobre%20Adobe%20Creative%20Cloud%20Pro%20y%20sus%20planes%20disponibles"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
 
-            <div class="product-card software-card">
-                <div class="badge-premium">Suscripción 1 Año</div>
+            <!-- Perplexity Pro -->
+            <article class="product-card software-card">
+                <div class="badge-premium">Suscripción 1 año</div>
 
                 <div class="logo-container">
-                    <img src="/assets/img/perplexity-logo.png" alt="Perplexity Pro" class="op-img">
+                    <img
+                        src="/assets/img/perplexity-logo.png"
+                        alt="Perplexity Pro"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
 
                 <h3>Perplexity Pro - IA Pro</h3>
 
                 <ul class="price-list">
-                    <li><span>Duración:</span> 1 Año Completo (12 Meses)</li>
-                    <li><span>Modelos:</span> GPT-4o, Claude 3.5 y Sonar</li>
-                    <li><span>Pro:</span> Consultas ilimitadas y subida de archivos</li>
-                    <li><span>IA Vision:</span> Generación de imágenes integrada</li>
-                    <li><span>Condición:</span> Válido para cuentas nuevas</li>
+                    <li><span>Duración:</span> 1 año (12 meses)</li>
+                    <li><span>Modelos:</span> Según el plan disponible</li>
+                    <li><span>Funciones:</span> Consultas y archivos</li>
+                    <li><span>IA:</span> Herramientas de búsqueda e investigación</li>
+                    <li><span>Condición:</span> Consultar elegibilidad de la cuenta</li>
                 </ul>
 
                 <div class="price-tag">$25.00 - Oferta Tech</div>
 
-                <a href="https://wa.me/593982541923?text=Hola, solicito información de Perplexity Pro por 1 AÑO"
-                    class="btn-download" target="_blank">
-                    Comprar Ahora
-                </a>
-            </div>
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20solicito%20informaci%C3%B3n%20de%20Perplexity%20Pro%20por%201%20a%C3%B1o"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar y comprar</a>
+            </article>
 
-        </div>
+        </section>
+
+        <!-- Mensaje de búsqueda sin resultados -->
+        <p id="no-results" role="status" hidden>
+            <span aria-hidden="true">🔍</span>
+            No encontramos licencias que coincidan con tu búsqueda.
+            Prueba con Windows, Office, Canva o McAfee.
+        </p>
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="../assets/js/main.js"></script>
-    <script>
-        function filterProducts() {
-            let input = document.getElementById('productSearch').value.toLowerCase();
-            let cards = document.getElementsByClassName('product-card');
-            let grid = document.querySelector('.products-grid');
-            let visibleCount = 0;
 
-            // Eliminar mensaje de "no resultados" previo si existe
-            let noResultsMsg = document.getElementById('no-results');
-            if (noResultsMsg) noResultsMsg.remove();
-
-            for (let i = 0; i < cards.length; i++) {
-                // innerText captura el h3 y los li de la lista de precios
-                let content = cards[i].innerText.toLowerCase();
-
-                if (content.includes(input)) {
-                    cards[i].style.display = "flex";
-                    visibleCount++;
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-
-            // Si no hay coincidencias, mostrar mensaje elegante
-            if (visibleCount === 0) {
-                let msg = document.createElement('div');
-                msg.id = 'no-results';
-                msg.innerHTML = `
-            <div style="text-align:center; padding: 40px; color: rgba(255,255,255,0.5);">
-                <p style="font-size: 2rem;">🔍</p>
-                <p>No encontramos licencias que coincidan con "${input}"</p>
-                <p style="font-size: 0.8rem;">Prueba con Windows, Office o Mcafee</p>
-            </div>
-        `;
-                grid.appendChild(msg);
-            }
-        }
-    </script>
-    <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
+    <!-- WhatsApp -->
+    <a
+        href="https://wa.me/593982541923"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar con el soporte de Tecnoicymi por WhatsApp"
+    >
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt=""
+            loading="lazy"
+        >
         <span class="float-text">¿Necesitas ayuda?</span>
     </a>
-</body>
 
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        function filterProducts() {
+            const input = document
+                .getElementById('productSearch')
+                .value
+                .trim()
+                .toLocaleLowerCase('es');
+
+            const cards = document.querySelectorAll('.products-grid .product-card');
+            const noResults = document.getElementById('no-results');
+            let visibleCount = 0;
+
+            cards.forEach(function (card) {
+                const content = card.innerText.toLocaleLowerCase('es');
+                const matches = content.includes(input);
+
+                card.hidden = !matches;
+
+                if (matches) {
+                    visibleCount++;
+                }
+            });
+
+            noResults.hidden = visibleCount !== 0;
+        }
+    </script>
+</body>
 </html>

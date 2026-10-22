@@ -1,120 +1,216 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware Esencial | Tecnoicymi</title>
+
+    <title>Hardware y Componentes | Tecnoicymi</title>
+    <meta name="description" content="Encuentra discos SSD, fuentes de poder, unidades M.2 NVMe y periféricos para tu computadora en Tecnoicymi. Consulta disponibilidad y precios por WhatsApp.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F8FAFC">
+
+    <meta property="og:title" content="Hardware y Componentes | Tecnoicymi">
+    <meta property="og:description" content="Componentes y accesorios para tu computadora. Consulta disponibilidad y precios con Tecnoicymi.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tecnoicymi.com/productos/hardware.html">
+    <meta property="og:image" content="https://www.tecnoicymi.com/assets/img/producto/hardware/ssd-producto.png">
+
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
+
 <body>
-    <div class="blob"></div>
+    <div class="blob" aria-hidden="true"></div>
     <div id="header-placeholder"></div>
 
     <main class="container">
         <header class="section-header">
-            <a href="index.html" class="btn-back-nav">Volver a Departamentos</a>
             <h1>Hardware y Componentes</h1>
-            <p>Piezas garantizadas para repotenciar tu equipo al máximo nivel.</p>
+            <p>Piezas y accesorios para ampliar las posibilidades de tu equipo.</p>
         </header>
 
         <div class="search-container">
             <div class="search-wrapper">
-                <input type="text" id="productSearch" placeholder="Escribe para buscar..." onkeyup="filterProducts()">
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Buscar componentes o accesorios..."
+                    aria-label="Buscar hardware y componentes"
+                    autocomplete="off"
+                >
             </div>
         </div>
 
-        <div class="products-grid">
-            
-            <div class="product-card hardware-card">
+        <div class="products-grid" id="productsGrid">
+
+            <!-- SSD SATA III -->
+            <article class="product-card hardware-card">
                 <div class="logo-container">
-                    <img src="/assets/img/producto/hardware/ssd-producto.png" alt="windows11" class="op-img">
+                    <img
+                        src="/assets/img/producto/hardware/ssd-producto.png"
+                        alt="Unidad de almacenamiento SSD SATA III"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
+
                 <h3>SSD SATA III</h3>
+
                 <ul class="price-list">
-                    <li><span>Capacidad:</span> 240GB / 480GB / 1TB</li>
+                    <li><span>Capacidad:</span> 240 GB / 480 GB / 1 TB</li>
                     <li><span>Velocidad:</span> Hasta 540 MB/s</li>
                     <li><span>Marca:</span> Kingston</li>
-                    <li><span>Conector:</span> Sata</li>
-                    <li><span>Garantía:</span> 1 Año</li>
+                    <li><span>Conector:</span> SATA</li>
+                    <li><span>Garantía:</span> 1 año</li>
                 </ul>
-                <div class="price-tag">Desde $90.00</div>
-                <a href="https://wa.me/593982541923?text=Hola, busco un disco SSD SATA" class="btn-download" target="_blank">Consultar Stock</a>
-            </div>
 
-            <div class="product-card hardware-card">
+                <div class="price-tag">Desde $90.00</div>
+
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20busco%20un%20disco%20SSD%20SATA"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar stock</a>
+            </article>
+
+            <!-- Fuente de poder -->
+            <article class="product-card hardware-card">
                 <div class="logo-container">
-                    <img src="/assets/img/producto/hardware/fuentePoder-producto.png" alt="windows11" class="op-img">
+                    <img
+                        src="/assets/img/producto/hardware/fuentePoder-producto.png"
+                        alt="Fuente de poder para computadora de escritorio"
+                        class="op-img"
+                        loading="lazy"
+                    >
                 </div>
-                <h3>FUENTE DE PODER (Desktop)</h3>
+
+                <h3>Fuente de poder para PC</h3>
+
                 <ul class="price-list">
                     <li><span>Tipo:</span> ATX</li>
-                    <li><span>Capacidad:</span> 850W</li>
-                    <li><span>Conector:</span> 3 Conector SATA / 2 Conectores IDE</li>
-                    <li><span>Uso:</span> PC Desktop</li>
+                    <li><span>Capacidad:</span> 850 W</li>
+                    <li><span>Conectores:</span> 3 SATA / 2 IDE</li>
+                    <li><span>Uso:</span> PC de escritorio</li>
                 </ul>
+
                 <div class="price-tag">Desde $15.00</div>
-                <a href="https://wa.me/593982541923?text=Hola, busco fuente de para para mi desktop" class="btn-download" target="_blank">Consultar Stock</a>
-            </div>
 
-            <div class="product-card hardware-card">
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20busco%20una%20fuente%20de%20poder%20para%20mi%20PC%20de%20escritorio"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar stock</a>
+            </article>
 
-                <div class="logo-container">🚀</div>
+            <!-- SSD M.2 NVMe -->
+            <article class="product-card hardware-card">
+                <div class="logo-container" aria-hidden="true">🚀</div>
+
                 <h3>SSD M.2 NVMe</h3>
+
                 <ul class="price-list">
                     <li><span>Interfaz:</span> PCIe Gen 3.0 / 4.0</li>
                     <li><span>Velocidad:</span> Hasta 3500 MB/s</li>
                     <li><span>Formato:</span> 2280</li>
                     <li><span>Ideal para:</span> Gaming / Diseño</li>
                 </ul>
-                <div class="price-tag">Desde $00.00</div>
-                <a href="https://wa.me/593982541923?text=Hola, busco un disco M.2 NVMe" class="btn-download" target="_blank">Consultar Stock</a>
-            </div>
 
-            <div class="product-card hardware-card">
-                <div class="logo-container">🖱️</div>
-                <h3>Periféricos & Accesorios</h3>
+                <div class="price-tag">Desde $00.00</div>
+
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20busco%20un%20disco%20M.2%20NVMe"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Consultar stock</a>
+            </article>
+
+            <!-- Periféricos y accesorios -->
+            <article class="product-card hardware-card">
+                <div class="logo-container" aria-hidden="true">🖱️</div>
+
+                <h3>Periféricos y accesorios</h3>
+
                 <ul class="price-list">
                     <li><span>Mouse:</span> Ópticos / Gamers</li>
                     <li><span>Teclados:</span> USB / Inalámbricos</li>
                     <li><span>Cámaras:</span> Full HD 1080p</li>
                     <li><span>Cables:</span> HDMI / VGA / Adaptadores</li>
                 </ul>
-                <div class="price-tag">Variedad de Marcas</div>
-                <a href="https://wa.me/593982541923?text=Hola, busco periféricos y accesorios" class="btn-download" target="_blank">Ver Catálogo</a>
-            </div>
+
+                <div class="price-tag">Variedad de marcas</div>
+
+                <a
+                    href="https://wa.me/593982541923?text=Hola%2C%20busco%20perif%C3%A9ricos%20y%20accesorios"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Ver catálogo</a>
+            </article>
 
         </div>
+
+        <p id="noResults" role="status" hidden>
+            No encontramos componentes que coincidan con tu búsqueda.
+        </p>
     </main>
 
     <div id="footer-placeholder"></div>
+
     <script src="../assets/js/main.js"></script>
+
     <script>
-        function filterProducts() {
-            let input = document.getElementById('productSearch').value.toLowerCase();
-            let cards = document.getElementsByClassName('product-card');
-            
-            for (let i = 0; i < cards.length; i++) {
-                // Busca en el título y en la lista de características
-                let content = cards[i].innerText.toLowerCase();
-                
-                if (content.includes(input)) {
-                    cards[i].style.display = "flex"; // Mantiene el diseño flex de tus tarjetas
-                    cards[i].style.animation = "fadeIn 0.3s ease";
-                } else {
-                    cards[i].style.display = "none";
-                }
+        (() => {
+            const searchInput = document.getElementById('productSearch');
+            const cards = document.querySelectorAll('.product-card');
+            const noResults = document.getElementById('noResults');
+
+            function filterProducts() {
+                const query = searchInput.value.trim().toLocaleLowerCase('es');
+                let visibleCount = 0;
+
+                cards.forEach((card) => {
+                    const content = card.textContent.toLocaleLowerCase('es');
+                    const matches = content.includes(query);
+
+                    card.hidden = !matches;
+
+                    if (matches) {
+                        visibleCount++;
+                    }
+                });
+
+                noResults.hidden = visibleCount > 0;
             }
-        }
-        </script>
-        <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
-            <span class="float-text">¿Necesitas ayuda?</span>
-        </a>
-        <a href="https://wa.me/593982541923" class="whatsapp-float" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Soporte Tecnoicymi">
-            <span class="float-text">¿Necesitas ayuda?</span>
-        </a>
+
+            searchInput.addEventListener('input', filterProducts);
+        })();
+    </script>
+
+    <a
+        href="https://wa.me/593982541923"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar al soporte de Tecnoicymi por WhatsApp"
+    >
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+            alt=""
+            loading="lazy"
+        >
+        <span class="float-text">¿Necesitas ayuda?</span>
+    </a>
 </body>
 </html>
+```

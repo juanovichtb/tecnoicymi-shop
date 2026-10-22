@@ -1,84 +1,75 @@
-
-
-
-/*ESTILOS HEADER*/
-/* Asegura que el Header se vea profesional ahora que el archivo carga bien */
-.main-header {
-    height: 80px; 
-    position: fixed; /* O absolute */
+/* =========================================================
+   TECNOICYMI — Cabecera, navegación y pie de página
+   ========================================================= */
+   .main-header {
+    min-height: 80px;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     margin: 0;
-    background: rgba(18, 20, 26, 0.85) !important; 
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
 }
 
 .header-container {
-    /* ... tus estilos ... */
-    pointer-events: auto; /* Esto permite que el logo y el menú sigan funcionando */
-}
-
-.header-container {
-    max-width: 1200px;
+    width: min(1200px, 100%);
+    min-height: 80px;
     margin: 0 auto;
-    padding: 15px 25px;
+    padding: 14px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* ESTO DEVUELVE EL CLIC AL MENÚ */
-    pointer-events: auto; 
+    gap: 24px;
+    pointer-events: auto;
 }
 
-/* Contenedor del logo y texto */
 .logo-wrapper {
-    display: flex;
-    align-items: center; /* Centra verticalmente la imagen con el texto */
-    gap: 12px;           /* Espacio entre el logo y la palabra */
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
+    flex-shrink: 0;
 }
-
-/* layout.css */
 
 .logo-img {
-    height: 35px;
-    width: auto;
-    border-radius: 50%;
-    
-    /* EL TRUCO: Un borde blanco sutil */
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    
+    height: 42px;
+    width: 42px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid var(--border);
     padding: 5px;
-    background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s ease;
+    background: var(--surface);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 
-/* Efecto al pasar el mouse */
 .logo-wrapper:hover .logo-img {
-    border-color: rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(37, 99, 235, .35);
+    box-shadow: var(--shadow-blue);
+    transform: translateY(-1px);
 }
 
-/* Estilo del texto al lado del logo */
 .logo-text {
-    font-weight: 800;
-    color: var(--text-white); /* O usa #ffffff si no tienes la variable */
-    letter-spacing: 1px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--night);
+    letter-spacing: .025em;
+    font-size: 1.15rem;
+    transition: color .2s ease;
 }
 
-/* Opcional: Que el logo también cambie a cian solo cuando pasas el mouse */
-.logo-wrapper:hover .logo-text {
-    color: var(--accent);
-}
+.logo-wrapper:hover .logo-text { color: var(--accent); }
 
 .nav-menu ul {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     list-style: none;
-    gap: 30px;
+    gap: clamp(14px, 2.3vw, 30px);
     margin: 0;
     padding: 0;
 }
@@ -86,229 +77,141 @@
 .nav-menu a {
     text-decoration: none;
     color: var(--text-gray);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: .92rem;
+    font-weight: 600;
+    transition: color .2s ease;
 }
 
-.nav-menu a:hover {
-    color: var(--accent); /* El cian neón que tanto nos gusta */
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+    color: var(--accent);
 }
 
-/* Animación de entrada suave */
+.nav-menu a:focus-visible,
+.logo-wrapper:focus-visible,
+.footer-links a:focus-visible {
+    outline: 3px solid rgba(6, 182, 212, .35);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Entrada suave de las secciones */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-/* Aplicar a los bloques principales */
 .category-block, .product-layout, .section-header {
-    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: fadeInUp .55s ease-out both;
 }
+.category-block:nth-child(1) { animation-delay: .05s; }
+.category-block:nth-child(2) { animation-delay: .12s; }
+.category-block:nth-child(3) { animation-delay: .19s; }
 
-/* Delay para efecto cascada en el catálogo */
-.category-block:nth-child(1) { animation-delay: 0.1s; }
-.category-block:nth-child(2) { animation-delay: 0.3s; }
-.category-block:nth-child(3) { animation-delay: 0.5s; }
-
-/*ESTILOS FOOTER*/
-/* Reseteo básico para que el cálculo de altura funcione */
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* El contenedor principal ocupa el 100% de la pantalla */
-.content-wrapper {
-    min-height: 100%;
-    display: block; /* Esto asegura que tus productos mantengan su diseño original */
-}
-
-/* Ajuste para el footer */
+/* Footer */
 .main-footer {
-    background: #12141a !important;
-    width: 100%;
     position: relative;
-    /* Si el footer 'tapa' contenido, podemos darle un margin-top negativo 
-       o simplemente dejar que el flujo natural lo ponga al final */
+    width: 100%;
+    background: #FFFFFF;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
 }
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 24px 28px;
     display: flex;
-    justify-content: space-between; /* Todo en una línea: Izquierda, Centro, Derecha */
+    justify-content: space-between;
     align-items: center;
+    gap: 24px;
 }
 
-/* El logo y slogan ahora en una sola línea pequeña */
 .footer-info {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
 }
 
 .footer-logo {
     color: var(--accent);
-    font-weight: 800;
-    font-size: 0.9rem; /* Más pequeño */
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: .92rem;
     margin: 0;
 }
 
 .footer-info p {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: .78rem;
+    color: var(--text-muted);
     margin: 0;
 }
 
-/* Los links en horizontal y sin título */
-.footer-links h4 {
-    display: none; /* Quitamos el título "Explora" que ocupa espacio */
-}
+.footer-links h4 { display: none; }
 
 .footer-links ul {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 18px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .footer-links a {
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: .8rem;
+    color: var(--text-gray);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color .2s ease;
 }
 
 .footer-links a:hover {
     color: var(--accent);
-    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5); /* Un brillo sutil al pasar el mouse */
-    transition: all 0.3s ease;
 }
-/* El copyright integrado a la derecha */
+
 .footer-copy {
     border: none;
     padding: 0;
     margin: 0;
-    font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.3);
+    font-size: .75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
 }
 
-/* Animación de entrada para el Hero */
-.hero-content {
-    position: relative;
-    z-index: 5;
-    pointer-events: auto; /* <--- Esto es vital */
+/* Plantilla de historias: separación respecto de la cabecera fija */
+.story-page .article-hero { padding-top: 18px; }
+
+@media (max-width: 900px) {
+    .header-container { padding-right: 20px; padding-left: 20px; gap: 16px; }
+    .nav-menu ul { gap: 14px; }
+    .nav-menu a { font-size: .86rem; }
+    .footer-container { flex-wrap: wrap; justify-content: center; text-align: center; }
 }
 
-@keyframes fadeInReveal {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* --- RESPONSIVIDAD PARA MÓVILES (Pantallas menores a 768px) --- */
 @media (max-width: 768px) {
-    
-    /* 1. Ajuste del Header */
-    .main-header {
-        height: auto; /* Dejamos que el alto se adapte al contenido apilado */
-        padding: 10px 0;
-    }
-
+    .main-header { min-height: 0; }
     .header-container {
-        flex-direction: column; /* Apila Logo arriba y Menú abajo */
-        gap: 15px;
-        padding: 10px 20px;
+        min-height: 0;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 16px 12px;
     }
-
-    .nav-menu ul {
-        gap: 15px; /* Menos espacio entre links para que no se corten */
-        justify-content: center;
-    }
-
-    .nav-menu a {
-        font-size: 0.85rem; /* Un poco más pequeño para ahorrar espacio */
-    }
-
-    .logo-text {
-        font-size: 1.1rem; /* Reducimos el nombre de la marca */
-    }
-
-    /* 2. Ajuste del Footer */
-    .footer-container {
-        flex-direction: column; /* Apila info, links y copy */
-        text-align: center;
-        gap: 25px;
-        padding: 30px 20px;
-    }
-
-    .footer-info {
-        flex-direction: column; /* Logo sobre el slogan */
-        gap: 8px;
-    }
-
-    .footer-links ul {
-        flex-direction: column; /* Links uno debajo del otro */
-        gap: 12px;
-    }
-
-    .footer-copy {
-        margin-top: 10px;
-        opacity: 0.5;
-    }
-
-    /* 3. Ajuste de la Imagen de Historia (Plantilla) */
-    /* Como ya definimos la imagen al 60%, en móvil debe ser 100% */
+    .logo-img { width: 36px; height: 36px; }
+    .logo-text { font-size: 1.05rem; }
+    .nav-menu { width: 100%; }
+    .nav-menu ul { justify-content: center; gap: 10px 18px; }
+    .nav-menu a { font-size: .84rem; }
+    .footer-container { flex-direction: column; gap: 18px; padding: 28px 18px; }
+    .footer-info { flex-direction: column; gap: 6px; }
+    .footer-links ul { justify-content: center; gap: 12px 18px; }
+    .footer-copy { white-space: normal; }
+    .story-page .article-hero { padding-top: 80px !important; text-align: left; }
     .story-page .featured-image {
         width: 100% !important;
-        max-height: 250px; /* Más bajita en móvil para ver el texto pronto */
+        max-height: 250px;
         margin-bottom: 20px;
     }
 }
 
-/* --- AJUSTE EXTRA PARA PANTALLAS MUY PEQUEÑAS (iPhone SE, etc) --- */
 @media (max-width: 480px) {
-    .nav-menu ul {
-        flex-wrap: wrap; /* Si no caben los links, que bajen a otra línea */
-        justify-content: center;
-    }
-}
-
-/* Arreglo específico para el botón volver en Guías */
-@media (max-width: 768px) {
-    .story-page .article-hero {
-        padding-top: 80px !important; /* Baja todo el contenido para que no lo tape el menú */
-        text-align: left;
-    }
-
-    .story-page .btn-back-nav {
-        display: inline-flex !important;
-        align-items: center;
-        background: var(--primary-color, #0a84ff);
-        color: white !important;
-        padding: 10px 16px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        position: relative; 
-        left: 0;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
+    .nav-menu ul { flex-wrap: wrap; }
 }

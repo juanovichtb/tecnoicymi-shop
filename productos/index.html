@@ -1,10 +1,30 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8FAFC">
+
     <title>Productos y Servicios | Tecnoicymi</title>
+    <meta name="description" content="Explora los productos y servicios de Tecnoicymi: licencias de software, recargas móviles, hardware, componentes y contenido digital.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Metadatos para compartir -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Productos y Servicios | Tecnoicymi">
+    <meta property="og:description" content="Descubre licencias de software, recargas móviles, hardware y contenido digital en Tecnoicymi.">
+    <meta property="og:url" content="https://www.tecnoicymi.com/productos/">
+
+    <!-- Icono del sitio -->
+    <link rel="icon" type="image/png" href="../assets/img/logo-icon.png">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos globales -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/layout.css">
     <link rel="stylesheet" href="../assets/css/components.css">
@@ -12,52 +32,60 @@
 
 <body>
     <div class="content-wrapper">
-        <div class="blob"></div>
+        <div class="blob" aria-hidden="true"></div>
+
         <div id="header-placeholder"></div>
 
         <main class="container">
             <header class="section-header">
                 <span class="badge">Tecnoicymi Store</span>
                 <h1>¿Qué estás buscando hoy?</h1>
-                <p>Selecciona una categoría para explorar nuestras soluciones y productos disponibles.</p>
+                <p>
+                    Selecciona una categoría para explorar nuestras soluciones
+                    y productos disponibles.
+                </p>
             </header>
 
-            <div class="categories-explorer">
+            <section class="categories-explorer" aria-label="Categorías de productos y servicios">
 
                 <a href="licencias.html" class="category-card">
-                    <div class="cat-icon">🔑</div>
-                    <h3>Software & Licencias</h3>
-                    <p>Windows, Office y Antivirus originales con activación inmediata.</p>
+                    <div class="cat-icon" aria-hidden="true">🔑</div>
+                    <h3>Software y Licencias</h3>
+                    <p>Windows, Office y antivirus originales con activación inmediata.</p>
                     <span class="item-count">Ver Catálogo</span>
                 </a>
 
                 <a href="recargas.html" class="category-card">
-                    <div class="cat-icon">📱</div>
+                    <div class="cat-icon" aria-hidden="true">📱</div>
                     <h3>Recargas Móviles</h3>
                     <p>Saldo al instante para Movistar, Claro, CNT y Tuenti.</p>
                     <span class="item-count">Recargar Ahora</span>
                 </a>
 
                 <a href="hardware.html" class="category-card">
-                    <div class="cat-icon">💾</div>
-                    <h3>Hardware & Piezas</h3>
+                    <div class="cat-icon" aria-hidden="true">💾</div>
+                    <h3>Hardware y Piezas</h3>
                     <p>Componentes de PC, periféricos y repuestos garantizados.</p>
                     <span class="item-count">Ver Stock</span>
                 </a>
 
                 <a href="digital.html" class="category-card">
-                    <div class="cat-icon">📚</div>
+                    <div class="cat-icon" aria-hidden="true">📚</div>
                     <h3>Contenido Digital</h3>
-                    <p>Libros y guías en PDF - EPUB listos para descargar. Pago fácil con tarjeta, PayPal y más.</p>
+                    <p>
+                        Libros y guías en PDF y EPUB listos para descargar.
+                        Pago fácil con tarjeta, PayPal y más.
+                    </p>
                     <span class="item-count">Explorar Packs</span>
                 </a>
 
-            </div>
+            </section>
         </main>
     </div>
+
     <div id="footer-placeholder"></div>
 
     <script src="../assets/js/main.js"></script>
 </body>
-
 </html>
+```
